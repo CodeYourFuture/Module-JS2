@@ -18,11 +18,11 @@ function getBudgets(peopleArray) {}
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("No Budgets", () => {
+test("returns 0 for no budgets", () => {
   expect(getBudgets([])).toEqual(0);
 });
 
-test("Test 1", () => {
+test("case 1", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 23000 },
@@ -32,7 +32,7 @@ test("Test 1", () => {
   ).toEqual(65700);
 });
 
-test("Test 2", () => {
+test("case 2", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 29000 },
@@ -42,7 +42,7 @@ test("Test 2", () => {
   ).toEqual(62600);
 });
 
-test("Test 3", () => {
+test("case 3", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 19401 },
@@ -52,7 +52,7 @@ test("Test 3", () => {
   ).toEqual(32926);
 });
 
-test("Test 4", () => {
+test("case 4", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 10234 },
@@ -62,7 +62,7 @@ test("Test 4", () => {
   ).toEqual(36923);
 });
 
-test("Huge List", () => {
+test("works for larger inputs", () => {
   expect(
     getBudgets([
       {
