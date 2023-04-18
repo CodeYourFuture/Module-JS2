@@ -1,23 +1,35 @@
 {
   "name": "module-js2",
   "version": "1.0.0",
-  "description": "All the coursework is listed as issues on this repo. You will copy these issues to your Coursework Planner, which is one repo that will hold all your coursework and assignments for the entire course.",
-  "main": "budget.js",
+  "license": "CC-BY-SA-4.0",
+  "description": "",
   "scripts": {
+    "test": "jest --testMatch='**/*.js'",
     "format": "prettier --write ."
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "alarmclock",
+      "highlight-words",
+      "slideshow",
+      "reading-list",
+      "todo-list",
+      "quote-generator"
+    ]
+  },
+  "workspaces": [
+    "alarmclock",
+    "reading-list",
+    "highlight-words",
+    "todo-list",
+    "slideshow"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeYourFuture/Module-JS2.git"
+    "url": "git+https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week3-London8.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeYourFuture/Module-JS2/issues"
+    "url": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week3-London8/issues"
   },
-  "homepage": "https://github.com/CodeYourFuture/Module-JS2#readme",
-  "devDependencies": {
-    "prettier": "^2.8.7"
-  }
+  "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week3-London8#readme"
 }
