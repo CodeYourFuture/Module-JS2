@@ -16,11 +16,6 @@ body:
         - how to get help 
         - how to review it with answers 
         - how to get it reviewed from mentors and peers
-  - type: input
-    attributes:
-      label: Link to the coursework
-    validations:
-      required: true
   - type: textarea
     attributes:
       label: Why are we doing this?
