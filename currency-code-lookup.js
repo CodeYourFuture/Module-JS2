@@ -11,7 +11,15 @@
 */
 
 function createLookup(countryCurrencyCodes) {
-  // write code here
+  let currencyCodeLookup = {};
+
+  for (let countryCurrencyCode of countryCurrencyCodes) {
+    let countryCode = countryCurrencyCode[0];
+    let currencyCode = countryCurrencyCode[1];
+    currencyCodeLookup[countryCode] = currencyCode;
+  }
+
+  return currencyCodeLookup;
 }
 
 /* ======= TESTS - DO NOT MODIFY =====
