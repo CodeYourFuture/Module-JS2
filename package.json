@@ -1,0 +1,23 @@
+{
+  "name": "module-js2",
+  "version": "1.0.0",
+  "description": "All the coursework is listed as issues on this repo. You will copy these issues to your Coursework Planner, which is one repo that will hold all your coursework and assignments for the entire course.",
+  "main": "budget.js",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeYourFuture/Module-JS2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeYourFuture/Module-JS2/issues"
+  },
+  "homepage": "https://github.com/CodeYourFuture/Module-JS2#readme",
+  "devDependencies": {
+    "prettier": "^2.8.7"
+  }
+}

@@ -22,7 +22,7 @@ function createLookup(countryCurrencyCodes) {
 }
 
 /* ======= TESTS - DO NOT MODIFY =====
-*/
+ */
 
 test("creates country currency code lookup", () => {
   expect(createLookup(COUNTRY_CURRENCY_CODES)).toEqual({

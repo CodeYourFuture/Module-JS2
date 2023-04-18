@@ -25,7 +25,7 @@ function convertScoreToGrade(score) {
 }
 
 /* ======= TESTS - FOR THIS EXERCISE YOU SHOULD MODIFY THEM! =====
-*/
+ */
 
 /*
   The first test has been written for you. You need to fix the test so that it

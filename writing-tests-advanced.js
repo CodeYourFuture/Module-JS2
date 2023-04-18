@@ -43,7 +43,7 @@ function formatCourseworkResult(trainee) {
 }
 
 /* ======= TESTS - FOR THIS EXERCISE YOU SHOULD MODIFY THEM! =====
-*/
+ */
 
 /*
   Write a test that checks the output of formatCourseworkResult when passed the following trainee:
