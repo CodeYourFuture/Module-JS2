@@ -34,7 +34,17 @@
 function countWords(string) {
   const wordCount = {};
 
-  // write code here
+  let words = string.split(" ");
+
+  words.forEach((word) => {
+    if (word !== "") {
+      if (wordCount.hasOwnProperty(word)) {
+        wordCount[word] += 1;
+      } else {
+        wordCount[word] = 1;
+      }
+    }
+  });
 
   return wordCount;
 }
@@ -42,7 +52,11 @@ function countWords(string) {
 /* ======= TESTS - DO NOT MODIFY =====
  */
 
-test("Code works for a small string", () => {
+test("given empty string returns an empty object", () => {
+  expect(countWords("")).toEqual({});
+});
+
+test("works for a small string", () => {
   expect(countWords("I love CodeYourFuture")).toEqual({
     I: 1,
     love: 1,
@@ -50,18 +64,14 @@ test("Code works for a small string", () => {
   });
 });
 
-test("A string with, some punctuation", () => {
+test("removes all punctuation", () => {
   expect(countWords("A string with, some punctuation")).toEqual({
     A: 1,
     string: 1,
-    "with,": 1,
+    with: 1,
     some: 1,
     punctuation: 1,
   });
-});
-
-test("Empty string", () => {
-  expect(countWords("")).toEqual({});
 });
 
 test("Example task string", () => {
@@ -72,9 +82,9 @@ test("Example task string", () => {
   ).toEqual({
     "you're": 1,
     and: 1,
-    "believe,": 1,
+    believe: 1,
     braver: 1,
-    "seem,": 1,
+    seem: 1,
     smarter: 1,
     stronger: 1,
     than: 3,
