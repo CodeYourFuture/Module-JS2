@@ -10,19 +10,32 @@ getBudgets([
 Should give return the answer of 62600.
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+  let budgets = peopleArray.map((person) => person.budget);
+  // If you haven't seen the "reduce" array method before it's worth a read; very useful for situations like this;
+  // as this one line is the same as the rest of this function!
+
+  //return budgets.reduce((acc, curr) => acc + curr, 0);
+
+  // Alternatively, this is a different way you may be more familiar with.
+  let totalBudget = 0;
+  budgets.forEach((budget) => {
+    totalBudget += budget;
+  });
+  return totalBudget;
+}
 
 /* ======= TESTS - DO MODIFY (!!!) =====
-- To run the tests for this exercise, run `npm test -- --testPathPattern budgets.js`
+- To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("returns 0 for no budgets", () => {
+test("No Budgets", () => {
   expect(getBudgets([])).toEqual(0);
 });
 
-test("case 1", () => {
+test("Test 1", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 23000 },
@@ -32,7 +45,7 @@ test("case 1", () => {
   ).toEqual(65700);
 });
 
-test("case 2", () => {
+test("Test 2", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 29000 },
@@ -42,7 +55,7 @@ test("case 2", () => {
   ).toEqual(62600);
 });
 
-test("case 3", () => {
+test("Test 3", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 19401 },
@@ -52,7 +65,7 @@ test("case 3", () => {
   ).toEqual(32926);
 });
 
-test("case 4", () => {
+test("Test 4", () => {
   expect(
     getBudgets([
       { name: "John", age: 21, budget: 10234 },
@@ -62,7 +75,7 @@ test("case 4", () => {
   ).toEqual(36923);
 });
 
-test("works for larger inputs", () => {
+test("Huge List", () => {
   expect(
     getBudgets([
       {
