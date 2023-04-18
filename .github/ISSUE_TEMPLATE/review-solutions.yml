@@ -1,7 +1,7 @@
 name: Review solutions assignment
 description: Assign a piece of technical coursework
 title: "[TECH ED] Review solutions for last week's coursework"
-labels: [Tech Ed, 🏕 Priority Mandatory]
+labels: [Tech Ed, 🏕 Priority Mandatory, 📅 JS2]
 body:
   - type: markdown
     attributes:
