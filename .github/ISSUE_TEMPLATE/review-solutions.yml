@@ -25,7 +25,10 @@ body:
     attributes:
       label: Why are we doing this?
       description: Clearly explain the purpose of this assignment
-      value: It is essential that you regularly check solutions to evaluate your understanding. However it is critical that you attempt the activities first before you use the solutions.
+      value: |
+        It is essential that you regularly check solutions to evaluate your understanding. 
+        However it is critical that you attempt the activities first before you using the solutions.
+        You can find the solutions all the assignments in the `solutions` branch of this repo.
     validations:
       required: true
   - type: input
