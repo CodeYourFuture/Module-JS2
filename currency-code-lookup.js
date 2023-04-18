@@ -10,13 +10,6 @@
     Hint: you'll need to use bracket notation to add new key/value pairs to the object
 */
 
-const COUNTRY_CURRENCY_CODES = [
-  ["GB", "GBP"],
-  ["DE", "EUR"],
-  ["NG", "NGN"],
-  ["MX", "MXN"],
-];
-
 function createLookup(countryCurrencyCodes) {
   // write code here
 }
@@ -24,7 +17,22 @@ function createLookup(countryCurrencyCodes) {
 /* ======= TESTS - DO NOT MODIFY =====
  */
 
-test("creates country currency code lookup", () => {
+test("converts a single pair of currency codes", () => {
+  expect(createLookup([["GB", "GBP"]])).toEqual({
+    GB: "GBP",
+  });
+  expect(createLookup([["DE", "EUR"]])).toEqual({
+    DE: "EUR",
+  });
+});
+
+test("creates a country currency code lookup for multiple codes", () => {
+  const COUNTRY_CURRENCY_CODES = [
+    ["GB", "GBP"],
+    ["DE", "EUR"],
+    ["NG", "NGN"],
+    ["MX", "MXN"],
+  ];
   expect(createLookup(COUNTRY_CURRENCY_CODES)).toEqual({
     GB: "GBP",
     DE: "EUR",
