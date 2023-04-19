@@ -1,6 +1,6 @@
 # Make a Quote Generator
 
-In this folder you will find the basic setup of a quote generator.
+In this folder, you will find the basic setup of a quote generator.
 
 You can change any of the files in this project
 
