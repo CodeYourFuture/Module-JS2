@@ -1,6 +1,6 @@
 # Mini-Twitter
 
-In this project we are going to create a reduced version of the [twitter interface](https://twitter.com/home). 
+In this project we are going to create a reduced version of the [twitter interface](https://twitter.com/home).
 
 ## Difficulty
 
