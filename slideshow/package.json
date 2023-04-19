@@ -4,7 +4,7 @@
   "description": "",
   "main": "alarmclock.js",
   "scripts": {
-    "test": "jest"
+    "jest": "test"
   },
   "keywords": [],
   "author": "",

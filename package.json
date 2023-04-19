@@ -4,20 +4,21 @@
   "license": "CC-BY-SA-4.0",
   "description": "",
   "scripts": {
-    "test": "jest --testMatch='**/*.js'",
+    "test": "jest",
     "format": "prettier --write ."
   },
   "jest": {
-    "testPathIgnorePatterns": [
-      "alarmclock",
-      "highlight-words",
-      "slideshow",
-      "reading-list",
-      "todo-list",
-      "quote-generator"
+    "verbose": false,
+    "testMatch": [
+      "<rootDir>/*.js",
+      "**/*.test.js"
     ],
     "setupFilesAfterEnv": [
-      "jest-extended/all"
+      "jest-extended/all",
+      "./jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/*/jest.setup.js"
     ]
   },
   "workspaces": [
@@ -37,5 +38,12 @@
   "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week3-London8#readme",
   "dependencies": {
     "jest-extended": "^3.2.4"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.19.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^13.5.0",
+    "jest": "^29.2.2",
+    "jest-environment-jsdom": "^29.2.2"
   }
 }
