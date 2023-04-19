@@ -1,25 +1,57 @@
-function populateTodoList(todos) {
-  let list = document.getElementById("todo-list");
-  // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
+const content = document.querySelector("#content");
+
+function toggleIsCompleted(todo) {
+  todo.classList.toggle("is-complete");
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-let todos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
-
-populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
-function addNewTodo(event) {
-  // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-  event.preventDefault();
-  // Write your code here... and remember to reset the input field to be blank after creating a todo!
+function removeTodo(todo) {
+  todo.remove();
 }
 
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-function deleteAllCompletedTodos() {
-  // Write your code here...
+const removeAllBtn = document.querySelector("#remove-all-completed");
+
+function removeCompletedTodos() {
+  const todoItems = document.querySelectorAll("li");
+  [...todoItems].forEach((todoItem) => {
+    if (todoItem.classList.contains("is-complete")) {
+      removeTodo(todoItem);
+    }
+  });
 }
+
+removeAllBtn.addEventListener("click", removeCompletedTodos);
+
+function createTodoListItem({ todo }) {
+  const todoItem = document.createElement("li");
+  const tickIcon = document.createElement("i");
+  tickIcon.classList.add("fa-check", "fa-solid");
+  const binIcon = document.createElement("i");
+  binIcon.classList.add("fa-trash", "fa-solid");
+  todoItem.innerText = todo;
+  todoItem.append(tickIcon, binIcon);
+  binIcon.addEventListener("click", () => removeTodo(todoItem));
+  tickIcon.addEventListener("click", () => toggleIsCompleted(todoItem));
+  return todoItem;
+}
+
+function todoList(todos) {
+  const todoList = document.createElement("ul");
+  todos.forEach(({ todo }) => {
+    const todoItem = createTodoListItem({ todo });
+    todoList.appendChild(todoItem);
+  });
+
+  content.appendChild(todoList);
+}
+
+const button = document.querySelector("button");
+button.addEventListener("click", function (e) {
+  const input = document.querySelector("input");
+  const todoList = document.querySelector("ul");
+  const todoItem = createTodoListItem({ todo: input.value });
+  todoList.appendChild(todoItem);
+});
+
+const todos = [{ todo: "wash the dishes" }, { todo: "do the shopping" }];
+
+todoList(todos);

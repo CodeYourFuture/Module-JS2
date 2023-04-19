@@ -30,16 +30,16 @@ afterEach(() => {
 });
 
 describe("Mandatory tasks", () => {
-  test("displays the initial list of todos", () => {
-    const todoList = page.window.document.querySelector("#todo-list");
+  test.only("displays the initial list of todos", () => {
+    const todoList = page.window.document.querySelector("ul");
     const listItems = [...page.window.document.querySelectorAll("li")];
 
-    expect(todoList).toHaveTextContent("Wash the dishes");
-    expect(todoList).toHaveTextContent("Do the shopping");
+    expect(todoList).toHaveTextContent("wash the dishes");
+    expect(todoList).toHaveTextContent("do the shopping");
     expect(listItems.length).toBe(2);
   });
 
-  test("each todo has a delete and tick icon", () => {
+  test.only("each todo has a delete and tick icon", () => {
     const listItems = [...page.window.document.querySelectorAll("li")];
 
     listItems.forEach((_, index) => {
@@ -55,10 +55,10 @@ describe("Mandatory tasks", () => {
     });
   });
 
-  test("can add a new todo to the list", () => {
-    const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+  test.only("can add a new todo to the list", () => {
+    const todoList = page.window.document.querySelector("ul");
+    const button = page.window.document.querySelector("button");
+    const input = page.window.document.querySelector("input");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
@@ -70,7 +70,7 @@ describe("Mandatory tasks", () => {
     expect(listItems.length).toBe(3);
   });
 
-  test("can strike through a todo when it is completed", () => {
+  test.only("can strike through a todo when it is completed", () => {
     const li = page.window.document.querySelector("li");
     const tickIcon = page.window.document.querySelector("li i");
 
@@ -81,7 +81,7 @@ describe("Mandatory tasks", () => {
     });
   });
 
-  test("can undo a strikethrough on a todo", () => {
+  test.only("can undo a strikethrough on a todo", () => {
     const li = page.window.document.querySelector("li");
     const tickIcon = page.window.document.querySelector("li i");
     userEvent.click(tickIcon);
@@ -97,10 +97,10 @@ describe("Mandatory tasks", () => {
     });
   });
 
-  test("can delete a todo from the list", () => {
-    const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+  test.only("can delete a todo from the list", () => {
+    const todoList = page.window.document.querySelector("ul");
+    const button = page.window.document.querySelector("button");
+    const input = page.window.document.querySelector("input");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
@@ -120,20 +120,20 @@ describe("Mandatory tasks", () => {
 });
 
 describe("Advanced tasks", () => {
-  test("can remove all completed todos", () => {
-    const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+  test.only("can remove all completed todos", () => {
+    const todoList = page.window.document.querySelector("ul");
+    const button = page.window.document.querySelector("button");
+    const input = page.window.document.querySelector("input");
 
-    userEvent.type(input, "Do CYF coursework");
+    userEvent.type(input, "do CYF coursework");
     userEvent.click(button);
 
     userEvent.clear(input);
-    userEvent.type(input, "Make a sandwich");
+    userEvent.type(input, "make a sandwich");
     userEvent.click(button);
 
     userEvent.clear(input);
-    userEvent.type(input, "Take a break");
+    userEvent.type(input, "take a break");
     userEvent.click(button);
 
     const tickIcon2 = page.window.document.querySelector(
@@ -152,11 +152,11 @@ describe("Advanced tasks", () => {
 
     const listItems = [...page.window.document.querySelectorAll("li")];
     expect(listItems.length).toBe(3);
-    expect(todoList).toHaveTextContent("Wash the dishes");
-    expect(todoList).toHaveTextContent("Do CYF coursework");
-    expect(todoList).toHaveTextContent("Take a break");
+    expect(todoList).toHaveTextContent("wash the dishes");
+    expect(todoList).toHaveTextContent("do CYF coursework");
+    expect(todoList).toHaveTextContent("take a break");
 
-    expect(todoList).not.toHaveTextContent("Do the shopping");
-    expect(todoList).not.toHaveTextContent("Make a sandwich");
+    expect(todoList).not.toHaveTextContent("do the shopping");
+    expect(todoList).not.toHaveTextContent("make a sandwich");
   });
 });
