@@ -21,10 +21,10 @@ function eligibleStudents(attendances) {
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
-- To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
-- To run all exercises/tests in the mandatory folder, run `npm test`
-- (Reminder: You must have run `npm install` one time before this will work!)
-*/
+  - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
+  - To run all exercises/tests in the mandatory folder, run `npm test`
+  - (Reminder: You must have run `npm install` one time before this will work!)
+  */
 
 const attendances = [
   { name: "Ahmed", attendance: 8 },
@@ -35,7 +35,7 @@ const attendances = [
   { name: "Nina", attendance: 10 },
 ];
 
-test("returns the names of eligible", () => {
+test("eligibleStudents function works", () => {
   expect(eligibleStudents(attendances)).toEqual([
     "Ahmed",
     "Clement",

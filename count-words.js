@@ -21,22 +21,14 @@
     - Loops or forEach
     - Comparison inside if statements
     - Setting values on an object
-
-## Advanced challenges
-
-1. Remove all of the punctuation (e.g. ".", ",", "!", "?") to tidy up the results
-
-2. Ignore the case of the words to find more unique words. e.g. (A === a, Hello === hello)
-
-3. Order the results to find out which word is the most common in the chapter
 */
 
 function countWords(string) {
   const wordCount = {};
 
-  let words = string.split(" ");
+  let arrayOfWords = string.split(" ");
 
-  words.forEach((word) => {
+  arrayOfWords.forEach((word) => {
     if (word !== "") {
       if (wordCount.hasOwnProperty(word)) {
         wordCount[word] += 1;
@@ -50,13 +42,12 @@ function countWords(string) {
 }
 
 /* ======= TESTS - DO NOT MODIFY =====
- */
+- To run the tests for this exercise, run `npm run extra-tests`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
+*/
 
-test("given empty string returns an empty object", () => {
-  expect(countWords("")).toEqual({});
-});
-
-test("works for a small string", () => {
+test("Code works for a small string", () => {
   expect(countWords("I love CodeYourFuture")).toEqual({
     I: 1,
     love: 1,
@@ -64,14 +55,18 @@ test("works for a small string", () => {
   });
 });
 
-test("removes all punctuation", () => {
+test("A string with, some punctuation", () => {
   expect(countWords("A string with, some punctuation")).toEqual({
     A: 1,
     string: 1,
-    with: 1,
+    "with,": 1,
     some: 1,
     punctuation: 1,
   });
+});
+
+test("Empty string", () => {
+  expect(countWords("")).toEqual({});
 });
 
 test("Example task string", () => {
@@ -82,9 +77,9 @@ test("Example task string", () => {
   ).toEqual({
     "you're": 1,
     and: 1,
-    believe: 1,
+    "believe,": 1,
     braver: 1,
-    seem: 1,
+    "seem,": 1,
     smarter: 1,
     stronger: 1,
     than: 3,

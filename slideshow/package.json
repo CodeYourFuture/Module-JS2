@@ -2,9 +2,9 @@
   "name": "@module-js2/slideshow",
   "version": "1.0.0",
   "description": "",
-  "main": "alarmclock.js",
+  "main": "index.html",
   "scripts": {
-    "jest": "test"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

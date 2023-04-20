@@ -15,6 +15,10 @@ let car = {
 };
 
 console.log(car["colour"]);
+/*
+  the value of the colour property on car is being logged but it does not exist in the object.
+  If you try to access the value of a key that does not exist on an object, JavaScript will return undefined.
+*/
 
 // Example 2
 function sayHelloToUser(user) {
@@ -26,6 +30,10 @@ let user = {
 };
 
 sayHelloToUser(user);
+/*
+  the value of the firstName property on user is being logged but it does not exist in the object.
+  If you try to access the value of a key that does not exist on an object, JavaScript will return undefined.
+*/
 
 // Example 3
 let myPet = {
@@ -36,3 +44,6 @@ let myPet = {
 };
 
 console.log(myPet.getName());
+/*
+  the getName method on the myPet object does not have a return statement, therefore it returns undefined.
+*/
