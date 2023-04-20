@@ -18,7 +18,8 @@
       "./jest.setup.js"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/*/jest.setup.js"
+      "<rootDir>/*/jest.setup.js",
+      "<rootDir>/recipes.js"
     ]
   },
   "workspaces": [
