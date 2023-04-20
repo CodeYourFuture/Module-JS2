@@ -1,8 +1,8 @@
 {
-  "name": "@module-js2/alarmclock",
+  "name": "@module-js2/quote-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "alarmclock.js",
+  "main": "index.html",
   "scripts": {
     "test": "jest"
   },

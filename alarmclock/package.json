@@ -2,7 +2,7 @@
   "name": "@module-js2/alarmclock",
   "version": "1.0.0",
   "description": "",
-  "main": "alarmclock.js",
+  "main": "index.html",
   "scripts": {
     "test": "jest"
   },
