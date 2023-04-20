@@ -33,7 +33,7 @@ afterEach(() => {
 describe("Reading list", () => {
   test("renders a list of books with author and title", () => {
     const readingList = page.window.document.querySelector("ul");
-    console.log(readingList, "readingList");
+
     expect(readingList).toHaveTextContent("The Design of Everyday Things");
     expect(readingList).toHaveTextContent("Don Norman");
 
