@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - "solutions"
+  pull_request:
+    branches:
+      - "solutions"
 jobs:
   build:
     runs-on: ubuntu-latest
