@@ -1,0 +1,14 @@
+name: Run mandatory tests
+on:
+  push:
+    branches:
+      - "solutions"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Run all tests
+        run: npm test
