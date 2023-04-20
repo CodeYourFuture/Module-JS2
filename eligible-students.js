@@ -35,7 +35,7 @@ const attendances = [
   { name: "Nina", attendance: 10 },
 ];
 
-test("eligibleStudents function works", () => {
+test("returns the names of eligible", () => {
   expect(eligibleStudents(attendances)).toEqual([
     "Ahmed",
     "Clement",
