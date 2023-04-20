@@ -1,4 +1,4 @@
-name: Run mandatory tests
+name: Test all solutions
 on:
   push:
     branches:
