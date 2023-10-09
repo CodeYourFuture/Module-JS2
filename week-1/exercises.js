@@ -13,23 +13,9 @@
 
 const items = ["a", "b", "c", "d", "e"];
 
-function find(list, target) {
-  for (const [index, item] of list.entries()) {
-    if (item === target) {
-      return index;
-    }
-  }
-}
+function find() {}
 
-function max(list) {
-  let max = -Infinity;
-  for (const item of list) {
-    if (item > max) {
-      max = item;
-    }
-  }
-  return max;
-}
+function max() {}
 
 console.log(find(items, "a"));
 console.log(max([10, 20, 2000, 410, 300]));
