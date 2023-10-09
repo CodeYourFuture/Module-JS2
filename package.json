@@ -4,7 +4,7 @@
   "license": "CC-BY-SA-4.0",
   "description": "## Challenge Overview",
   "scripts": {
-    "test": "jest week-1/fix",
+    "test": "jest",
     "format": "prettier --write ."
   },
   "jest": {

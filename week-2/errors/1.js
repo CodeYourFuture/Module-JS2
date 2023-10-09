@@ -1,10 +1,12 @@
+// predict and explain first...
+
+// someone is trying to update callignCodes so it contains the code for Iran
+// but it isn't working at the moment
+
 const callingCodes = {
   UK: "+44",
   Sudan: "+249",
   Mexico: "+52",
 };
 
-const country = "Sudan";
-const phoneNumber = "7506172506";
-const diallingCode = callingCodes.country;
-console.log(`${diallingCode}${phoneNumber}`);
+callingCodes.push("+98", "Iran");
