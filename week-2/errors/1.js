@@ -1,6 +1,6 @@
 // predict and explain first...
 
-// someone is trying to update callignCodes so it contains the code for Iran
+// Iman is trying to update callingCodes so it contains the dialling code for Iran
 // but it isn't working at the moment
 
 const callingCodes = {

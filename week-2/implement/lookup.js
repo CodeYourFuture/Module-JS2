@@ -28,11 +28,11 @@
  * }
  */
 
-function createLookup(countryCurrencyPairs) {
+function createLookup() {
   // implementation here
 }
 
-/* ======= TESTS - DO NOT MODIFY =====
+/* ======= Test suite is provided below... =====
  */
 
 test("converts a single pair of currency codes", () => {
