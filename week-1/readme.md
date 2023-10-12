@@ -1,6 +1,12 @@
 # 🧭 Guide to Week 1 exercises
 
 This README will guide you through the different sections for this week.
+
+## Setup
+
+Go to the root of this repository. Double check you're there with `pwd`.
+Run the command `npm install` in the root of this repo.
+
 To run tests in the `week-1` directory you can make use of the [`testPathPattern` CLI option in Jest.](https://jestjs.io/docs/cli#--testpathpatternregex)
 
 For example,
