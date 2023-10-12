@@ -1,6 +1,6 @@
 // predict and explain first...
 
-// why does the program result in an error being thrown
+// why is an error thrown when this program runs?
 
 const profile = {
   firstName: "Abdul",

@@ -1,5 +1,5 @@
 function mode(numbers) {
-  // Track frequency of each value
+  // track frequency of each value
   let freqs = new Map();
 
   for (let num of numbers) {
