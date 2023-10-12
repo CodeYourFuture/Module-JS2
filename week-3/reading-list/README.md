@@ -23,12 +23,9 @@ const books = [
 
 Render the list of books on the page. Each book should have a title, author and image and a background colour that is set dependent on whether we have read the book or not.
 
-## Exercise
+## 🧭 Strategy
 
-- For each book, there should be a `p` element with the book title and author.
-- There should be an image with a `src` and `alt` attribute
-- Change the style of the book depending on whether you have read it (green) or not (red). Hint: try adding some CSS classes to styles.css for these styles.
-- All of your HTML should go inside the element with the id **"content"**.
+Try and outline your strategy / approach for solving this problem before you get started. There is also a test suite provided to help you meet the acceptance criteria in the issue.
 
 The end result should look something like this
 
