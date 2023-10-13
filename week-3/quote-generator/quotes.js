@@ -1,6 +1,6 @@
 // DO NOT EDIT BELOW HERE
 
-// A function which will return one item, at
+// pickFromArray is a function which will return one item, at
 // random, from the given array.
 //
 // Parameters
@@ -9,14 +9,14 @@
 //
 // Returns
 // -------
-// One item of the given array.
+// One item at random from the given array.
 //
 // Examples of use
 // ---------------
-// pickFromArray([1,2,3,4])     //maybe returns 2
-// pickFromArray(coloursArray)  //maybe returns "#F38630"
-//
-// You DO NOT need to understand how this function works.
+// pickFromArray(['a','b','c','d'])     // maybe returns 'c'
+
+
+// You don't need to change this function
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
@@ -490,3 +490,21 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+// call pickFromArray with the quotes array to check you get a random quote
+
+const randomQuote = pickFromArray(quotes);
+const $quote = document.querySelector('#quote');
+const $author = document.querySelector("#author");
+const $button = document.querySelector('button');
+updateQuote(randomQuote)
+
+function updateQuote({quote, author}) {
+  $quote.innerText = quote;
+  $author.innerText = author;
+}
+
+$button.addEventListener('click',function handleClick() {
+  const { quote, author } = pickFromArray(quotes);
+  updateQuote({ quote, author })
+});
