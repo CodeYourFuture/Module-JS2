@@ -1,7 +1,3 @@
-function readingList(books) {
-  // Write your code here...
-}
-
 // for the tests, do not modify this array of books
 const books = [
   {
@@ -25,4 +21,3 @@ const books = [
   },
 ];
 
-readingList(books);
