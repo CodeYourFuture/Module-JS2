@@ -2,7 +2,9 @@
 
 In this folder you will find the basic setup of a quote generator.
 
-You can change any of the files in this project
+You can change any of the files in this project.
+
+First off, once you've branched off `main`, then update the title element in `index.html` to "Quote generator app"
 
 ## How the Quote Generator should work
 

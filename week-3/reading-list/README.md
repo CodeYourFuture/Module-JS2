@@ -1,5 +1,7 @@
 # Reading List
 
+First off, once you've branched off `main`, then update the title element in `index.html` to "Reading list app"
+
 The function **readingList** takes an array of book objects:
 
 ```js

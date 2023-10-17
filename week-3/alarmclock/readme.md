@@ -2,6 +2,7 @@
 
 In this folder you will find the basic setup of an alarm clock.
 
+First off, once you've branched off `main`, then update the title element in `index.html` to "Alarm clock app"
 You should only change code in the `alarmclock.js` file.
 
 ## How the clock should work
