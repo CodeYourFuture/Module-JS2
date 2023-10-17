@@ -15,7 +15,6 @@
 // ---------------
 // pickFromArray(['a','b','c','d'])     // maybe returns 'c'
 
-
 // You don't need to change this function
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
@@ -494,17 +493,17 @@ const quotes = [
 // call pickFromArray with the quotes array to check you get a random quote
 
 const randomQuote = pickFromArray(quotes);
-const $quote = document.querySelector('#quote');
+const $quote = document.querySelector("#quote");
 const $author = document.querySelector("#author");
-const $button = document.querySelector('button');
-updateQuote(randomQuote)
-
-function updateQuote({quote, author}) {
+const $button = document.querySelector("button");
+updateQuote(randomQuote);
+console.log("****");
+function updateQuote({ quote, author }) {
   $quote.innerText = quote;
   $author.innerText = author;
 }
 
-$button.addEventListener('click',function handleClick() {
+$button.addEventListener("click", function handleClick() {
   const { quote, author } = pickFromArray(quotes);
-  updateQuote({ quote, author })
+  updateQuote({ quote, author });
 });
