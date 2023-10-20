@@ -28,5 +28,3 @@ const totalAmount = totalTill(till);
 // b) Why do we need to use Object.entries inside the for...of loop in this function?
 
 // c) What does coin * quantity evaluate to inside the for...of loop?
-
-// d)
