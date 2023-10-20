@@ -1,5 +1,5 @@
 /*
-  This exercise is to write function that counts the number of times each word appears in a string.
+  Count the number of times a word appears in a given string.
 
   Write a function called countWords that
     - takes a string as an argument
@@ -8,17 +8,13 @@
           - the values are the number of times the word appears in the string
 
   Example
-  If the function is given the input:
+  If we call countWords like this:
 
-  "you and me and you";
-
-  the object returned would be:
-
-  { you: 2, and: 2, me: 1 }
+  countWords("you and me and you") then the target output is { you: 2, and: 2, me: 1 }
 
   To complete this exercise you should understand
     - Strings and string manipulation
-    - Loops or forEach
+    - Loops
     - Comparison inside if statements
     - Setting values on an object
 
