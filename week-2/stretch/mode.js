@@ -1,4 +1,12 @@
-function mode(list) {
+// You are given an implementation of calculateMode
+// calculateMode does 2 things:
+// 1. One part of the code tracks the frequency of each value
+// 2. The other part finds the value with the highest frequency
+
+// refactor calculateMode by splitting up the code
+// into smaller functions with different roles
+
+function calculateMode(list) {
   // track frequency of each value
   let freqs = new Map();
 
@@ -21,4 +29,4 @@ function mode(list) {
   return maxFreq === 0 ? NaN : mode;
 }
 
-module.exports = mode;
+module.exports = calculateMode;
