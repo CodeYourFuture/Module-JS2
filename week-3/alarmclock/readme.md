@@ -3,7 +3,7 @@
 In this folder you will find the basic setup of an alarm clock.
 
 First off, once you've branched off `main`, then update the title element in `index.html` to "Alarm clock app"
-You should only change code in the `alarmclock.js` file.
+You will need to write your implementation in `alarmclock.js`.
 
 ## How the clock should work
 
@@ -22,13 +22,6 @@ Only read this section if you really need to! It's good to work this out for you
 ### Hints
 
 - Have you tried looking at the `setInterval` function?
-
-### Steps to complete
-
-1. When the `Set Alarm` button is clicked, get the value of the input field
-2. When you have the input field value, set the title to the correct value
-3. Work out how to update the `Time Remaining` title every second
-4. When the remaining time left is 0, play the alarm sound
 
 ## Extra Tasks
 
