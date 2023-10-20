@@ -1,4 +1,4 @@
-/* Sum the numbers in an array
+/* sum the numbers in an array
 
 In this kata, you will need to implement a function that sums the numerical elements of an array
 
