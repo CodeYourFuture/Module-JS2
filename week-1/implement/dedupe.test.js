@@ -1,14 +1,13 @@
-/**
+/*
  * Dedupe Array
  *
  * Dedupe means deduplicate
  * In this kata, you will need to deduplicate the elements of an array
  *
- * Acceptance Criteria:
+ * E.g. dedupe(['a','a','a','b','b','c']) target output: ['a','b','c']
+ * E.g. dedupe([5, 1, 1, 2, 3, 2, 5, 8]) target output: [5, 1, 2, 3, 8]
  *
- * Given a function named dedupe
- * When passed an array of elements
- * Then it returns a new array removing any duplicate elements
+ * Acceptance Criteria:
  *
  * Given an empty array
  * When passed to the dedupe function
@@ -18,7 +17,7 @@
  * When passed to the dedupe function
  * Then it should return a copy of the original array
  *
- * Given an array with duplicate primitive values
+ * Given an array with duplicate primitive values like strings or numbers
  * When passed to the dedupe function
  * Then it should remove the duplicate values
  *
@@ -26,15 +25,4 @@
  * When passed to the dedupe function
  * Then it should remove the duplicate references
  *
- * Given an array with nested arrays or objects
- * When passed to the dedupe function
- * Then it should handle nested structures correctly
- *
- * Given an invalid parameter
- * When passed to the dedupe function
- * Then it should handle the error case properly
- *
- * Given a very large array
- * When passed to the dedupe function
- * Then it should not crash or exceed memory limits
  */
