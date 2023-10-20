@@ -2,21 +2,17 @@
 
 This README will guide you through the different sections for this week.
 
-This README will guide you through the different sections for this week.
-To run tests in the `week-1` directory you can make use of the [`testPathPattern` CLI option in Jest.](https://jestjs.io/docs/cli#--testpathpatternregex)
+## Setup
 
-For example,
-To run all the tests inside `week-2/refactor`:
+Go to the **root of this repository**. Double check you're there with `pwd`. Also double check with `ls`.
+**If you're in the root you should be able to see the `week-1`, `week-2` and `week-3` directories**
 
-```console
-npm test -- --testPathPattern="week-1/refactor"
-```
+Run the command `npm install` in the root of this repo.
 
-To run all the tests in all sub-directories of `week-2`:
+To run tests in the `week-2` directory you can:
 
-```console
-npm test -- --testPathPattern="week-1"
-```
+1. Change directory into `week-2`
+2. Run the tests using `npm test`
 
 ## Exercises
 
