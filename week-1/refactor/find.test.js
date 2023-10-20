@@ -2,35 +2,35 @@
 
 const find = require("./find.js");
 
-test("find returns index when target is in array", () => {
+test("returns index when target is in array", () => {
   const currentOutput = find(["a", "b", "c", "d"], "c");
   const targetOutput = 2;
 
   expect(currentOutput).toBe(targetOutput);
 });
 
-test("find returns -1 when target not in array", () => {
+test("returns -1 when target not in array", () => {
   const currentOutput = find([1, 2, 3, 4], "a");
   const targetOutput = -1;
 
   expect(currentOutput).toBe(targetOutput);
 });
 
-test("find returns index of first match", () => {
+test("returns index of first match", () => {
   const currentOutput = find([1, 2, 2, 3], 2);
   const targetOutput = 1;
 
   expect(currentOutput).toBe(targetOutput);
 });
 
-test("find returns -1 for empty array", () => {
+test("returns -1 for empty array", () => {
   const currentOutput = find([]);
   const targetOutput = -1;
 
   expect(currentOutput).toBe(targetOutput);
 });
 
-test("find searches for null", () => {
+test("searches for null", () => {
   const currentOutput = find(["b", "z", null, "a"], null);
   const targetOutput = 2;
 
