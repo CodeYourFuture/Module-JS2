@@ -1,4 +1,4 @@
-# ToDo-list
+# Todo-list
 
 ## Explanation
 
