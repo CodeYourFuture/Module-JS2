@@ -2,7 +2,8 @@ const dedupe = require("./dedupe.js");
 /*
 Dedupe Array
 
-Dedupe means deduplicate
+📖 Dedupe means deduplicate
+
 In this kata, you will need to deduplicate the elements of an array
 
 E.g. dedupe(['a','a','a','b','b','c']) target output: ['a','b','c']
@@ -20,10 +21,6 @@ test.todo("given an empty array, it returns an empty array");
 // When passed to the dedupe function
 // Then it should return a copy of the original array
 
-// Given an array with duplicate primitive values like strings or numbers
+// Given an array with strings or numbers
 // When passed to the dedupe function
 // Then it should remove the duplicate values
-
-// Given an array with duplicate object references
-// When passed to the dedupe function
-// Then it should remove the duplicate references
