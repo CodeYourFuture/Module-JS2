@@ -14,13 +14,19 @@ To run tests in the `week-2` directory you can:
 1. Change directory into `week-2`
 2. Run the tests using `npm test`
 
-## Exercises
+## 🐛 Debug
 
-In this section, you'll have a short program and task. Some of the syntax may be unfamiliar - in this case, you'll need to look things up in documentation.
+Each of the files in `debug` contains a 🐛. Predict and explain first and then run the code with node to check your prediction. Fix any bugs that appear in the code.
 
-## Errors
+## 🔨 Implement
 
-In this section, you'll need to go to each file in `errors` directory and run the file with node to check what the error is. Your task is to interpret the error message and explain why it occurs. The [errors documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors) will help you figure out the solution.
+In this section, you will have a short set of requirements about a function. You will need to implement a function based off this set of requirements. Make sure you check your function works for a number of different inputs.
+
+Here is a recommended order:
+
+1. `contains.test.js`
+2. `lookup.test.js`
+3. `tally.test.js`
 
 ## Interpret
 
@@ -28,6 +34,8 @@ In these tasks, you have to interpret a slightly larger program with some syntax
 You must use documentation to make sense of anything unfamiliar - learning how to look things up this way is a fundamental part of being a developer!
 You can also use `console.log` to check the value of different variables in the code.
 
-## Explore - Stretch 💪
+Once you've completed all these tasks, raise a PR with your work so far. Don't wait to complete your coursework before completing the PR.
 
-This stretch activity will get you to start exploring new concepts and environments by yourself. It will do so by prompting you to reflect on some questions.
+## Stretch 💪
+
+Try the stretch tasks after you've completed the other sections.

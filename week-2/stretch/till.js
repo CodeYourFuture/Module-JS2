@@ -23,8 +23,10 @@ const till = {
 };
 const totalAmount = totalTill(till);
 
-// a) What is the target output for when totalTill is called with till
+// a) What is the target output when totalTill is called with the till object
 
 // b) Why do we need to use Object.entries inside the for...of loop in this function?
 
 // c) What does coin * quantity evaluate to inside the for...of loop?
+
+// d) Write a test for this function to check it works and then fix the implementation of totalTill

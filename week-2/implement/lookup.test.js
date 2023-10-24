@@ -13,8 +13,8 @@ When
 
 Then
  - It should return an object where:
-   - The keys are the country codes
-   - The values are the corresponding currency codes
+ - The keys are the country codes
+ - The values are the corresponding currency codes
 
 Example
 Given: [['US', 'USD'], ['CA', 'CAD']]

@@ -1,7 +1,8 @@
-// predict and explain first...
+// Predict and explain first...
 
-// this code should log out the houseNumber from the address object
+// This code should log out the houseNumber from the address object
 // but it isn't working...
+// Fix anything that isn't working
 
 const address = {
   houseNumber: 42,

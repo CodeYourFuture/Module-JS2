@@ -1,4 +1,4 @@
-/* find the maximum element of an array of numbers
+/* Find the maximum element of an array of numbers
 
 In this kata, you will need to implement a function that sums the numerical elements of an array
 

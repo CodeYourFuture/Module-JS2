@@ -2,7 +2,7 @@ const dedupe = require("./dedupe.js");
 /*
 Dedupe Array
 
-📖 Dedupe means deduplicate
+📖 Dedupe means **deduplicate**
 
 In this kata, you will need to deduplicate the elements of an array
 
