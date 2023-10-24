@@ -1,10 +1,12 @@
 // You are given an implementation of calculateMode
-// calculateMode does 2 things:
-// 1. One part of the code tracks the frequency of each value
-// 2. The other part finds the value with the highest frequency
+
+// calculateMode's implementation can be broken down into two stages:
+
+// Stage 1. One part of the code tracks the frequency of each value
+// Stage 2. The other part finds the value with the highest frequency
 
 // refactor calculateMode by splitting up the code
-// into smaller functions with different roles
+// into smaller functions using the stages above
 
 function calculateMode(list) {
   // track frequency of each value
