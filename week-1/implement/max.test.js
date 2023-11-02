@@ -5,24 +5,44 @@ In this kata, you will need to implement a function that sums the numerical elem
 E.g. max([30, 50, 10, 40]), target output: 50
 E.g. max(['hey', 10, 'hi', 60, 10]), target output: 60 (sum ignores any non-numerical elements)
 */
+const calculateSum = require("./max.js");
 
 // Given an empty array
 // When passed to the max function
 // Then it should return -Infinity
-test.todo("given an empty array, returns -Infinity");
+// test.todo("given an empty array, returns -Infinity");
+ test("returns -Infinity for an empty array", () => {
+   expect(calculateSum([])).toBe(-Infinity);
+ });
 
 // Given an array with one number
 // When passed to the max function
 // Then it should return that number
+ test("returns the number when given an array with only one number", () => {
+   expect(calculateSum([4])).toBe(4);
+   expect(calculateSum([-8])).toBe(-8);
+ });
 
 // Given an array with both positive and negative numbers
 // When passed to the max function
 // Then it should return the largest number overall
+test("returns the largest number when given an array with positive and negative numbers", () => {
+  expect(calculateSum([5, -9, 3])).toBe(5);
+  expect(calculateSum([-8, 12, 78])).toBe(78);
+});
 
 // Given an array with decimal numbers
 // When passed to the max function
 // Then it should return the largest decimal number
+test("returns the largest decimal number when given an array with decimal numbers", () => {
+  expect(calculateSum([9.89,4.56,3.9,21.6])).toBe(21.6);
+  expect(calculateSum([5.99,2.01,8.6])).toBe(8.6);
+});
 
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+test("returns the max number and ignores the non-numeric characters", () => {
+  expect(calculateSum([7,"i","*",6])).toBe(7);
+  expect(calculateSum(["u",9,33,"k"])).toBe(33);
+});
