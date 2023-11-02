@@ -8,6 +8,6 @@ function getMaxNumber(items) {
   return max !== -Infinity ? max : -Infinity;
 }
 
-console.log(getMaxNumber([5.99, 2.01, 8]));
+
 
 module.exports = getMaxNumber;

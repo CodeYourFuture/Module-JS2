@@ -10,7 +10,7 @@ const calculateSum = require("./max.js");
 // Given an empty array
 // When passed to the max function
 // Then it should return -Infinity
-test.todo("given an empty array, returns -Infinity");
+// test.todo("given an empty array, returns -Infinity");
  test("returns -Infinity for an empty array", () => {
    expect(calculateSum([])).toBe(-Infinity);
  });

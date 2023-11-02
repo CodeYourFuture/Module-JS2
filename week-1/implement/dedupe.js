@@ -14,4 +14,4 @@ function dedupe(items) {
 
 module.exports = dedupe;
 
-console.log(dedupe([4,4,8,0,3,"e",0]));
+

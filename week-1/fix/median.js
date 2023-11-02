@@ -10,12 +10,14 @@
 
 function calculateMedian(list) {
   let listLength = list.length;
-  let med = Math.floor(listLength / 2);
+  let middleIndex = Math.floor(listLength / 2);
+  let median = list.slice(middleIndex)[0];
   if (listLength % 2 != 0) {
-    return listLength[med];
-  } else {
-    return (listLength[med - 1] + listLength[med]) / 2.0;
-  }
+    return median;
+  } 
+  return (list[middleIndex - 1] + list[middleIndex]) / 2;
+
 }
+
 
 module.exports = calculateMedian;

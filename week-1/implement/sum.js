@@ -16,6 +16,6 @@ function calculateSum(list) {
 
     }
     
-console.log(calculateSum([5,-4,1,"y"]));
+
 
 module.exports = calculateSum;
