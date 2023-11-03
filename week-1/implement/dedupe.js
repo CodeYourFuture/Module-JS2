@@ -1,16 +1,14 @@
 function dedupe(array) {
     let newArray = [];
-    if (array.length === 0) {
-        return [];
-    }
-
-    for (let i = 0; i < array.length ; i++) {
-      
-        if (!newArray.includes(array[i])){
-            newArray.push(array[i]);
+    if (array.length > 0) {
+        for (let item of array) {
+            if (!newArray.includes(item)) {
+                newArray.push(item);
+            }
         }
+        return newArray;
     }
-    return newArray;
+    return [];
 }
 
 module.exports = dedupe;
