@@ -1,4 +1,4 @@
-function findTheSum(list){
+function findTheSum(list) {
     if (list.length === 0) {
         return 0;
     }
@@ -6,13 +6,12 @@ function findTheSum(list){
         return Number(list);
     }
     let sum = 0;
-    for (let i = 0; i < list.length; i++) {
-        
-       if (typeof(list[i])==="number") {
-            sum += list[i];
+    for (let item of list) {
+        if (typeof (item) === "number") {
+            sum += item;
         }
     }
     return sum;
 }
 
-module.exports=findTheSum;
+module.exports = findTheSum;
