@@ -6,10 +6,9 @@ function findMaximumNumber(list) {
         return Number(list);
     }
     let max = 0;
-    for (let i = 0; i < list.length; i++) {
-
-       if (list[i] > max && typeof(list[i])==="number") {
-            max = list[i];
+    for (let item of list) {
+       if (item > max && typeof(item)==="number") {
+            max = item;
         }
     }
     return max;
