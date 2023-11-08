@@ -13,3 +13,7 @@ const address = {
 };
 
 console.log(`My house number is ${address[0]}`);
+
+// This is not working because index[0] is used instead of the key[houseNumber] which holds the value of the houseNumber(42). 
+//console.log(`My house number is ${address["houseNumber"]}`);This is how we should write it in the console. 
+
