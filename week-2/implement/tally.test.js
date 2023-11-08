@@ -1,3 +1,4 @@
+const tally = require("./tally.js");
 /**
  * tally array
  *
@@ -29,3 +30,11 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+test("count the frequency of each item in an array", () => {
+  expect(tally(["a", "b", "b"])).toEqual({ a: 1, b: 2 });
+  expect(tally(["a", "a", "a"])).toEqual({ a: 3 });
+  expect(tally(["a", "a", "b", "c"])).toEqual({ a: 2, b: 1, c: 1 });
+  expect(tally([])).toEqual({});
+  expect(tally("1")).toEqual("invalid input !");
+});
