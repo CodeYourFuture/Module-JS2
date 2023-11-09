@@ -1,3 +1,4 @@
+const createLookup = require("./lookup.js");
 /*
 
 Create a lookup object of key value pairs from an array of code pairs
@@ -29,3 +30,22 @@ It should return:
    'CA': 'CAD'
  }
 */
+test("converts a single pair of currency codes", () => {
+  expect(createLookup([["KE", "KSH"]])).toEqual({
+    KE: "KSH",
+  });
+  expect(createLookup([["DE", "EUR"]])).toEqual({
+    DE: "EUR",
+  });
+});
+
+test("creates a country currency code lookup for multiple codes", () => {
+  expect(createLookup([["GB", "GBP"],["KE", "KSH"]])).toEqual({
+    GB: "GBP",
+    KE: "KSH"
+  });
+  expect(createLookup([["DE", "EUR"],["TR", "TRY"]])).toEqual({
+    DE: "EUR",
+    TR: "TRY"
+  });
+});
