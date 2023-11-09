@@ -15,3 +15,7 @@ function max(list) {
     return result;
   }
 }
+module.exports = {
+  numSort,
+  max,
+};
