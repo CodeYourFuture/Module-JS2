@@ -26,4 +26,6 @@ console.log(invert({ a: 1, b: 2 }));
 
 // c) What does Object.entries return? Why is it needed in this program?
 // It returns an array containing arrays of key-value pairs of an object's enumerable
+
 // d) Explain why the current return value is different from the target output
+// on line 12 we Assigned Key to Value , ths is why we get different output from target
