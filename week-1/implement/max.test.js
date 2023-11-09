@@ -15,9 +15,12 @@ test.todo("given an empty array, returns -Infinity");
 // When passed to the max function
 // Then it should return that number
 
+
 // Given an array with both positive and negative numbers
 // When passed to the max function
 // Then it should return the largest number overall
+
+findMaximumNumber([9,-4,8,-6,5]) //9
 
 // Given an array with decimal numbers
 // When passed to the max function
@@ -43,6 +46,7 @@ test("return the largest number overall if array has both positive and negative 
 test("return the largest decimal number if array has decimal numbers", () => {
     expect(findMaximumNumber([0.4, 0.78, 0.1, 0.43, 0.5])).toBe(0.78);
 });
+
 test("Skip non-number and return the maximum number in an array", () => {
     expect(findMaximumNumber([10, 20,"@", 5,"b" ,80])).toBe(80);
     expect(findMaximumNumber([99, 45, 232, 5, 67, 87, 34])).toBe(232);
