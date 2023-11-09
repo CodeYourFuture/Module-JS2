@@ -1,3 +1,6 @@
+function numSort(a, b) {
+  return a - b;
+}
 function max(list) {
   const maxNumber = [];
   if (list.length === 0) {
