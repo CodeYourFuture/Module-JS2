@@ -13,3 +13,6 @@ const address = {
 };
 
 console.log(`My house number is ${address[0]}`);
+// In order to accsess property value stored in object literals.
+// we use dot notation to access the property value associated with a key .
+console.log(`My house number is ${address.houseNumber}`);

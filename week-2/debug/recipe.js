@@ -10,6 +10,10 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
-console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+console.log(`
+Recipe: ${recipe.title} 
+serves: ${recipe.serves}
+ingredients: ${recipe.ingredients.join("\n")}.`);
+
+// to have each ingredient on a new line, we can use .join function
+// recipe.ingredients.join("\n");

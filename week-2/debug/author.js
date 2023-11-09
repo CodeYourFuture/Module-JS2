@@ -10,7 +10,15 @@ const author = {
   age: 40,
   alive: true,
 };
-
-for (const value of author) {
-  console.log(value);
+// Iterate over the property names:
+for (const getKeysValue of Object.values(author)) {
+  //const getValue = author[getKeysValue];
+  console.log(getKeysValue);
 }
+
+// in java Script Objects are not iterable
+
+// const obj = { France: "Paris", England: "London" };
+// for (const p of obj) {
+// }
+// TypeError: obj is not iterable

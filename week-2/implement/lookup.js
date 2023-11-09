@@ -1,6 +1,12 @@
-function createLookup() {
+function createLookup(money) {
+  const currency = {};
+  const [key, value] = money;
+  currency[key] = value;
+  return currency;
+
   // implementation here
 }
+console.log(createLookup(["GB", "GBP"]));
 
 /* ======= Test suite is provided below... =====
  */
