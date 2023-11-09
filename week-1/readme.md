@@ -13,6 +13,7 @@ To run tests in the `week-1` directory you can:
 
 1. Change directory into `week-1`
 2. Run the tests using `npm test`
+   ✅
 
 ## Fix
 
