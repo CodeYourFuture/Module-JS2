@@ -3,9 +3,19 @@
 // If you're in the week-1 directory, you can run npm test -- fix to run the tests in the fix directory
 
 function calculateMedian(list) {
-  const middleIndex = Math.floor(list.length / 2);
-  const median = list.splice(middleIndex, 1)[0];
-  return median;
+  const listCopy=[...list];
+  const listLength = listCopy.length;
+  const middleIndex = Math.floor(listLength / 2);
+
+  if (listLength % 2 != 0) {
+    const medianOdd = listCopy.splice(middleIndex, 1)[0];
+    return medianOdd;
+  } else if (listLength % 2 === 0) {
+    const medianEven = (listCopy[middleIndex - 1] + listCopy[middleIndex])/2;
+    return medianEven;
+  }
 }
 
 module.exports = calculateMedian;
+
+
