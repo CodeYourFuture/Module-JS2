@@ -3,6 +3,7 @@ function numSort(a, b) {
 }
 function max(list) {
   const maxNumber = [];
+  let result = maxNumber.sort(numSort)[maxNumber.length - 1];
   if (list.length === 0) {
     return "-Infinity";
   } else {
@@ -11,6 +12,6 @@ function max(list) {
         maxNumber.push(item);
       }
     }
-    return maxNumber.sort(numSort)[maxNumber.length - 1];
+    return result;
   }
 }
