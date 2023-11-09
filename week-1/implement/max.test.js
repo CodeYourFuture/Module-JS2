@@ -30,7 +30,7 @@ E.g. max(['hey', 10, 'hi', 60, 10]), target output: 60 (sum ignores any non-nume
 
 const {compareNum, max} = require("./max");
 
-// test
+// test 1
 test("given an empty array, returns -Infinity ", function () {
     const emptyArray = []
   expect(max(emptyArray)).toBe("-Infinity");
