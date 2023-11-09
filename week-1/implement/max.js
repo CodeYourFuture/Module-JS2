@@ -8,5 +8,6 @@ function max(list) {
         maxNumber.push(item);
       }
     }
+    return maxNumber.sort()[maxNumber.length - 1];
   }
 }
