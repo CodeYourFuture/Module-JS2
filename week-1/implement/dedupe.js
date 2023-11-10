@@ -7,3 +7,4 @@ function dedupe(arr) {
     }
     return newArr;
 }
+console.log(dedupe(["b","g","a","c","r","t","c", "g"]));
