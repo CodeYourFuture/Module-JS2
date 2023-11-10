@@ -1,5 +1,4 @@
-function compareNum(a, b) {
-  //this function addresses the side-effect of .sort() by comparing two items of
+function compareNum(a, b) { //this function addresses the side-effect of .sort() by comparing two items of
   return a - b; //the array and returning the smallest first. This ensures .sort() does not return 6 as bigger than 10 (since it typically looks at the first digit rather than the value of the number)
 }
 function max(arr) {
