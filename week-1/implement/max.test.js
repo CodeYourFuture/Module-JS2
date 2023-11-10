@@ -28,27 +28,27 @@ test.todo("given an empty array, returns -Infinity");
 // Then it should return the max and ignore non-numeric values
 
 
-//inaro khodam vared kardam-->>>>>>>>>>>
+//inaro khodam vared kardam-->
 
-// max.test.js
-// const max = require('./max');
 
-// test('given an empty array, returns -Infinity', () => {
-//   expect(max([])).toBe(-Infinity);
-// });
+const findMaximumNum = require('./max.js');
 
-// test('given an array with one number, returns that number', () => {
-//   expect(max([5])).toBe(5);
-// });
+test("given an empty array, returns -Infinity", () => {
+  expect(findMaximumNum([])).toBe(-Infinity);
+});
 
-// test('given an array with both positive and negative numbers, returns the largest number overall', () => {
-//   expect(max([-10, 0, 10, 20, -5])).toBe(20);
-// });
+test('given an array with one number, returns that number', () => {
+  expect(findMaximumNum([5])).toBe(5);
+});
 
-// test('given an array with decimal numbers, returns the largest decimal number', () => {
-//   expect(max([1.5, 2.3, 1.2, 2.5])).toBe(2.5);
-// });
+test('given an array positive and negative numbers, returns the largest number overall', () => {
+  expect(findMaximumNum([-1, 0, 10, 20, -5])).toBe(20);
+});
 
-// test('given an array with non-number values, returns the max and ignores non-numeric values', () => {
-//   expect(max(['hey', 10, 'hi', 60, 10])).toBe(60);
-// });
+test('given an array with decimal numbers, returns the largest decimal number', () => {
+  expect(findMaximumNum([1.5, 2.3, 1.2, 2.5])).toBe(2.5);
+});
+
+test('given an array with non-number values, returns the max and ignores non-numeric values', () => {
+  expect(findMaximumNum(["@", 10, "hi", 60, 10])).toBe(60);
+});

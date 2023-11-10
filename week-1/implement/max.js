@@ -1,25 +1,22 @@
-function maxSums(array) {
-    let maxSumValue = -Infinity;
-    let currentSum = 0;
-    for(let i=o;i<array.length;i++){
-        currentSum+=array[i];
-        if(currentSum>maxSumValue){
-            maxSumValue=currentSum;
-        }
+function findMaximumNum (list){
+    if(list.length===0){
+        return -Infinity;
     }
-    return maxSumValue;
+    if(list.length===1){
+        return list[0];  
+    }
+    
+   for(const item of list){
+    let max=0;
+    if(item>max && typeof(item)==="number"){
+        max=item;
+    }
+    
+   }return max;
 }
+// console.log([-2,'@',6,3]);
 
 
 
-// function max(arr) {
-//     let maxNum = -Infinity;
-//     for (let i = 0; i < arr.length; i++) {
-//       if (typeof arr[i] === 'number' && !isNaN(arr[i])) {
-//         maxNum = Math.max(maxNum, arr[i]);
-//       }
-//     }
-//     return maxNum;
-//   }
   
-//   module.exports = max;
+module.exports = findMaximumNum;
