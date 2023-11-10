@@ -11,4 +11,5 @@ function find(list, target) {
 }
 console.log(find(["a", "b", "c", "d"], "c"));
 console.log(find([1, 2, 3, 4], "a"));
+console.log(find([1, 2, 2, 3], 2));
 module.exports = find;
