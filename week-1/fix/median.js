@@ -9,3 +9,13 @@ function calculateMedian(list) {
 }
 
 module.exports = calculateMedian;
+
+
+
+const arr=[1,2,3,4];
+console.log(arr);
+const index=Math.floor(arr.length/2)
+console.log(index);
+ const median=arr.splice(index,1)[0];
+console.log(median);
+
