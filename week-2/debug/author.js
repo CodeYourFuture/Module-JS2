@@ -11,6 +11,13 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+// for (const value of author) {
+//   console.log(value);
+// }
+
+for (const value of Object.values(author)) {
+  
+  console.log(value); 
 }
+
+//It is not working because the for loop is trying to iterate the object author which is not iterable. Instead we need to link it to the values inside the array.

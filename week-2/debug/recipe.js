@@ -10,6 +10,12 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
+// console.log(`${recipe.title} serves ${recipe.serves}
+//   ingredients:
+// ${recipe}`);
+
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+ingredients:
+${recipe.ingredients.join("\n")}`);
+
+//It is not working because in the console, the object recipe was not linked by the key [ingridients].
