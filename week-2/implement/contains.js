@@ -4,10 +4,6 @@ function contains(object, key) {
     }
   return object.hasOwnProperty(key);
 }
-console.log(contains({ a: 1, b: 2 }, "a")); 
-console.log(contains({ a: 1, b: 2 }, ""));
-console.log(contains({ a: 1, b: 2 }, ["aisha", "zainab"]));
-
 
 
 module.exports = contains;

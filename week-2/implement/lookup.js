@@ -14,14 +14,6 @@ function createLookup(arrays) {
   return countryCurrency;
 }
 
-console.log(createLookup(["KE", "KSH"]));
-console.log(
-  createLookup([
-    ["KE", "KSH"],
-    ["TR", "TRY"],
-  ])
-);
-
 module.exports = createLookup;
 
 /* ======= Test suite is provided below... =====
