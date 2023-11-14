@@ -1,3 +1,5 @@
+const tally=require('./tally.js');
+
 /**
  * tally array
  *
@@ -29,3 +31,15 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+test("should return an object containing the count for each unique item", () => {
+    expect(tally(['a','a','b','c'])).toEqual({ a : 2, b: 1, c: 1 });
+  });
+  
+  test("should return an object containing the count for each unique item", () => {
+    expect(tally([])).toEqual({});
+  });
+
+  test("should return an object containing the count for each unique item", () => {
+    expect(tally("HELLO")).toEqual("Error, not a valid type");
+  });

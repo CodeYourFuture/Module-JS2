@@ -20,7 +20,6 @@ describe("calculateMode()", () => {
 
   test("returns the first mode in case of multiple modes", () => {
     const nums = [1, 2, 2, 3, 3];
-
     expect(calculateMode(nums)).toBe(2);
   });
 

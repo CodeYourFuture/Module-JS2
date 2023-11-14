@@ -26,3 +26,24 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+function countWords(str) {
+  let obj = {};
+  let specialChar = /[,.?!]/g;
+  str = str.replace(specialChar, '')
+  let strArray = str.split(' ');
+  for (const item of strArray) {
+    if (obj[item]) {
+      obj[item] += 1;
+    } else {
+      obj[item] = 1;
+    }
+  }
+  let arr = Object.entries(obj).sort((a, b) => b[1] - a[0]);
+  let object = {}
+  for (const item of arr) {
+    object[item[0]] = item[1];
+  }
+  return object;
+}
+module.exports = countWords;
