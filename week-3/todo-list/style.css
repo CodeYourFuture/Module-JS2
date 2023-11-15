@@ -1,1 +1,102 @@
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: url(/assets/world.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5rem;
+}
+form {
+  height: auto;
+  width: 70%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: 1rem;
+  gap: 2rem;
+}
+.form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
 
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.3rem;
+  outline: 1px solid rgb(104, 55, 55);
+  border: none;
+  border-radius: 3px;
+  font-size: 1.2rem;
+}
+span {
+  display: flex;
+  gap: 1rem;
+}
+#check,
+#trash {
+  cursor: pointer;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background: url(/check-solid.svg), rgb(61, 145, 242);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+#check:checked {
+  background: url(/check-solid.svg), rgb(242, 61, 170);
+}
+#trash {
+  background: url(/trash-solid.svg) no-repeat;
+}
+.todo-list {
+  height: auto;
+  width: 70%;
+  display: block;
+  margin: auto;
+  padding-inline: 0;
+}
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  list-style: none;
+  height: 2rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid rgb(43, 162, 226);
+}
+.btn {
+  display: flex;
+  gap: 3rem;
+}
+#remove-all-completed,
+#add {
+  cursor: pointer;
+  height: 3rem;
+  background-color: rgb(0, 94, 255);
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  padding-inline: 1rem;
+}
+#remove-all-completed:hover,
+#add:hover {
+  background-color: rgb(8, 0, 255);
+}

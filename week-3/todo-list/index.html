@@ -5,18 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title here</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css"
+      integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <form>
-      <div>
-        <input type="text" placeholder="New todo..." />
+      <div class="container">
+        <div class="form">
+          <div class="lable-input">
+            <label for="input"> Enter your todo task:</label>
+            <input id="input" type="text" placeholder="New todo..." />
+          </div>
+
+          <div class="lable-input">
+            <label for="date">Deadline to complete the task: </label>
+            <input id="date" type="date" placeholder="Deadline" />
+          </div>
+        </div>
+
+        <ul id="todo-list" class="todo-list"></ul>
       </div>
-      <div>
-        <button type="submit">Add Todo</button>
+      <div class="btn">
+        <button id="add" class="add" onclick="addNewTodo()" type="submit">
+          Add Todo
+        </button>
         <button
           type="button"
           id="remove-all-completed"
-          class="btn btn-primary mb-3"
+          onclick="deleteAllCompletedTodos()"
         >
           Remove all completed
         </button>
