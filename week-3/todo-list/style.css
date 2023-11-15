@@ -1,7 +1,7 @@
 body {
   min-height: 100vh;
   box-sizing: border-box;
-  background: url(/week-3/todo-list/assets/world.jpg) no-repeat;
+  background: url(world.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
@@ -53,7 +53,7 @@ span {
   display: block;
   height: 1rem;
   width: 1rem;
-  background: url(/week-3/todo-list/dist/check-solid.svg), rgb(61, 145, 242);
+  background: url(check-solid.svg), rgb(61, 145, 242);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -64,7 +64,7 @@ span {
   background: url(), rgb(242, 61, 170);
 }
 #trash {
-  background: url(/week-3/todo-list/dist/trash-solid.svg) no-repeat;
+  background: url(trash-solid.svg) no-repeat;
 }
 .todo-list {
   height: auto;
