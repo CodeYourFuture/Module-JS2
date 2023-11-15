@@ -53,7 +53,7 @@ span {
   display: block;
   height: 1rem;
   width: 1rem;
-  background: url(/check-solid.svg), rgb(61, 145, 242);
+  background: url(TODO-LIST/check-solid.svg), rgb(61, 145, 242);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -61,10 +61,10 @@ span {
   margin-top: 0.5rem;
 }
 #check:checked {
-  background: url(/check-solid.svg), rgb(242, 61, 170);
+  background: url(), rgb(242, 61, 170);
 }
 #trash {
-  background: url(/trash-solid.svg) no-repeat;
+  background: url(TODO-LIST/trash-solid.svg) no-repeat;
 }
 .todo-list {
   height: auto;
