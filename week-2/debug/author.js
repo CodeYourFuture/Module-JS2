@@ -11,7 +11,6 @@ const author = {
   age: 40,
   alive: true,
 };
-
 for (const value in author) {
   console.log(author[value]);
 }
