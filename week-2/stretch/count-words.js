@@ -27,19 +27,42 @@
 3. Order the results to find out which word is the most common in the chapter
 */
 function countWords(str) {
-  let wordCounts = {};
-  
-  for(let i=0 ; i<str.length;i++){
-    const word =str[i];
-    if (wordCounts[word]){
-      // If the word already exists in the object, increment its count
-      wordCounts[word]++;
-    } else{
-      // If the word doesn't exist in the object, add it with a count of 1
-      wordCounts[word] = 1;
+  let obj = {};
+   const word = str.replace(/[.,!?]/g,'').toLowerCase();
+   const wordArray= word.split(' ');
+   
+   const setOfWordArray = new Set(wordArray);
+  //  console.log(word, wordArray,setOfWordArray);
+  //  for(const items of setOfWordArray){
+  //   let wordsCount = 0;
+  //   for(const elements of wordArray){
+  //     if(items === elements){
+  //       wordsCount++;
+  //     }
+    
+  //   }
+  //   if(items.length>0){
+  //     obj[items] = wordsCount;
+
+  //   }
+      
+  //  }
+  const arr =[];
+  for(const items of setOfWordArray){
+    
+    if(items.length>0){
+      let key = items;
+      let value = wordArray.filter(element => element === items).length;
+      arr.push([key,value]);
     }
   }
-  return wordCounts;
+  
+  const sortedArr = arr.sort((a , b)=> b[1] - a[1]);
+  for(const [i,j] of sortedArr){
+    obj[i]= j;
+  }
+   return obj;
 }
+console.log(countWords('me and you you and me and you with ?'))
 
 module.exports = countWords;
