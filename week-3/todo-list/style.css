@@ -100,3 +100,6 @@ span {
 #add:hover {
   background-color: rgb(8, 0, 255);
 }
+.completed{
+  text-decoration: line-through;
+}
