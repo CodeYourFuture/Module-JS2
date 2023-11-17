@@ -26,3 +26,20 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(str) {
+  let wordCounts = {};
+  
+  for(let i=0 ; i<str.length;i++){
+    const word =str[i];
+    if (wordCounts[word]){
+      // If the word already exists in the object, increment its count
+      wordCounts[word]++;
+    } else{
+      // If the word doesn't exist in the object, add it with a count of 1
+      wordCounts[word] = 1;
+    }
+  }
+  return wordCounts;
+}
+
+module.exports = countWords;
