@@ -491,3 +491,46 @@ const quotes = [
 ];
 
 // call pickFromArray with the quotes array to check you get a random quote
+
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const quoteBtn = document.getElementById("new-quote");
+
+const getRandomQuote = () => {
+  const pickedQuote = pickFromArray(quotes);
+  quote.innerText = pickedQuote.quote;
+  author.innerText = pickedQuote.author;
+};
+
+getRandomQuote();
+quoteBtn.addEventListener("click", getRandomQuote);
+
+// Auto Play
+
+const checkbox = document.querySelector("input[name=checkbox]");
+
+function autoPlay() {
+
+  let currentCheck;
+
+  return {
+    start() {
+      currentCheck = setInterval(getRandomQuote, 1000);
+    },
+    stop() {
+      clearInterval(currentCheck);
+    },
+  };
+}
+
+let checkboxChange = autoPlay();
+
+checkbox.addEventListener("change", function () {
+  if (this.checked) {
+    checkboxChange.start();
+    console.log("Checkbox is checked..");
+  } else {
+    checkboxChange.stop();
+    console.log("Checkbox is not checked..");
+  }
+});
