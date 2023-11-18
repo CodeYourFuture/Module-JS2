@@ -525,8 +525,8 @@ function autoPlay() {
 
 let checkboxChange = autoPlay();
 
-checkbox.addEventListener("change", function () {
-  if (this.checked) {
+checkbox.addEventListener("change", function (event) {
+  if (event.target.checked) {
     checkboxChange.start();
     console.log("Checkbox is checked..");
   } else {
