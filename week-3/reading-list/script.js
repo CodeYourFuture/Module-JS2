@@ -22,26 +22,26 @@ const books = [
 ];
 
 const readingList = document.getElementById("reading-list");
-for (let index = 0; index < books.length; index++) {
+
+for (const book of books) {
   const list = document.createElement("li");
-  
-  if(books[index].alreadyRead === true){
+
+  if(book.alreadyRead === true){
     list.setAttribute("class", "green");
   }
   else{
     list.setAttribute("class", "red");
   }
   
-
   const p = document.createElement("p");
 
-  p.innerText = `${books[index].title} by ${books[index].author}`;
+  p.innerText = `${book.title} by ${book.author}`;
 
-  const div = document.querySelector("#content");
   readingList.appendChild(list);
   list.appendChild(p);
 
   const image = document.createElement("img");
-  image.src = books[index].bookCoverImage;
+  image.src = book.bookCoverImage;
   list.appendChild(image);
 }
+
