@@ -8,15 +8,15 @@ function populateTodoList(todo) {
     //add the check button
     const span = document.createElement('span');
     li.appendChild(span);
-        //Add Deadline
+    //Add Deadline
     const date = document.createElement('i');
     span.appendChild(date);
-    date.textContent=item.deadline;
+    date.textContent = item.deadline;
     const iCheck = document.createElement('i');
     span.appendChild(iCheck);
     iCheck.classList.add('check');
     iCheck.addEventListener("click", () => {
-    li.classList.toggle('completed')
+      li.classList.toggle('completed')
     });
     // add the delete button
     const iDelete = document.createElement('i');
@@ -24,16 +24,16 @@ function populateTodoList(todo) {
     iDelete.classList.add('trash');
     iDelete.addEventListener("click", () => {
       li.remove();
-      });
+    });
   }
 }
 const addTodoButton = document.querySelector("#add");
 const input = document.querySelector('#input');
-const date=document.querySelector('#date');
+const date = document.querySelector('#date');
 
 let todos = [
   { task: "Wash the dishes", completed: false, deadline: '2-10-2023' },
-  { task: "Do the shopping", completed: false,  deadline: '5-11-2023'  }
+  { task: "Do the shopping", completed: false, deadline: '5-11-2023' }
 ];
 populateTodoList(todos);
 
@@ -41,13 +41,13 @@ addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
   console.log(date.value);
   const input = document.querySelector('#input');
-  if(input.value!=='' && date.value!==''){
+  if (input.value !== '' && date.value !== '') {
     todos.push({
       task: input.value,
       completed: false,
-      deadline:date.value,
+      deadline: date.value,
     });
-  }else(
+  } else (
     alert('Either task or date is empty.')
   )
 
@@ -58,8 +58,8 @@ addTodoButton.addEventListener("click", (event) => {
 
 // deletes the completed ones
 function deleteAllCompletedTodos() {
-  let listItems=document.getElementsByTagName('li')
-   for (const item of listItems) {
+  let listItems = document.getElementsByTagName('li')
+  for (const item of listItems) {
     if (item.classList.contains('completed')) {
       item.remove();
     }
