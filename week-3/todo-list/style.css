@@ -47,8 +47,8 @@ span {
   display: flex;
   gap: 1rem;
 }
-#check,
-#trash {
+.check,
+.trash {
   cursor: pointer;
   display: block;
   height: 1rem;
@@ -60,10 +60,10 @@ span {
   border-radius: 2px;
   margin-top: 0.5rem;
 }
-#check:checked {
+.check:checked {
   background: url(), rgb(242, 61, 170);
 }
-#trash {
+.trash {
   background: url(trash-solid.svg) no-repeat;
 }
 .todo-list {
