@@ -5,14 +5,20 @@ function populateTodoList(todo) {
     const li = document.createElement('li');
     list.appendChild(li);
     li.textContent = item.task;
+    //add the check button
     const span = document.createElement('span');
     li.appendChild(span);
+        //Add Deadline
+    const date = document.createElement('i');
+    span.appendChild(date);
+    date.textContent=item.deadline;
     const iCheck = document.createElement('i');
     span.appendChild(iCheck);
     iCheck.classList.add('check');
     iCheck.addEventListener("click", () => {
     li.classList.toggle('completed')
     });
+    // add the delete button
     const iDelete = document.createElement('i');
     span.appendChild(iDelete);
     iDelete.classList.add('trash');
@@ -23,27 +29,29 @@ function populateTodoList(todo) {
 }
 const addTodoButton = document.querySelector("#add");
 const input = document.querySelector('#input');
+const date=document.querySelector('#date');
 
 let todos = [
-  { task: "Wash the clothes", completed: false },
-  { task: "Call the doctor", completed: false }
+  { task: "Wash the clothes", completed: false, deadline: '2-10-2023' },
+  { task: "Call the doctor", completed: false,  deadline: '5-11-2023'  }
 ];
 populateTodoList(todos);
 
 addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
+  console.log(date.value);
   const input = document.querySelector('#input');
   if(input.value!==''){
     todos.push({
       task: input.value,
-      completed: false
+      completed: false,
+      deadline:date.value,
     });
   }
   populateTodoList(todos);
   input.value = '';
+  date.value = '';
 })
-
-
 
 // deletes the completed ones
 function deleteAllCompletedTodos() {
