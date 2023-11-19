@@ -32,8 +32,8 @@ const input = document.querySelector('#input');
 const date=document.querySelector('#date');
 
 let todos = [
-  { task: "Wash the clothes", completed: false, deadline: '2-10-2023' },
-  { task: "Call the doctor", completed: false,  deadline: '5-11-2023'  }
+  { task: "Wash the dishes", completed: false, deadline: '2-10-2023' },
+  { task: "Do the shopping", completed: false,  deadline: '5-11-2023'  }
 ];
 populateTodoList(todos);
 
@@ -41,13 +41,16 @@ addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
   console.log(date.value);
   const input = document.querySelector('#input');
-  if(input.value!==''){
+  if(input.value!=='' || date.value!==''){
     todos.push({
       task: input.value,
       completed: false,
       deadline:date.value,
     });
-  }
+  }else(
+    alert('Fill task and date please!')
+  )
+
   populateTodoList(todos);
   input.value = '';
   date.value = '';
