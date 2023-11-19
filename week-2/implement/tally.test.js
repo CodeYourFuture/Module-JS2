@@ -29,3 +29,22 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+const tally = require("./tally.js");
+
+test("given an array of unique items, returns count of item in a tally", function(){
+    expect(tally(["a", "a", "b", "c"])).toEqual({ a: 2, b: 1, c: 1 });
+});
+
+test("given an empty array, returns an empty object", function () {
+  expect(tally([])).toEqual({});
+});
+
+test("given an array of duplicate items, returns count of the duplicate in a tally", function () {
+  expect(tally(["a", "a", "a", "a"])).toEqual({ a: 4 });
+  expect(tally(["a"])).toEqual({ a: 1 });
+
+});
+test("given an invalid input, throw Error or invalid argument", function () {
+  expect(tally("a")).toEqual('Invalid argument');
+});
