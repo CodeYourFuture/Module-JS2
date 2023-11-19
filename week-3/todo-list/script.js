@@ -48,7 +48,7 @@ addTodoButton.addEventListener("click", (event) => {
       deadline:date.value,
     });
   }else(
-    alert('Fill task and date please!')
+    alert('Either task or date is empty.')
   )
 
   populateTodoList(todos);
