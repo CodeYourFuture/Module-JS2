@@ -32,10 +32,13 @@ populateTodoList(todos);
 
 addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
-  todos.push({
-    task: input.value,
-    completed: false
-  });
+  const input = document.querySelector('#input');
+  if(input.value!==''){
+    todos.push({
+      task: input.value,
+      completed: false
+    });
+  }
   populateTodoList(todos);
   input.value = '';
 })
