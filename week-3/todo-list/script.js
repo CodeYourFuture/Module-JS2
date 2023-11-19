@@ -41,7 +41,7 @@ addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
   console.log(date.value);
   const input = document.querySelector('#input');
-  if(input.value!=='' || date.value!==''){
+  if(input.value!=='' && date.value!==''){
     todos.push({
       task: input.value,
       completed: false,
