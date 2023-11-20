@@ -3,7 +3,8 @@ function contains(obj, char) {
 }
 
 const objEx = {a : 1, b:3};
-// console.log(contains({},"c"));
+console.log(contains(objEx,"b"));
+
 const invalidParam = ["a", "b", "c"];
 console.log(contains(invalidParam,"a"));
 

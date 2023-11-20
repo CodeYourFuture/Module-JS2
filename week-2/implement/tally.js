@@ -14,5 +14,5 @@ function tally(arr){
 }
 
 console.log(tally("a"));
-// console.log(typeof ["a","a","b"]=='object');
+
 module.exports = tally;
