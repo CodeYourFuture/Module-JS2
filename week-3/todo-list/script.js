@@ -1,12 +1,12 @@
 function populateTodoList(todo) {
   let list = document.getElementById("todo-list");
   list.textContent = '';
+
   for (const item of todo) {
     const li = document.createElement('li');
     list.appendChild(li);
     li.textContent = item.task;
 
-    //add the check button
     const span = document.createElement('span');
     li.appendChild(span);
 
@@ -15,11 +15,13 @@ function populateTodoList(todo) {
     span.appendChild(date);
     date.textContent = item.deadline;
 
+    //added check button
     const iCheck = document.createElement('i');
     span.appendChild(iCheck);
     iCheck.classList.add('check');
+
     iCheck.addEventListener("click", () => {
-      item.completed = !item.completed;
+    li.classList.add('complete');
       populateTodoList(todos);
     });
 
@@ -27,6 +29,7 @@ function populateTodoList(todo) {
     const iDelete = document.createElement('i');
     span.appendChild(iDelete);
     iDelete.classList.add('trash');
+
     iDelete.addEventListener("click", () => {
       todos = todos.filter(todoItem => todoItem !== item);
       populateTodoList(todos);
@@ -45,13 +48,14 @@ populateTodoList(todos);
 
 addTodoButton.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log(dateInput.value);
+
   if (input.value !== '' && dateInput.value !== '') {
     const newTodo = {
       task: input.value,
       completed: false,
       deadline: dateInput.value,
     };
+
     todos.push(newTodo);
     populateTodoList(todos);
   } else {
@@ -67,3 +71,5 @@ function deleteAllCompletedTodos() {
   todos = todos.filter(item => !item.completed);
   populateTodoList(todos);
 }
+
+
