@@ -26,3 +26,24 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+function countWords (myString){
+  const removeSymbol = myString.replaceAll(/[^\w\s]/g, "").toLowerCase();
+  const strToArray = removeSymbol.split(" ");
+  const myStrObject = {};
+
+  for(const item of strToArray){
+    if(myStrObject[item]){
+      myStrObject[item] += 1;
+    }else{
+      myStrObject[item] = 1;
+    }
+  }
+  const objectToArray = Object.entries(myStrObject);
+  const sortedArray = objectToArray.sort((a, b) => b[1] - a[1]);
+  const sortedObject = Object.fromEntries(sortedArray);
+
+  return sortedObject;
+}
+let stringToObject = countWords("You? and, me! and= you and.");
+console.log(stringToObject);
