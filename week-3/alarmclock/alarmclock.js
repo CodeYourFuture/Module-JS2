@@ -41,9 +41,17 @@ function displayTime() {
 document.querySelector('#stop').addEventListener('click', () => {
   clearTimeout(timeOut);
 });
+const pauseBtn = document.querySelector('#pause');
 
-document.querySelector('#pause').addEventListener('click', () => {
-  if(clearInterval(time)){
+pauseBtn.addEventListener('click', () => {
+  
+  if (pauseBtn.textContent === "Restart") {
+    pauseBtn.textContent = "Pause";
+  } else {
+    pauseBtn.textContent = "Restart";
+  }
+
+  if (clearInterval(time)) {
     displayTime();
   }
 });
