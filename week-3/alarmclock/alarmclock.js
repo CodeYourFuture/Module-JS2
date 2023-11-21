@@ -34,7 +34,7 @@ function displayTime() {
     seconds = "0" + seconds
   }
   const formattedTime = `${minutes}:${seconds}`;
-  timeRemaining.textContent = "Time-Remaining:" + formattedTime;
+  timeRemaining.textContent = "Time Remaining: " + formattedTime;
 }
 
 
