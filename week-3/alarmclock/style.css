@@ -14,7 +14,7 @@ h1 {
   text-align: center;
 }
 .red {
-  animation: redflash 1s 2 alternate ease-out;
+  animation: redflash 1s infinite alternate ease-out;
 }
 
 @keyframes redflash {
