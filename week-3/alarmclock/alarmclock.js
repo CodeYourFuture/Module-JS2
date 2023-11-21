@@ -1,6 +1,7 @@
 const timeRemaining = document.querySelector('#timeRemaining');
 let time;
 let input;
+let timeOut;
 
 function setAlarm() {
   input = parseInt(document.querySelector('#alarmSet').value, 10);
@@ -15,22 +16,26 @@ function interval() {
   } else {
     clearInterval(time);
     playAlarm();
-    document.querySelector('.centre').style.background = 'red';
   }
+  timeOut = window.setTimeout(function () {
+    document.body.classList.toggle('red');
+  }, 100);
 }
+
 
 function displayTime() {
-  const minutes = Math.floor(input / 60);
-  const seconds = input % 60;
+  let minutes = Math.floor(input / 60);
+  let seconds = input % 60;
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds
+  }
   const formattedTime = `${minutes}:${seconds}`;
-  timeRemaining.textContent ="Time Remaining:" +formattedTime;
+  timeRemaining.textContent = "Time-Remaining:" + formattedTime;
 }
-
-function stopAlarm() {
-  clearInterval(time);
-  timeRemaining.textContent = "Time Remaining:00:00";
-  pauseAlarm();
-}
+ 
 
 // DO NOT EDIT BELOW HERE
 
