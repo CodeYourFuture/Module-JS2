@@ -32,3 +32,23 @@ as the object doesn't contains a key of 'c'
 // Given invalid parameters like arrays
 // When passed to contains
 // Then it should return false or throw an error
+
+test("given an empty object, it should return false", () => {
+    const myNum = { };
+    expect(contains(myNum, "")).toBe(false);
+});
+
+test("given an object with properties, it should return true", () => {
+  const myNum = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+  expect(contains(myNum, "b")).toBe(true);
+});
+
+test("given an object with a non-existent property name, it should return false", () => {
+  const myNum = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+  expect(contains(myNum, "z")).toBe(false);
+});
+
+test("given invalid parameters like arrays, it should return false or throw an error", () => {
+  const myNum = ["a: 1", "b: 2", "c: 3", "d: 4", "e : 5"];
+  expect(contains(myNum, "c")).toBe(false);
+});
