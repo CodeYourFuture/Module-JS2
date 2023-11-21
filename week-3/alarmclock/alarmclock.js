@@ -42,6 +42,13 @@ document.querySelector('#stop').addEventListener('click', () => {
   clearTimeout(timeOut);
 });
 
+document.querySelector('#pause').addEventListener('click', () => {
+  if(clearInterval(time)){
+    displayTime();
+  }
+});
+
+
 // DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
