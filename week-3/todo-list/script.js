@@ -21,11 +21,10 @@ function populateTodoList(todo) {
     iCheck.classList.add('check');
 
     iCheck.addEventListener("click", () => {
-    li.classList.add('complete');
-      populateTodoList(todos);
+      li.classList.toggle('completed');
     });
 
-    // add the delete button
+    // added the delete button
     const iDelete = document.createElement('i');
     span.appendChild(iDelete);
     iDelete.classList.add('trash');
