@@ -20,7 +20,7 @@ function interval() {
       document.body.classList.toggle('red');
     }, 100);
   }
- 
+
 }
 
 
@@ -38,7 +38,9 @@ function displayTime() {
 }
 
 
-
+document.querySelector('#stop').addEventListener('click', () => {
+  clearTimeout(timeOut);
+});
 
 // DO NOT EDIT BELOW HERE
 
@@ -60,6 +62,8 @@ function playAlarm() {
 
 function pauseAlarm() {
   audio.pause();
-}
+} [
+
+]
 
 window.onload = setup;
