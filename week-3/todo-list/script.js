@@ -22,6 +22,7 @@ function populateTodoList(todo) {
 
     iCheck.addEventListener("click", () => {
       li.classList.toggle('completed');
+      item.completed = !item.completed;
     });
 
     // added the delete button
@@ -63,7 +64,7 @@ addTodoButton.addEventListener("click", (event) => {
 
   input.value = '';
   dateInput.value = '';
-});
+})
 
 // deletes the completed ones
 function deleteAllCompletedTodos() {
