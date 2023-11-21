@@ -16,10 +16,11 @@ function interval() {
   } else {
     clearInterval(time);
     playAlarm();
+    timeOut = window.setTimeout(function () {
+      document.body.classList.toggle('red');
+    }, 100);
   }
-  timeOut = window.setTimeout(function () {
-    document.body.classList.toggle('red');
-  }, 100);
+ 
 }
 
 
@@ -35,7 +36,9 @@ function displayTime() {
   const formattedTime = `${minutes}:${seconds}`;
   timeRemaining.textContent = "Time-Remaining:" + formattedTime;
 }
- 
+
+
+
 
 // DO NOT EDIT BELOW HERE
 
