@@ -43,19 +43,20 @@ const pauseBtn = document.querySelector('#pause');
 
 pauseBtn.addEventListener('click', () => {
 
-  if (clearInterval(time)) {
-    displayTime();
-  }
-  if (pauseBtn.textContent === "Restart") {
+ 
+  if (pauseBtn.textContent === "Restart") {let currentInput
     pauseBtn.textContent = "Pause";
+    let newInput=
   } else {
     pauseBtn.textContent = "Restart";
+    if (clearInterval(time)) {
+      displayTime();
+    }
   }
 
 });
 
 document.getElementById("stop").addEventListener("click", () => {
-  clearTimeout(timeOut);
   document.body.classList.remove('red');
 });
 
