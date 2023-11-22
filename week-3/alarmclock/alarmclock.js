@@ -38,6 +38,7 @@ function displayTime() {
 }
 
 
+
 const pauseBtn = document.querySelector('#pause');
 
 pauseBtn.addEventListener('click', () => {
@@ -53,7 +54,10 @@ pauseBtn.addEventListener('click', () => {
 
 });
 
-
+document.getElementById("stop").addEventListener("click", () => {
+  clearTimeout(timeOut);
+  document.body.classList.remove('red');
+});
 
 // DO NOT EDIT BELOW HERE
 
