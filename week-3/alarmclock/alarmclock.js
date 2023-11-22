@@ -41,7 +41,7 @@ function displayTime() {
 const pauseBtn = document.querySelector('#pause');
 
 pauseBtn.addEventListener('click', () => {
-  
+
   if (clearInterval(time)) {
     displayTime();
   }
@@ -52,6 +52,7 @@ pauseBtn.addEventListener('click', () => {
   }
 
 });
+
 
 
 // DO NOT EDIT BELOW HERE
