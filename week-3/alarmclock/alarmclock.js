@@ -43,10 +43,9 @@ const pauseBtn = document.querySelector('#pause');
 
 pauseBtn.addEventListener('click', () => {
 
- 
-  if (pauseBtn.textContent === "Restart") {let currentInput
+  if (pauseBtn.textContent === "Restart") {
     pauseBtn.textContent = "Pause";
-    let newInput=
+    time = setInterval(interval, 1000);
   } else {
     pauseBtn.textContent = "Restart";
     if (clearInterval(time)) {
