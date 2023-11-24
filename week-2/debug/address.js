@@ -12,4 +12,11 @@ const address = {
   postcode: "XYZ 123",
 };
 
-console.log(`My house number is ${address[0]}`);
+
+console.log(`My house number is ${address['houseNumber']}`);
+console.log(`My house number is ${address.houseNumber}`);
+
+// we'll face an error as the `address` is not an array to refer items by using the index address[0] it's a key/value pair object 
+// however we still could use address[0] for this typ of objects but we don't have a key with the name 0 in bracket we should 
+// put the key's name in the it.
+// it wasn't an error it was undefined lol

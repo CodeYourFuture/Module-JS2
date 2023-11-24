@@ -25,7 +25,7 @@ describe("calculateMode()", () => {
   });
 
   test("ignores non-number values", () => {
-    const nums = [1, 3, "2", 2, 3, null];
+    const nums = [1, 3, "2",'2', 2, 3, null];
 
     expect(calculateMode(nums)).toBe(3);
   });

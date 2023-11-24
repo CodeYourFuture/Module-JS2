@@ -29,3 +29,19 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+const tally=require('./tally.js');
+
+test('test for a unique array',()=>{
+    expect(tally(['a','b','c',8])).toEqual({'a':1,'b':1,'c':1,'8':1});
+})
+
+test('test for an array containing duplicate items',()=>{
+    expect(tally(['a','a','b','c','c','c',8,8,9])).toEqual({a:2,b:1,c:3,8:2,9:1});
+})
+
+test('test for invalid inputs such a string or anther object datatypes',()=>{
+    expect(tally('123')).toBeInstanceOf(Error);
+    expect(tally({a:1,x:2})).toBeInstanceOf(Error);
+    
+})
