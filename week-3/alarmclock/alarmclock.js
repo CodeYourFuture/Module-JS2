@@ -4,10 +4,15 @@ let input;
 let timeOut;
 
 function setAlarm() {
+
   input = parseInt(document.querySelector('#alarmSet').value, 10);
-  displayTime();
-  time = setInterval(interval, 1000);
-  document.getElementById('alarmSet').value = "";
+  if (document.getElementById('alarmSet').value === "") {
+    alert("Add value to set alarm please!")
+  } else {
+    displayTime();
+    time = setInterval(interval, 1000);
+    document.getElementById('alarmSet').value = "";
+  }
 }
 
 function interval() {
