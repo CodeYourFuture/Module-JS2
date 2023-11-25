@@ -7,7 +7,7 @@ function setAlarm() {
   input = parseInt(document.querySelector('#alarmSet').value, 10);
   displayTime();
   time = setInterval(interval, 1000);
-  document.getElementById('alarmSet').value="";
+  document.getElementById('alarmSet').value = "";
 }
 
 function interval() {
