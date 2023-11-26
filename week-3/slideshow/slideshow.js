@@ -15,6 +15,7 @@ picDiv.appendChild(image);
 
 let index = 0;
 function displayImages() {
+    console.log(index);
     image.src = images[index];
 }
 displayImages(index);
@@ -25,10 +26,16 @@ const previousButton = document.getElementById("backward-btn");
 
 nextButton.addEventListener("click", function() {
     index = index + 1;
+    if(index > images.length-1) {
+        index = 0;
+    }
     displayImages(index);
 });
 
 previousButton.addEventListener("click", function () {
   index = index - 1;
+  if (index < 0) {
+    index = images.length - 1;
+  }
   displayImages(index);
 });
