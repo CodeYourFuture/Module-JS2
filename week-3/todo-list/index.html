@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,6 +22,37 @@
         </button>
       </div>
     </form>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div lass="container-fluid">TODO LIST</div>
+    </nav>
+    <div class="container">
+      <div class="todo-app">
+        <h2>Add new todo</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="New todo..." />
+          <button onclick="addTask()">Add todo</button>
+          <button onclick="deleteListItem()">delete task</button>
+        </div>
+        <ul id="list-container">
+          <!-- <li class="checked">Task 1</li>
+          <li>Task 2</li>
+          <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
