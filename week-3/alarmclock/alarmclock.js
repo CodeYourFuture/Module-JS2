@@ -10,12 +10,12 @@ function setAlarm() {
     alert("Add value to set alarm please!")
   } else {
     displayTime();
-    time = setInterval(interval, 1000);
+    time = setInterval(countdown, 1000);
     document.getElementById('alarmSet').value = "";
   }
 }
 
-function interval() {
+function countdown() {
   if (input > 0) {
     input--;
     displayTime();
@@ -51,7 +51,7 @@ pauseBtn.addEventListener('click', () => {
 
   if (pauseBtn.textContent === "Restart") {
     pauseBtn.textContent = "Pause";
-    time = setInterval(interval, 1000);
+    time = setInterval(countdown , 1000);
   } else {
     pauseBtn.textContent = "Restart";
     if (clearInterval(time)) {
