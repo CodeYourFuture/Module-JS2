@@ -26,3 +26,24 @@ test.todo("given an empty array, returns -Infinity");
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+
+const findMax = require('./max');
+
+test("return infinity if array is empty", () => {
+    expect(findMax([])).toBe("infinity");
+});
+
+test("Given an array with one number, return that number", () => {
+    expect(findMax([8])).toBe(8);
+});
+
+test("Given array with both positive and negative numbers, return the largest number overall", () => {
+    expect(findMax([-57, 16, -34, 60, -45])).toBe(60);
+});
+test("Given an array with decimal numbers, return the largest decimal number", () => {
+    expect(findMax([0.5, 2.65, 0.81, 1.56])).toBe(2.65);
+});
+
+test("Given an array with non-number, skip non-number and return the maximum number", () => {
+    expect(findMax([6, "@", 87, "!", 8, 23])).toBe(87);
+});
