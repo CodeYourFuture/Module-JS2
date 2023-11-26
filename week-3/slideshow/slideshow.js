@@ -46,14 +46,11 @@ stopBtn.addEventListener('click', () => {
 })
 
 function autoBackward() {
-    disableAutoButtons()
     backward();
 }
 
 function autoForward() {
     forward();
-    disableAutoButtons();
-    
 }
 
 backwardBtn.addEventListener('click', () => {
@@ -65,15 +62,17 @@ forwardBtn.addEventListener('click', () => {
 })
 
 autoBackBtn.addEventListener('click', () => {
+    disableAutoButtons();
     delay = document.querySelector('#delay').value;
     timeBackward = setInterval(autoBackward, delay);
-    document.querySelector('delay').value='';
+    
 })
 
 autoForwardBtn.addEventListener('click', () => {
+    disableAutoButtons()
     delay = document.querySelector('#delay').value;
     timeForward = setInterval(autoForward, delay);
-    document.querySelector('delay').value='';
+    document.querySelector('delay').value = '';
 })
 
 function disableAutoButtons() {
