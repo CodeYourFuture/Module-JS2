@@ -20,9 +20,34 @@ function displayImages() {
 }
 displayImages(index);
 
+const btnDiv = document.getElementById("btn");
+const autoPrevious = document.createElement("button");
+btnDiv.appendChild(autoPrevious);
+autoPrevious.innerText = "Auto Back";
 
-const nextButton = document.getElementById("forward-btn");
-const previousButton = document.getElementById("backward-btn");
+const previousButton = document.createElement("button");
+btnDiv.appendChild(previousButton);
+previousButton.innerText = "Back";
+
+const autoStop = document.createElement("button");
+btnDiv.appendChild(autoStop);
+autoStop.innerText = "Stop";
+
+const nextButton = document.createElement("button");
+btnDiv.appendChild(nextButton);
+nextButton.innerText = "Forward";
+
+const autoNext = document.createElement("button");
+btnDiv.appendChild(autoNext);
+autoNext.innerText = "Auto Forward";
+
+previousButton.addEventListener("click", function () {
+  index = index - 1;
+  if (index < 0) {
+    index = images.length - 1;
+  }
+  displayImages(index);
+});
 
 nextButton.addEventListener("click", function() {
     index = index + 1;
@@ -32,10 +57,17 @@ nextButton.addEventListener("click", function() {
     displayImages(index);
 });
 
-previousButton.addEventListener("click", function () {
-  index = index - 1;
-  if (index < 0) {
-    index = images.length - 1;
-  }
-  displayImages(index);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
