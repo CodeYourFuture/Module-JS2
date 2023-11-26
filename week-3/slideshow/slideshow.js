@@ -4,5 +4,84 @@ const images = [
     "./assets/cute-cat-c.jpg",
 ];
 
+const img = document.querySelector('#carousel-img');
+const forwardBtn = document.querySelector('#forward-btn');
+const backwardBtn = document.querySelector('#backward-btn');
+const autoBackBtn = document.querySelector('#auto-backward');
+const autoForwardBtn = document.querySelector('#auto-forward');
+const stopBtn = document.querySelector('#stop');
+let index = 0;
+let timeBackward;
+let timeForward;
+let delay;
 
-// Write your code here
+function displayImages(num) {
+    img.src = images[num];
+}
+
+function backward() {
+    if (index === 0) {
+        index = images.length - 1;
+        displayImages(index);
+    } else {
+        index--;
+        displayImages(index);
+    }
+}
+
+function forward() {
+    if (index === images.length - 1) {
+        index = 0;
+        displayImages(index);
+    } else {
+        index++;
+        displayImages(index);
+    }
+}
+
+stopBtn.addEventListener('click', () => {
+    clearInterval(timeBackward);
+    clearInterval(timeForward);
+    enableAutoButtons();
+})
+
+function autoBackward() {
+    disableAutoButtons()
+    backward();
+}
+
+function autoForward() {
+    forward();
+    disableAutoButtons();
+    
+}
+
+backwardBtn.addEventListener('click', () => {
+    backward();
+})
+
+forwardBtn.addEventListener('click', () => {
+    forward();
+})
+
+autoBackBtn.addEventListener('click', () => {
+    delay = document.querySelector('#delay').value;
+    timeBackward = setInterval(autoBackward, delay);
+    document.querySelector('delay').value='';
+})
+
+autoForwardBtn.addEventListener('click', () => {
+    delay = document.querySelector('#delay').value;
+    timeForward = setInterval(autoForward, delay);
+    document.querySelector('delay').value='';
+})
+
+function disableAutoButtons() {
+    autoForwardBtn.disabled = true;
+    autoBackBtn.disabled = true;
+}
+
+function enableAutoButtons() {
+    autoForwardBtn.disabled = false;
+    autoBackBtn.disabled = false;
+}
