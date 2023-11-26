@@ -7,7 +7,6 @@ const images = [
   "./assets/penguin7.jpeg",
 ];
 
-
 // Write your code here
 const picDiv = document.getElementById("slideshow");
 const image = document.createElement("img");
@@ -15,8 +14,7 @@ picDiv.appendChild(image);
 
 let index = 0;
 function displayImages() {
-    console.log(index);
-    image.src = images[index];
+  image.src = images[index];
 }
 displayImages(index);
 
@@ -41,33 +39,36 @@ const autoNext = document.createElement("button");
 btnDiv.appendChild(autoNext);
 autoNext.innerText = "Auto Forward";
 
-previousButton.addEventListener("click", function () {
+function goBackward() {
   index = index - 1;
   if (index < 0) {
     index = images.length - 1;
   }
   displayImages(index);
+}
+
+function goForward() {
+  index = index + 1;
+  if (index > images.length - 1) {
+    index = 0;
+  }
+  displayImages(index);
+}
+
+let autoPlay;
+
+previousButton.addEventListener("click", goBackward);
+
+nextButton.addEventListener("click", goForward);
+
+autoPrevious.addEventListener("click", function () {
+  autoPlay = setInterval(goBackward, 1000);
 });
 
-nextButton.addEventListener("click", function() {
-    index = index + 1;
-    if(index > images.length-1) {
-        index = 0;
-    }
-    displayImages(index);
+autoNext.addEventListener("click", function () {
+  autoPlay = setInterval(goForward, 1000);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+autoStop.addEventListener("click", function() {
+    clearInterval(autoPlay);
+});
