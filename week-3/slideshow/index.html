@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container">
-      <h1>Image carousel level 2</h1>
+      <h1 class="heading">Image carousel level 2</h1>
       <img
         id="carousel-img"
         class="img"
@@ -17,16 +17,16 @@
         alt="cat-pic"
       />
       <label for="delay"
-        >How long to wait between images?(In milisecoonds)
-        <input type="number" name="delay" id="delay" />
+        >Delay time: (In milisecoonds)
+        <input class="time-input" type="number" name="delay" id="delay" />
       </label>
-      <section class="btn">
-        <button type="button" id="auto-backward">Auto Backwards</button>
-        <button type="button" id="stop">Stop</button>
-        <button type="button" id="auto-forward">Auto Forward</button>
+      <section class="btn-group">
+        <button type="button" class="btn" id="auto-backward">Auto Backwards</button>
+        <button type="button" class="btn" id="stop">Stop</button>
+        <button type="button" class="btn" id="auto-forward">Auto Forward</button>
       </section>
-      <section id="forward-btn">►</section>
-      <section id="backward-btn">◄</section>
+      <section id="forward-btn"><img src="/week-3/slideshow/arrow-right-solid (1).svg" alt="Arrow right"></section>
+      <section id="backward-btn"><img src="/week-3/slideshow/arrow-left-solid.svg" alt="arrow left"></section>
     </section>
   </body>
 </html>
