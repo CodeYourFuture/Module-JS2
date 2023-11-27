@@ -5,6 +5,9 @@
 // Fix the implementation of calculateMedian so it passes all tests
 
 const calculateMedian = require("./median.js");
+//-->to access this function(passing an strong pass (./)-->same directory )
+//require the function for test use
+//1.find the index of middle items
 
 describe("calculateMedian", () => {
   test("returns the median for odd length array", () => {

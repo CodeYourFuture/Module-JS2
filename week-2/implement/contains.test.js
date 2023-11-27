@@ -32,3 +32,28 @@ as the object doesn't contains a key of 'c'
 // Given invalid parameters like arrays
 // When passed to contains
 // Then it should return false or throw an error
+
+test("return true if the object contains the property", () => {
+    expect(contains({ a: 1, b: 2 }, 'a')).toBe(true)
+  });
+
+  test("return false if the object is empty", () => {
+    expect(contains({}, 'a')).toBe(false)
+  });
+
+  test("return false if the object not contains the property", () => {
+    expect(contains({ a : 1, b : 2},'c')).toBe(false)
+  });
+
+  test("Given an object with properties , return true with an existing property name", () => {
+    expect(contains({ a : 1, b : 2, c:3, d:4, e:5},'c','e')).toBe(true)
+  });
+
+  test("Given an object with properties , return false non-existent property name", () => {
+    expect(contains({ a : 1, b : 2, c:3, d:4, e:5},'g','f')).toBe(false)
+  });
+
+  test("Given invalid parameters like arrays, return false or throw an error ", () => {
+    expect(contains({ a : 1, b : 2, c:3, d:4, e:5},'g','f')).toBe(false)
+  });
+
