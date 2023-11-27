@@ -1,4 +1,46 @@
 /** Write your CSS in here **/
+body {
+    /* background-color: rgb(222, 208, 186); */
+    background-image: url("https://nsidc.org/sites/default/files/images/ColdestPlace_AtsuMuto_5.JPG");
+    
+}
+
 img {
     width: 500px;
+}
+
+h1 {
+    margin-top: 8rem;
+    text-align: center ;
+}
+
+#slideshow {
+    margin-top: 3rem;
+    margin-left: 36rem;
+    border: 5px rgb(65, 33, 119) solid;
+    padding: 1rem;
+    margin-right: 36rem;
+    border-radius: 25px;
+    
+}
+
+#btn {
+    margin-left: 30rem;
+    margin-top: 3rem;
+}
+
+button {
+    padding: 1.5rem;
+    color: white;
+    border: 1px solid;
+    margin-left: 2rem;
+    background-color: rgb(65, 33, 119);
+    font-size: medium;
+}
+
+button:hover {
+    background-color: white;
+    color: rgb(65, 33, 119);
+    font-size: x-large;
+
 }
