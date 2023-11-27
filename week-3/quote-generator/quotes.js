@@ -506,8 +506,8 @@ console.log(button);
 button.addEventListener("click", () => {
   const pickQuote = pickRandom(quotes);
   console.log(pickQuote);
-  p.textContent = pickQuote.quoes;
-  author.textContent = pickQuote.author;
+  p.textContent = `‟ ${pickQuote.quote}`;
+  author.textContent = `- ${pickQuote.author}`;
 })
 
 
