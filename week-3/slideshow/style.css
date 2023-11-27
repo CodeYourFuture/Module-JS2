@@ -39,8 +39,9 @@ button {
 }
 
 button:hover {
-    background-color: white;
+    background-color: rgb(226, 174, 213);
     color: rgb(65, 33, 119);
     font-size: x-large;
+    cursor: pointer; 
 
 }
