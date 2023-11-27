@@ -8,7 +8,7 @@ body {
   display: grid;
   justify-content: center;
   font-family: monospace;
-  background: url(/week-3/slideshow/pexels-kseniya-lapteva-9175736.jpg)
+  background: url(pexels-kseniya-lapteva-9175736.jpg)
     no-repeat center;
 }
 .container {
