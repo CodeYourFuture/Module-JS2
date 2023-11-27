@@ -28,25 +28,23 @@ img {
 #forward-btn {
   cursor: pointer;
   position: absolute;
-  height: 2rem;
-  width: 2rem;
-  background-color: rgb(208, 207, 207);
+  height: 3rem;
+  width: 3rem;
   top: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  box-shadow: 1px 1px 8px inset gray;
+  background-color:rgb(243, 241, 241);
 }
 
 #forward-btn {
-  right: -4rem;
+  right: -5rem;
 }
-
 #backward-btn {
-  left: -3rem;
+  left: -5rem;
 }
 #backward-btn:hover,
 #forward-btn:hover {
-  box-shadow: 1px 1px 10px rgb(88, 64, 64);
+  background-color:gainsboro;
 }

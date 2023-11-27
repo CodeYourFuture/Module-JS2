@@ -65,7 +65,6 @@ autoBackBtn.addEventListener('click', () => {
     disableAutoButtons();
     delay = document.querySelector('#delay').value;
     timeBackward = setInterval(autoBackward, delay);
-    
 })
 
 autoForwardBtn.addEventListener('click', () => {
