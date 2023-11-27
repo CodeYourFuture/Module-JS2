@@ -1,1 +1,47 @@
 /** Write your CSS in here **/
+* {
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    background-color: rgb(255, 166, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    position: relative;
+    height: 20rem;
+    width: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 2rem;
+  }
+  #quote {
+    text-align: center;
+    font-size: 1.3rem;
+    color: rgba(255, 166, 0, 0.823);
+  }
+  #author {
+    position: absolute;
+    right: 2rem;
+    bottom: 5rem;
+    font-size: 1.3rem;
+    color: rgba(255, 166, 0, 0.67);
+  }
+  button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: rgb(242, 180, 63);
+    border: 0;
+    height: 2.5rem;
+    padding-inline: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+  }
+  
