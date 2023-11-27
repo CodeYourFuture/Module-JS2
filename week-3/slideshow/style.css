@@ -35,7 +35,7 @@ img {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color:rgb(243, 241, 241);
+  background-color: rgb(243, 241, 241);
 }
 
 #forward-btn {
@@ -46,5 +46,5 @@ img {
 }
 #backward-btn:hover,
 #forward-btn:hover {
-  background-color:gainsboro;
+  background-color: gainsboro;
 }
