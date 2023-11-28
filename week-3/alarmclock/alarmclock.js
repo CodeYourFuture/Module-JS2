@@ -6,11 +6,12 @@ let timeHolder=0;
 let timerBoolean=false; // is used for pause and resume button
 let updaterInterval;
 const setButton=document.getElementById('set');
+let flashingInterval;
 
 function displayTimer(duration){
     const remainedMinutes=Math.floor(duration/60);
     const remainedSeconds=duration%60;
-    timeRemaining.innerText=`Time remianing: ${String(remainedMinutes).padStart(2,'0')}:${String(remainedSeconds).padStart(2,'0')}`;
+    timeRemaining.innerText=`Time Remaining: ${String(remainedMinutes).padStart(2,'0')}:${String(remainedSeconds).padStart(2,'0')}`;
   }
   
 function updateTimer(){
@@ -18,22 +19,38 @@ function updateTimer(){
       
       displayTimer(seconds);
       seconds--;
-      timeHolder=seconds;
+      
       if(seconds<0){
       playAlarm();
       clearInterval(updaterInterval);
-    }
+      colorChanger();
+      
+      }
       
     }, 1000);
     
   }
 
+const alarmImage=document.getElementById('alarm-image');
+function colorChanger(){
+        let isRed=true;
+        flashingInterval=setInterval(function(){
+            if(isRed){
+            alarmImage.src='./idea1.png';
+            
+            }
+            else{
+              alarmImage.src='./idea.png';
+            }
+
+            isRed=!isRed;
+
+        },500)
+      }
+
 
 function setAlarm() {
   const inputValue = document.getElementById("alarmSet");
-  
-
-  clearInterval(updaterInterval);
   
   if (inputValue.value !== '') {
       seconds = parseInt(inputValue.value, 10);
@@ -60,9 +77,21 @@ function setAlarm() {
   })
 
 
-function backgroundChanger(){
 
-}
+const resetButton=document.getElementById('reset');
+resetButton.addEventListener('click',function(){
+  setButton.disabled=false;
+  clearInterval(updaterInterval);
+  displayTimer(0);
+  pauseAlarm();
+  clearInterval(flashingInterval);
+  alarmImage.src='idea.png';
+})
+
+
+
+
+
 
 // DO NOT EDIT BELOW HERE
 //////////////////////////////////////////////////////////////////////////
@@ -76,6 +105,8 @@ function setup() {
 
   document.getElementById("stop").addEventListener("click", () => {
     pauseAlarm();
+    clearInterval(flashingInterval);
+    alarmImage.src='idea.png';
   });
 }
 
@@ -85,6 +116,7 @@ function playAlarm() {
 
 function pauseAlarm() {
   audio.pause();
+  
 }
 
 window.onload = setup;
