@@ -1,48 +1,7 @@
-// function populateTodoList(todos) {
-//   let list = document.getElementById("todo-list");
-//   // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
-// }
-
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-// let todos = [
-//   { task: "Wash the dishes", completed: false },
-//   { task: "Do the shopping", completed: false },
-// ];
-
-//populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
-// function addNewTodo(event) {
-//   // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-//   event.preventDefault();
-//   // Write your code here... and remember to reset the input field to be blank after creating a todo!
-// }
-
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-// function deleteAllCompletedTodos() {
-//   // Write your code here...
-// }
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
-// Assuming you have a list element with id "myList"
-var myList = document.getElementById("myList");
 
-// Add a click event listener to the list
-// deleteButton.addEventListener("click", function (e) {
-//   deleteListItem(e);
-// });
-
-// Your deleteListItem function
-// function deleteListItem(e) {
-//   if (e.target.classList.contains("checked")) {
-//     e.target.parentElement.remove();
-//   } else {
-//     alert("You must select a task");
-//   }
-// }
-
-function addTask() {
+function populateTodoList() {
   if (inputBox.value === "") {
     alert("You must write a task");
   } else {
@@ -86,5 +45,18 @@ function saveData() {
 function showList() {
   listContainer.innerHTML = localStorage.getItem("data");
 }
-showList();
+//showList();
 // calling the function
+
+function deleteList() {
+  // Get the reference to the ul element
+  var list = document.querySelector(".checked");
+
+  // Check if the ul element exists
+  if (list) {
+    // Remove the ul element from its parent
+    list.parentNode.removeChild(list);
+  } else {
+    console.log("UL element not found");
+  }
+}

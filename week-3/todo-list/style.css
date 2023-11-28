@@ -4,21 +4,17 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
-.navbar > .container,
-.navbar > .container-fluid,
-.navbar > .container-lg,
-.navbar > .container-md,
-.navbar > .container-sm,
-.navbar > .container-xl,
-.navbar > .container-xxl {
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-}
-nav div {
+nav {
   display: flex;
-  flex-wrap: inherit;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  padding: 12px;
+  margin: 17px;
+  background-color: #fff;
+  color: black;
+  font-size: x-large;
+}
+.container-title {
 }
 body {
   /* width: 100%;
@@ -36,11 +32,11 @@ body img {
   height: 30%;
 }
 .container {
-  margin: 0rem 0rem 0rem 24rem;
+  margin: 0rem 0rem 0rem 26rem;
 }
 .todo-app {
   width: 100%;
-  max-width: 540px;
+  max-width: 699px;
   background: #fff;
   margin: 100px auto 20px;
   padding: 6px 4px 60px;
@@ -77,17 +73,24 @@ input {
   /* background: transparent; */
   /* margin: 12px; */
 }
-button {
+.add-btn {
   border: none;
   outline: none;
   padding: 12px 30px;
   color: white;
   background-color: blue;
-  font-size: 16px;
+
   cursor: pointer;
   /* border-radius: 40px; */
   margin: 12px;
   border-radius: 3px;
+}
+.delete-btn {
+  padding: 12px;
+  border-radius: 3px;
+  border: none;
+  background-color: blue;
+  color: white;
 }
 
 ul li {
@@ -128,6 +131,7 @@ ul li span {
   color: red;
   line-height: 40px;
   text-align: center;
+  margin: 10px;
 }
 
 ul li span:hover {
