@@ -1,1 +1,55 @@
 /** Write your CSS in here **/
+/** Write your CSS in here **/
+body {
+  background-color: orange;
+}
+.quote-Content {
+  background-color: white;
+  margin: 6rem 5rem;
+  padding: 1rem;
+}
+.quote-mark {
+  color: orange;
+  font-size: 8rem;
+  margin-top: 5.5rem;
+  padding: 1rem;
+}
+.quote-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: 1rem;
+}
+
+#quote {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: orange;
+  font-size: 40px;
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
+#author {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: orange;
+  font-size: 40px;
+}
+#new-quote {
+  padding: 22px 25px;
+  background-color: orange;
+  font-size: 20px;
+  color: white;
+  font-weight: 200;
+  border: none;
+}
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 1rem;
+}
+
+/* #new-quote {
+  background-color: aquamarine;
+  padding: 1rem 0rem 1rem 0rem;
+  margin: 1rem 1rem 1rem 95rem;
+} */
