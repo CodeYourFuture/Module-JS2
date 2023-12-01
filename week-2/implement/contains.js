@@ -4,4 +4,5 @@ if (typeof a !== `object` && a === null) {
 }
 return true;
 }
+
 module.exports = contains;
