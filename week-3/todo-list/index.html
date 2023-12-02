@@ -3,23 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
+    <title>To-do List App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <form>
       <div>
-        <input type="text" placeholder="New todo..." />
+        <input type="text" placeholder="New todo..." id="text-box" value="" />
       </div>
       <div>
-        <button type="submit">Add Todo</button>
+        <button type="button" id="button" onclick="addNewTodo()">
+          Add Todo
+        </button>
         <button
           type="button"
           id="remove-all-completed"
           class="btn btn-primary mb-3"
+          onclick="removeCompeleted()"
         >
           Remove all completed
         </button>
+      </div>
+      <div>
+        <ul id="todo-list">
+
+        </ul>
       </div>
     </form>
     <script src="script.js"></script>

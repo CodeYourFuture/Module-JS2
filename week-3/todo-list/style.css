@@ -1,1 +1,24 @@
+body {
+  /* background-image: url(/assets/world.jpg); */
+}
 
+#todo-list li {
+  list-style: none;
+}
+
+.fa .fa-trash-o {
+  font-size: 48px;
+  color: red;
+}
+
+li {
+  font-size: large;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.no-strike{
+    text-decoration: none;
+}

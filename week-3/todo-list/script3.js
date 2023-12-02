@@ -1,5 +1,5 @@
 let todos = [];
-
+const todoList = document.getElementById("todo-list");
 function addNewTodo() {
   let input = document.querySelector("input").value;
   todos[todos.length] = { task: input, completed: false };
@@ -8,7 +8,6 @@ function addNewTodo() {
 }
 
 function populateTodoList() {
-  const todoList = document.getElementById("todo-list");
   todoList.innerHTML = "";
   for (const item of todos) {
     let listItem = document.createElement("li");
@@ -66,13 +65,13 @@ function deleteAllCompletedTodos() {
 //   displayTodoList();
 //   event.preventDefault();
 
-//   // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-//   // Write your code here... and remember to reset the input field to be blank after creating a todo!
+// The code below prevents the page from refreshing when we click the 'Add Todo' button.
+// Write your code here... and remember to reset the input field to be blank after creating a todo!
 // }
 
 // document.getElementById("button").addEventListener("click", displayTodoList);
 
-// // // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-// // function deleteAllCompletedTodos() {
-// //   // Write your code here...
-// // }
+// // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
+// function deleteAllCompletedTodos() {
+//   // Write your code here...
+// }
