@@ -1,5 +1,8 @@
 // Predict and explain first...
 
+// Because an object is not iterable with a for of loop unless you use .Object.
+// Therefore its a good practice to use the forOf Object.value to return the values and Object.keys to return the keys
+
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
 
@@ -11,6 +14,6 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+for (const values of Object.values(author)) {
+  console.log(values);
 }

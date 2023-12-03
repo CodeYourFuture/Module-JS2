@@ -1,5 +1,9 @@
 // Predict and explain first...
 
+// Its because you are trying to call a specific key-value pair, but not using
+// the correct method to do so, it should use the dot notation or square brackets method along with
+// the key to access the value.
+
 // This code should log out the houseNumber from the address object
 // but it isn't working...
 // Fix anything that isn't working
@@ -12,4 +16,4 @@ const address = {
   postcode: "XYZ 123",
 };
 
-console.log(`My house number is ${address[0]}`);
+console.log(`My house number is ${address.houseNumber}`);

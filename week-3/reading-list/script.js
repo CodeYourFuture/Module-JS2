@@ -21,3 +21,20 @@ const books = [
   },
 ];
 
+const readingList = document.querySelector("#reading-list");
+for (const book of books) {
+  const li = document.createElement("li");
+  readingList.appendChild(li);
+
+  const seperateBookTitles = document.createElement("p");
+  seperateBookTitles.innerText = `${book.title} by ${book.author}`;
+  li.appendChild(seperateBookTitles);
+
+  const imagesOfBooks = document.createElement("img");
+  imagesOfBooks.src = `${book.bookCoverImage}`;
+  li.appendChild(imagesOfBooks);
+
+  book.alreadyRead
+    ? (li.style.background = "green")
+    : (li.style.background = "red");
+}
