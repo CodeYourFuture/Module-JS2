@@ -5,9 +5,9 @@ let input;
 let timeOut;
 let multiplierFactor;
 function setAlarm() {
- 
+
   input = parseInt(document.querySelector('#alarmSet').value, 10);
-  multiplierFactor= 360 / input;
+  multiplierFactor = 360 / input;
   if (document.getElementById('alarmSet').value === "") {
     alert("Add value to set alarm please!")
   } else {
@@ -43,7 +43,7 @@ function displayTime() {
   const formattedTime = `${minutes}:${seconds}`;
   timeRemaining.textContent = formattedTime;
 }
-function setInfoCircularProgressBar(value){
+function setInfoCircularProgressBar(value) {
   circularProgressBar.style.background = `conic-gradient(var(--blue) ${value * multiplierFactor}deg, var(--purple) 0deg)`;
 
 }
