@@ -27,4 +27,15 @@ function invert(obj) {
 // d) Explain why the current return value is different from the target output
 /*The current result is wrong because the code mistakenly uses a fixed key "key" instead of dynamically using the variable key during the loop.
 The corrected code ensures that the keys in the inverted object are dynamically assigned based on the values from the original object.
+
+here is updated function that should correctly produce the target output:
+function invert(obj) {
+  const invertedObj = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    invertedObj[value] = key;
+  }
+
+  return invertedObj;
+}
 */
