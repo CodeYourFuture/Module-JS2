@@ -1,5 +1,5 @@
 body {
-  background-color:bisque;
+  background-image: url("https://cdn11.bigcommerce.com/s-l2xlls5oyw/images/stencil/500x500/products/26481/33610/8f7f9b1c-c03d-4ac0-9269-531fe241c6f1__48808.1661169644.jpg?c=1");
 }
 
 h1 {
@@ -23,6 +23,7 @@ form {
   padding-bottom: 20rem;
   padding-top: 5rem;
   font-size: larger;
+  background-color: white;
 }
 
 #text-box {
@@ -43,10 +44,13 @@ button {
 button:hover {
   background-color: white;
   color:  red;
-  font-size: large;
-  border-color: white
+  font-size: medium;
+  border-color: white;
 }
 
+h3 {
+  font-style: italic;
+}
 
 
 
@@ -57,6 +61,7 @@ button:hover {
 
 li {
   font-size: large;
+  margin-bottom: 1rem;
 }
 
 .strike {
