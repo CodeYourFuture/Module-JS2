@@ -1,18 +1,26 @@
+:root {
+  --blue: rgb(121, 121, 224);
+  --purple: rgb(255, 179, 0);
+}
+body {
+  background: darkblue;
+}
 .centre {
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1rem;
+  width: 20rem;
+  height: 30rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.567);
 }
 
-#alarmSet {
-  margin: 20px;
-}
-
-h1 {
-  text-align: center;
-}
 .red {
   animation: redflash 1s infinite alternate ease-out;
 }
@@ -21,4 +29,48 @@ h1 {
   to {
     background-color: #90131f;
   }
+}
+
+#timeRemaining {
+  text-align: center;
+}
+
+.progress-bar {
+  height: 180px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: conic-gradient(var(--blue) 360deg, var(--purple) 0deg);
+  border-radius: 50%;
+  transition: all ease;
+}
+
+.progress-bar-inner {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+button {
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: 700;
+}
+button:nth-of-type(1) {
+  background: green;
+}
+button:nth-of-type(2) {
+  background: rgb(128, 0, 92);
+}
+button:nth-of-type(3) {
+  background: rgb(128, 102, 0);
 }
