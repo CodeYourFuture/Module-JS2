@@ -1,4 +1,5 @@
-let todos = [];
+
+/*let todos = [];
 const todoList = document.getElementById("todo-list");
 function addNewTodo() {
   let input = document.querySelector("input").value;
@@ -31,24 +32,50 @@ function populateTodoList() {
     });
 
     //trash button
-
-    let trashButton = document.createElement("button");
-    listItem.appendChild(trashButton);
-    let trashIcon = document.createElement("i");
-    trashIcon.setAttribute("class", "fa fa-trash-o");
-    trashButton.appendChild(trashIcon);
-
-    trashButton.addEventListener("click", () => {
-      // todos.splice(todos.length-1);
-      const index = todos.indexOf(item);
-      if (index > -1) {
+    let trashSpan = document.createElement("span");
+listItem.appendChild(trashSpan);
+let trashIcon = document.createElement("i");
+trashIcon.setAttribute("class", "fa fa-trash-o");
+trashSpan.appendChild(trashIcon);
+trashSpan.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const index = todos.indexOf(item);
+    if (index > -1) {
         todos.splice(index, 1);
-      }
+    }
+    populateTodoList(); // update the list
+});
+
+    // let trashButton = document.createElement("span");
+    // listItem.appendChild(trashButton);
+    // let trashIcon = document.createElement("i");
+    // trashIcon.setAttribute("class", "fa fa-trash-o");
+    // trashButton.appendChild(trashIcon);
+
+    // trashButton.addEventListener("click", () => {
+    //   for(const item of todos){
+    //     listItem.remove();
+    //   }
+      
+//       item.remove() )
+      // todos.splice(todos.length-1);
+      // const index = todos.indexOf(item);
+      // if (index > -1) {
+      //   todos.splice(index, 1);
+      // }
     });
 
     todoList.appendChild(listItem);
   }
 }
+
+// function deletelist() {
+//   for(const item of ){
+//     item.addEventListener("click", () => {
+//       item.remove()
+//     })
+//   }
+// }
 
 function deleteAllCompletedTodos() {
   // Write your code here...
@@ -75,3 +102,4 @@ function deleteAllCompletedTodos() {
 // function deleteAllCompletedTodos() {
 //   // Write your code here...
 // }
+*/

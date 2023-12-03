@@ -1,10 +1,54 @@
 body {
-  /* background-image: url(/assets/world.jpg); */
+  background-color:bisque;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 6rem;
+  color: rgb(73, 6, 197);
+  font-weight: bolder;
+  font-size: xx-large;
 }
 
 #todo-list li {
   list-style: none;
 }
+
+form {
+  border: 3px rgb(73, 6, 197) double;
+  text-align: center;
+  margin-left: 25rem;
+  margin-right: 25rem;
+  margin-top: 3rem;
+  padding-bottom: 20rem;
+  padding-top: 5rem;
+  font-size: larger;
+}
+
+#text-box {
+  width: 20rem;
+  height: 2rem;
+}
+
+button {
+  padding: 0.5rem;
+  width: 10rem;
+  margin-top: 1rem;
+  background-color:  rgb(73, 6, 197);
+  color: white;
+  border-color:  rgb(73, 6, 197);
+  font-size: small;
+}
+
+button:hover {
+  background-color: white;
+  color:  red;
+  font-size: large;
+  border-color: white
+}
+
+
+
 
 .fa .fa-trash-o {
   font-size: 48px;
