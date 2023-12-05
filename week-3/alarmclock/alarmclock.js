@@ -67,12 +67,15 @@ function setAlarm() {
 
   
   const pauseButton=document.getElementById("Pause" );
+
   pauseButton.addEventListener('click',function(){
     if(timerBoolean===false){
       clearInterval(updaterInterval);
       timerBoolean=true;
+      pauseButton.textContent = 'Resume'; 
     }
     else{
+      pauseButton.textContent = 'Pause'; 
       updateTimer();
       timerBoolean=false;
     }
@@ -88,7 +91,8 @@ resetButton.addEventListener('click',function(){
   pauseAlarm();
   clearInterval(flashingInterval);
   alarmImage.src='idea.png';
-  document.body.style.backgroundColor='white';
+  document.body.style.backgroundColor='lightgray';
+  pauseButton.textContent = 'Pause'; 
 
 })
 

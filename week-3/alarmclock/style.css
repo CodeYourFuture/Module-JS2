@@ -1,4 +1,6 @@
-
+body{
+  background-color: lightgray;
+}
 .centre {
   position: fixed;
   top: 50%;
@@ -26,4 +28,15 @@ h1 {
   width: 4em;
   height: 4em;
   margin: 2px;
+}
+
+button{
+  width: 6rem;
+  height: 2em;
+  background: rgb(255, 221, 0);
+  font-weight: bold;
+}
+
+button:hover{
+  background: orange;
 }
