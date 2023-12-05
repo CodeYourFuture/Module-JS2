@@ -1,3 +1,4 @@
+
 .centre {
   position: fixed;
   top: 50%;
@@ -14,14 +15,14 @@ h1 {
   text-align: center;
 }
 
-.timer-image{
+.timer-image {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 
-#alarm-image{
+#alarm-image {
   width: 4em;
   height: 4em;
   margin: 2px;
