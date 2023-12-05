@@ -1,3 +1,42 @@
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+#content{
+  width: 60%;
+  margin: auto;
+  background-color: lightblue;
+}
+
+#reading-list{
+  width: 100%;
+  margin: 0;
+
+}
+
+#reading-list{
+  list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Base styles to use at the start of the class
  *

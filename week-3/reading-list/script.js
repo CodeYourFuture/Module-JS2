@@ -21,3 +21,26 @@ const books = [
   },
 ];
 
+function listStructure(){
+  // createing a li tag for 
+  const listItem=document.createElement('li');
+  listItem.className='list-item';
+  // p tag to hold title of the book
+  const titleOfBook=document.createElement('p');
+  titleOfBook.className='title';
+  // p tag to hold author name
+  const authorOfBook=document.createElement('p');
+  authorOfBook.className='author';
+
+  // img tag to hold books image
+  const bookImage=document.createElement('img');
+  bookImage.className='book-image';
+
+  listItem.appendChild(titleOfBook,authorOfBook,bookImage);
+}
+
+
+books.forEach(element => {
+  
+
+});
