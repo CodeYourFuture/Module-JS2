@@ -1,3 +1,4 @@
+// alarm clock js code
 
 
 const timeRemaining=document.getElementById("timeRemaining");
@@ -130,3 +131,5 @@ function pauseAlarm() {
 window.onload = setup;
 
 // all change for js files so far
+
+
