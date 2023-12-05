@@ -28,17 +28,17 @@ function listStructure(){
 
   // p tag to hold title of the book
   const titleOfBook=document.createElement('p');
-  titleOfBook.className='title';
+  titleOfBook.className='title-author';
   // p tag to hold author name
-  const authorOfBook=document.createElement('p');
-  authorOfBook.className='author';
+  // const authorOfBook=document.createElement('p');
+  // authorOfBook.className='author';
 
   // img tag to hold books image
   const bookImage=document.createElement('img');
   bookImage.className='book-image';
 
   listItem.appendChild(titleOfBook);
-  listItem.appendChild(authorOfBook);
+  //listItem.appendChild(authorOfBook);
   listItem.appendChild(bookImage);
 
   const bookList=document.getElementById('reading-list');
@@ -49,8 +49,8 @@ function listStructure(){
 books.forEach(element => {
   listStructure();
   const listItem=document.querySelector('.list-item:last-child');
-  listItem.querySelector('.title').textContent=element.title;
-  listItem.querySelector('.author').textContent=element.author;
+  listItem.querySelector('.title-author').textContent=`${element.title} written by ${element.author}`
+  //listItem.querySelector('.author').textContent=element.author;
   listItem.querySelector('.book-image').src=element.bookCoverImage;
 
 });
