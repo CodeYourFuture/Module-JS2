@@ -37,10 +37,12 @@ function colorChanger(){
         flashingInterval=setInterval(function(){
             if(isRed){
             alarmImage.src='./idea1.png';
+            document.body.style.backgroundColor='red';
             
             }
             else{
               alarmImage.src='./idea.png';
+              document.body.style.backgroundColor='white';
             }
 
             isRed=!isRed;
@@ -86,6 +88,8 @@ resetButton.addEventListener('click',function(){
   pauseAlarm();
   clearInterval(flashingInterval);
   alarmImage.src='idea.png';
+  document.body.style.backgroundColor='white';
+
 })
 
 
@@ -121,4 +125,4 @@ function pauseAlarm() {
 
 window.onload = setup;
 
-
+// all change for js files so far
