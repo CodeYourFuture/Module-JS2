@@ -8,6 +8,7 @@ let timerBoolean=false; // is used for pause and resume button
 let updaterInterval;
 const setButton=document.getElementById('set');
 let flashingInterval;
+const pauseButton=document.getElementById("Pause" );
 
 function displayTimer(duration){
     const remainedMinutes=Math.floor(duration/60);
@@ -25,6 +26,9 @@ function updateTimer(){
       playAlarm();
       clearInterval(updaterInterval);
       colorChanger();
+      pauseButton.disabled = true;
+
+
       
       }
       
@@ -33,6 +37,8 @@ function updateTimer(){
   }
 
 const alarmImage=document.getElementById('alarm-image');
+
+// change the color after reaching 0 second
 function colorChanger(){
         let isRed=true;
         flashingInterval=setInterval(function(){
@@ -67,7 +73,7 @@ function setAlarm() {
 
 
   
-  const pauseButton=document.getElementById("Pause" );
+  
 
   pauseButton.addEventListener('click',function(){
     if(timerBoolean===false){
@@ -93,7 +99,8 @@ resetButton.addEventListener('click',function(){
   clearInterval(flashingInterval);
   alarmImage.src='idea.png';
   document.body.style.backgroundColor='lightgray';
-  pauseButton.textContent = 'Pause'; 
+  pauseButton.textContent = 'Pause';
+  pauseButton.disabled = false;
 
 })
 
