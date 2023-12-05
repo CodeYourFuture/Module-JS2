@@ -4,9 +4,10 @@ html,body{
 }
 
 #content{
-  width: 60%;
+  width: 50%;
   margin: auto;
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  height: fit-content;
 }
 
 #reading-list{
@@ -17,6 +18,23 @@ html,body{
 
 #reading-list{
   list-style: none;
+}
+
+.list-item{
+  margin: 5px;
+  border-bottom: solid 2px black;
+  padding: 4px;
+  margin-bottom: 1em;
+}
+
+.list-item>p{
+  margin:0 0 5px 0 ;
+}
+
+.book-image{
+  width: 100%;
+  height: fit-content;
+  margin: 0;
 }
 
 

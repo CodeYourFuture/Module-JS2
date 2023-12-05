@@ -48,7 +48,7 @@ function listStructure(){
 
 books.forEach(element => {
   listStructure();
-  const listItem=document.querySelector('.list-item:lastChild');
+  const listItem=document.querySelector('.list-item:last-child');
   listItem.querySelector('.title').textContent=element.title;
   listItem.querySelector('.author').textContent=element.author;
   listItem.querySelector('.book-image').src=element.bookCoverImage;
