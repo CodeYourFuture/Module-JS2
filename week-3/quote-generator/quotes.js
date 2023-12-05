@@ -512,7 +512,7 @@ showQuote();
   const checkBoxValidator=document.getElementById("check-box");
 
   // change the time of random quotes 
-  const secondsToChangeQuote=20000;
+  const secondsToChangeQuote=2;
   const quoteCahngerPerTime=document.getElementById('second-for-quote');
   quoteCahngerPerTime.textContent=secondsToChangeQuote;
 
@@ -521,7 +521,7 @@ showQuote();
     if(checkBoxValidator.checked==true){
       checkBoxInterval=setInterval(function(){
         showQuote();
-      },secondsToChangeQuote)
+      },secondsToChangeQuote*1000)
     }
     else if(checkBoxValidator.checked==false){
       clearInterval(checkBoxInterval);
@@ -533,6 +533,7 @@ showQuote();
 
 
 });
+
 
 console.log(pickFromArray(quotes));
 // call pickFromArray with the quotes array to check you get a random quote
