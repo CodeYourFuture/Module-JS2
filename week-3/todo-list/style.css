@@ -12,11 +12,13 @@ body{
 
 form{
     align-self: left;
+    margin-top: 1em;
 }
 
 #todo-container{
     background-color: white;
     width: 20em;
+    margin-top: 1em;
 }
 
 

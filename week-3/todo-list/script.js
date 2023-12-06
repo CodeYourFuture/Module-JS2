@@ -1,11 +1,32 @@
+
 function populateTodoList(todos) {
-  //let list = document.getElementById("todo-list");
+  let list = document.getElementById("todo-list");
   list.innerHTML='';
   // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
   todos.forEach(element => {
-    htmlStructure();
-    const liItem=document.getElementById('todo-list:first-child');
-    liItem.innerText=element.task;
+  const todoItem=document.createElement('li');
+  const spanInList=document.createElement('span');
+  const completedButton=document.createElement('i');
+  const deleteButton=document.createElement('i');
+   // set up class names 
+  spanInList.className='badge bg-primary rounded-pill';
+  completedButton.className="fa fa-check";
+  deleteButton.className="fa fa-trash";
+
+  //set aria-hidden attribute to true
+  completedButton.setAttribute('aria-hidden','true');
+  deleteButton.setAttribute('aria-hidden','true');
+
+  //appending childs 
+  todoItem.appendChild(spanInList);
+  spanInList.appendChild(completedButton);
+  spanInList.appendChild(deleteButton);
+
+  todoItem.textContent=element.task;
+  
+  list.insertBefore(todoItem,list.firstChild);
+  //const liItem=document.getElementById('todo-list:first-child');
+  
     
     
   });
@@ -23,26 +44,6 @@ let todos = [
 
 populateTodoList(todos);
 
-function htmlStructure(){
-
-  const todoItem=document.createElement('li');
-  const spanInList=document.createElement('span');
-  const completedButton=document.createElement('i');
-  const deleteButton=document.createElement('i');
-   // set up class names 
-  spanInList.className='badge bg-primary rounded-pill';
-  completedButton.className="fa fa-check";
-  deleteButton.className="fa fa-trash";
-
-  //appending childs 
-  todoItem.appendChild(spanInList);
-  spanInList.appendChild(completedButton);
-  spanInList.appendChild(deleteButton);
-
-  const todoList=document.getElementById("todo-list");
-  todoList.insertBefore(todoItem,todoList.firstChild);
-
-}
 
 // This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
 function addNewTodo(event) {
@@ -50,8 +51,8 @@ function addNewTodo(event) {
   event.preventDefault();
   // Write your code here... and remember to reset the input field to be blank after creating a todo!
   const inputBox=document.querySelector('input[placeholder="New todo..."]');
-  const newTodo={};
-  newTodo={
+  if(inputBox.value.length>0){
+    const newTodo={
     task:inputBox.value,
     completed:false
   }
@@ -63,12 +64,14 @@ function addNewTodo(event) {
   inputBox.value='';
 
   populateTodoList(todos);
-
+  
+  }
 }
 
 
 const addToDoButton=document.querySelector('button[type=submit]');
 addToDoButton.addEventListener('click',addNewTodo);
+
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
