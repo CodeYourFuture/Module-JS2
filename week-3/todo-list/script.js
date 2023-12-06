@@ -18,7 +18,17 @@ function htmlStructure(){
   const spanInList=document.createElement('span');
   const completedButton=document.createElement('i');
   const deleteButton=document.createElement('i');
-  
+   // set up class names 
+  spanInList.className='badge bg-primary rounded-pill';
+  completedButton.className="fa fa-check";
+  deleteButton.className="fa fa-trash";
+
+  //appending childs 
+  const todoList=document.getElementById("todo-list");
+  todoList.appendChild(todoItem);
+  todoItem.appendChild(spanInList);
+  spanInList.appendChild(completedButton);
+  spanInList.appendChild(deleteButton);
 
 
 }
