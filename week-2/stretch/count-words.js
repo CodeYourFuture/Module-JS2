@@ -26,3 +26,30 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(inputText) {
+  //Removing punctuations and Converting to lowercase
+  const cleanString = inputText
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
+    .toLowerCase();
+
+  //Splitting the string into an array of words
+  const wordsArray = cleanString.split(" ");
+
+  //Creating an object to store word counted Words
+  const wordCount = {};
+
+  //Looping through the words and count occurrences
+  for (let i = 0; i < wordsArray.length; i++) {
+    const word = wordsArray[i];
+
+    //Checking if the word is already in the count object
+    if (wordCount[word]) {
+      wordCount[word]++;
+    } else {
+      wordCount[word] = 1;
+    }
+  }
+  return wordCount;
+}
+
+console.log(countWords("COde code ,coDE CODe ,your future ... your !!!"));
