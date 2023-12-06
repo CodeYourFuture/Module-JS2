@@ -1,1 +1,22 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('assets/world.jpg');
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+form{
+    align-self: left;
+}
+
+#todo-container{
+    background-color: white;
+    width: 20em;
+}
+
 

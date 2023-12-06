@@ -12,6 +12,17 @@ let todos = [
 
 populateTodoList(todos);
 
+function htmlStructure(){
+
+  const todoItem=document.createElement('li');
+  const spanInList=document.createElement('span');
+  const completedButton=document.createElement('i');
+  const deleteButton=document.createElement('i');
+  
+
+
+}
+
 // This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
 function addNewTodo(event) {
   // The code below prevents the page from refreshing when we click the 'Add Todo' button.
