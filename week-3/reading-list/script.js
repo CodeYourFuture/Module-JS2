@@ -49,8 +49,15 @@ function listStructure(){
 books.forEach(element => {
   listStructure();
   const listItem=document.querySelector('.list-item:last-child');
-  listItem.querySelector('.title-author').textContent=`${element.title} written by ${element.author}`
+  const titleAuthor= listItem.querySelector('.title-author');
+  titleAuthor.innerHtml=`<strong>${element.title}</strong> written by <strong>${element.author}</strong>`;
   //listItem.querySelector('.author').textContent=element.author;
   listItem.querySelector('.book-image').src=element.bookCoverImage;
+  if(element.alreadyRead===true){
+    listItem.style.backgroundColor = 'green';
+  }
+  else{
+    listItem.style.backgroundColor='red';
+  }
 
 });
