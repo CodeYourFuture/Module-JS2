@@ -21,4 +21,30 @@ form{
     margin-top: 1em;
 }
 
+ul{
+    padding: 5px 8px;
+    text-wrap: pretty;
+    min-width: 15em;
+}
+
+ul>li{
+    min-width: inherit;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom: solid 2px black;
+    font-size: large;
+    white-space: pre-line;
+
+    /* Allow for line breaks in the text */
+    word-break: break-all;
+    /* Break long words onto the next line */
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
 
