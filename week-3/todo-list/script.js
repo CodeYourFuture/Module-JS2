@@ -7,14 +7,17 @@ function populateTodoList(todos) {
   const todoItem=document.createElement('li');
   const spanInList=document.createElement('span');
   const completedButton=document.createElement('i');
+  const spanForDate=document.createElement('span');
+  spanForDate.className='dead-line';
+
+  // set up class names 
   completedButton.className="fa fa-check";
   const deleteButton=document.createElement('i');
+  // set up class names 
   deleteButton.className="fa fa-trash";
    // set up class names 
   spanInList.className='badge bg-primary rounded-pill';
   
-  
-
   //set aria-hidden attribute to true
   completedButton.setAttribute('aria-hidden','true');
   deleteButton.setAttribute('aria-hidden','true');
@@ -23,6 +26,7 @@ function populateTodoList(todos) {
   //appending childs 
   spanInList.appendChild(completedButton);
   spanInList.appendChild(deleteButton);
+  spanInList.appendChild(spanForDate);
   todoItem.appendChild(spanInList);
     // append the <li> to the begining of the <ul>
   list.prepend(todoItem);
@@ -83,6 +87,29 @@ addToDoButton.addEventListener('click',addNewTodo);
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-  const list=document.getElementById('todo-list');
-  list.innerHTML='';
+  todos.forEach(element => {
+    if(element.completed){
+      todoItem.remove();
+    }
+  });
 }
+
+const removeAllCompletedButton=document.getElementById("remove-all-completed");
+removeAllCompletedButton.addEventListener('click',deleteAllCompletedTodos);
+
+
+const submitDate=document.getElementById('submit-date');
+const todoDeadLine=document.getElementById("todo-date");
+submitDate.addEventListener('click',function(){
+  const [currentYear,currentMonth,currentDay]=[
+  new Date().getFullYear(),
+  new Date().getMonth(),
+  new Date().getDay()];
+
+
+})
+
+
+// set up min property not to let user pick up past dates
+document.getElementById('todo-date').min=new Date().toISOString().split('T')[0];
+
