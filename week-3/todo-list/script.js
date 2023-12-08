@@ -81,31 +81,31 @@ function addNewTodo(event) {
   const inputBox=document.querySelector('input[placeholder="New todo..."]');
   const inputdate=document.getElementById('todo-date');
   const deadLine=inputdate.value;
-  
-  const newTodo={
-        task:inputBox.value,
-        completed:false,
-        deadLineProperty:new Date(deadLine)
-      }
-  const dateChecker=updateDeadLineCalculator(initialDeadLine,newTodo.deadLineProperty);
+  const newTodo={};
+  if(deadLine.length!==''){
+      newTodo.task=inputBox.value,
+      newTodo.completed=false,
+      newTodo.deadLineProperty=deadLine
+  }
 
-  if(dateChecker>=0 && newTodo.task.length!==0){
-      todos.push(newTodo);
-
-      //reset the inputbox 
-      inputBox.value='';
-      document.getElementById('todo-date').value='';
-      
-      populateTodoList(todos);
-        
-      }
-      
   else{
-    alert('Please Enter a  valid value');
+      newTodo.task=inputBox.value,
+      newTodo.completed=false,
+      newTodo.deadLineProperty=''
+      }
+  todos.push(newTodo);
+  const dateChecker=updateDeadLineCalculator(initialDeadLine,newTodo.deadLineProperty);
+    
+
+    //   //reset the inputbox 
+    // inputBox.value='';
+    // document.getElementById('todo-date').value='';
+      
+    populateTodoList(todos);
+        
     inputBox.value='';
     document.getElementById('todo-date').value='';
-    return;
-  }
+      console.log(todos);
 }
 
 
@@ -127,39 +127,51 @@ removeAllCompletedButton.addEventListener('click',deleteAllCompletedTodos);
 // initialising deadline
 function initialDeadLine(deadLineProperty){
     // get deadLine date , creating a new date object based on deadlineproperty
-  const deadLineTime=new Date(deadLineProperty);
+  if(deadLineProperty.length!=0){
+    const deadLineTime=new Date(deadLineProperty);
 
-  // declare variable of current date to colculate remained date
-  const currentTime=new Date();
+    // declare variable of current date to colculate remained date
+    const currentTime=new Date();
 
-  //calculate diffrence time by Miliseconds
-  const diffTime=deadLineTime-currentTime;
-  
-  //change it into days
-  const diffTimeByDays=Math.ceil(diffTime/(1000*60*60*24));
+    //calculate diffrence time by Miliseconds
+    const diffTime=deadLineTime-currentTime;
+    
+    //change it into days
+    const diffTimeByDays=Math.ceil(diffTime/(1000*60*60*24));
 
-  return diffTimeByDays;
-  
+    return diffTimeByDays;
   }
+
+  else{
+    return -1;
+  }
+}
 
 // deadline calculator takes the todo deadlineproperty from the object
 // and returns different time between today and deadline todo date by days
 
 function updateDeadLineCalculator(initialDeadLine,deadLineProperty){
   let daysForInterval=(24*3600*1000);
-  const intervalDeadLine=setInterval(() => {
-    
-    const numberOfDays=initialDeadLine(deadLineProperty);
-    if(numberOfDays<=0){
+  const numberOfDays=initialDeadLine(deadLineProperty);
+  const intervalDeadLine=setTimeout(() => {
+    if(numberOfDays===''){
+    return 'Date is not set';
+
+    }
+
+  if(numberOfDays<=0){
     clearInterval(intervalDeadLine);
     }
-  }, daysForInterval); 
+  }, daysForInterval);
+  
+  
 }
 
 
 
 // set the date value for the sapn tag which  holds date in list
 // setDateValue function prepare the text for the sapn tag which shows the remained time for the todo by days
+
 function setDateValue(numberOfDays){
   //calcualting remained years for todo task
   const years=Math.floor(numberOfDays/365);
@@ -170,24 +182,19 @@ function setDateValue(numberOfDays){
 
   // based on the remained days proper message will be returned
 
-  let message='';
+  //let message='';
   if(days>0 && months===0 && years===0){
-    return message=`${days} day's left`;
-    
+    return `${days} day's left`;
   }
   if(days>0 && months>0 && years===0){
     return message=`${months} months  ${days} day's left!`;
-    
   }
+
   if(days===0 && months===0&& years===0){
-    return message='few hours left!';
-    
+    return 'few hours left!';
   }
 
-  
-  message=`${years} years and ${months} months and ${days} day's left!`;
-
-  return message;
+  return  `${years} years and ${months} months and ${days} day's left! `;
 
 }
 
@@ -195,16 +202,14 @@ function setDateValue(numberOfDays){
 // set up back ground color of deadline date
 
 function bgColorSetupDate(spanForDate,numberOfDays){
-  if(numberOfDays===0){
-    spanForDate.style.backgroundColor='red';
+  if (numberOfDays === 0) {
+    spanForDate.style.backgroundColor = 'red';
+  } else if (numberOfDays > 0 && numberOfDays < 10) {
+    spanForDate.style.backgroundColor = 'yellow';
+  } else if (numberOfDays >= 10) {
+    spanForDate.style.backgroundColor = 'green';
+  } else {
+    spanForDate.style.backgroundColor = 'lightgray';
   }
-  if(numberOfDays>0 && numberOfDays<10){
-    spanForDate.style.backgroundColor='yellow';
-  }
-  if(numberOfDays>=10){
-    spanForDate.style.backgroundColor='green';
-  }
-  if(numberOfDays===isNaN){
-    spanForDate.style.backgroundColor='lightgray';
-  }
+
 }
