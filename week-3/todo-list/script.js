@@ -22,8 +22,13 @@ function populateTodoList(todos) {
   completedButton.setAttribute('aria-hidden','true');
   deleteButton.setAttribute('aria-hidden','true');
 
+  // assigning value to span tag of date and list item
+  const numberOfDays=deadLineCalculator(element.deadLineProperty);
+  spanForDate.textContent=setDateValue(numberOfDays);
   todoItem.innerText=element.task;
+
   //appending childs 
+  
   spanInList.appendChild(completedButton);
   spanInList.appendChild(deleteButton);
   spanInList.appendChild(spanForDate);
@@ -44,6 +49,8 @@ function populateTodoList(todos) {
   
   });
 
+ 
+
 }
 
 // These are the same todos that currently display in the HTML
@@ -54,6 +61,8 @@ let todos = [
 ];
 
 
+// set up min property not to let user pick up past dates
+document.getElementById('todo-date').min=new Date().toISOString().split('T')[0];
 
 //populateTodoList(todos);
 
@@ -64,19 +73,32 @@ function addNewTodo(event) {
   event.preventDefault();
   // Write your code here... and remember to reset the input field to be blank after creating a todo!
   const inputBox=document.querySelector('input[placeholder="New todo..."]');
-  if(inputBox.value.length>0){
-    const newTodo={
-    task:inputBox.value,
-    completed:false
-  }
-
-  todos.push(newTodo);
-
-  //reset the inputbox 
-  inputBox.value='';
-
-  populateTodoList(todos);
+  const inputdate=document.getElementById('todo-date');
+  const deadLine=inputdate.value;
   
+  const newTodo={
+        task:inputBox.value,
+        completed:false,
+        deadLineProperty:new Date(deadLine)
+      }
+  const dateChecker=deadLineCalculator(newTodo.deadLineProperty);
+
+  if(dateChecker>=0 && newTodo.task.length!==0){
+      todos.push(newTodo);
+
+      //reset the inputbox 
+      inputBox.value='';
+      document.getElementById('todo-date').value='';
+      
+      populateTodoList(todos);
+        
+      }
+      
+  else{
+    alert('Please Enter a  valid value');
+    inputBox.value='';
+    document.getElementById('todo-date').value='';
+    return;
   }
 }
 
@@ -87,29 +109,61 @@ addToDoButton.addEventListener('click',addNewTodo);
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-  todos.forEach(element => {
-    if(element.completed){
-      todoItem.remove();
-    }
-  });
+  
 }
 
 const removeAllCompletedButton=document.getElementById("remove-all-completed");
 removeAllCompletedButton.addEventListener('click',deleteAllCompletedTodos);
 
 
-const submitDate=document.getElementById('submit-date');
-const todoDeadLine=document.getElementById("todo-date");
-submitDate.addEventListener('click',function(){
-  const [currentYear,currentMonth,currentDay]=[
-  new Date().getFullYear(),
-  new Date().getMonth(),
-  new Date().getDay()];
+/////////////// date setup ///////////////////////////////
 
+// deadline calculator takes the todo deadlineproperty from the object
+// and returns different time between today and deadline todo date by days
 
-})
+function deadLineCalculator(deadLineProperty){
 
+  // get deadLine date , creating a new date object based on deadlineproperty
+  const deadLineTime=new Date(deadLineProperty);
 
-// set up min property not to let user pick up past dates
-document.getElementById('todo-date').min=new Date().toISOString().split('T')[0];
+  // declare variable of current date to colculate remained date
+  const currentTime=new Date();
+
+  //calculate diffrence time by Miliseconds
+  const diffTime=deadLineTime-currentTime;
+  
+  //change it into days
+  const diffTimeByDays=Math.ceil(diffTime/(1000*60*60*24));
+
+  return diffTimeByDays;
+  
+  
+}
+
+// set the date value for the sapn tag which  holds date in list
+// setDateValue function prepare the text for the sapn tag which shows the remained time for the todo by days
+function setDateValue(numberOfDays){
+  //calcualting remained years for todo task
+  const years=Math.floor(numberOfDays/365);
+  //calculating remained month for todo task
+  const months=Math.floor(numberOfDays%365/30);
+  //calculating remained days for todo task
+  const days=Math.ceil(numberOfDays%365%30);
+
+  // based on the remained days proper message will be returned
+  if(days>0 && months===0 && years===0){
+    return `${days} day's left`;
+  }
+  if(days>0 && months>0 && years===0){
+    return `${months} months  ${days} day's left!`
+  }
+  if(days===0 && months===0&& years===0){
+    return 'few hours left!'
+  }
+
+  
+  return `${years} years and ${months} months and ${days} day's left!`
+
+}
+
 
