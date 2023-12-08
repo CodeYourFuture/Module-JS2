@@ -1,13 +1,20 @@
 function dedupe(array) {
-  let deduplicatedArray = []
+  // let deduplicatedArray = []
 
-  if (array.length === 0) {
-    return deduplicatedArray
-  }
+  // if (array.length === 0) {
+  //   return deduplicatedArray
+  // }
 
-  array.forEach(element => {
-    !deduplicatedArray.includes(element) ? deduplicatedArray.push(element) : null
-  });
+  // array.forEach(element => {
+  //   !deduplicatedArray.includes(element) ? deduplicatedArray.push(element) : null
+  // });
+
+  let deduplicatedArray = array.reduce((acc, curr) => {
+    if (!acc.includes(curr)) {
+      acc.push(curr)
+    }
+    return acc
+  }, [])
   
   return deduplicatedArray
 }
