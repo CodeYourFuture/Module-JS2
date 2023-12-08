@@ -28,10 +28,27 @@ function populateTodoList(todos) {
     // a li vira filha da ul
     document.getElementById("itemList").appendChild(newItem);
 
+    const removeButton = document.createElement("button");
+    removeButton.innerHTML = `remove `
+    removeButton.addEventListener("click", function () {
+      document.getElementById("itemList").removeChild(newItem);
+
+      if (window.confirm("Do you want do delete?")) {
+        window.alert("deleted!");
+      }
+      
+    });
+    newItem.appendChild(removeButton);
+
+    // confrim.alert
+
+ 
     // depois disso para limpar o retângulo do input
     document.getElementById("todo-list").value = "";
   }
 }
+
+
 
 window.onload = function() {
   const addButton = document.querySelector('button[type="submit"]');
@@ -39,10 +56,12 @@ window.onload = function() {
       event.preventDefault(); // Impede a submissão do formulário
       populateTodoList();
   });
+
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
+
+
+
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
@@ -51,24 +70,7 @@ let todos = [
 
 
 
-//O CODIGO NAO FUNCIOU NAO SEI O MOTIVO TESTAR EM AULA
-
-// function deleteAllCompletedTodos() {
-//   // Obtém todos os itens da lista
-//   const items = document.querySelectorAll('#itemList li');
-
-//   // Itera sobre os itens
-//   items.forEach(item => {
-//     // Obtém a caixa de seleção associada ao item
-//     const checkbox = item.querySelector('input[type="checkbox"]');
-
-//     // Verifica se a caixa de seleção está marcada
-//     if (checkbox.checked) {
-//       // Remove o item da lista
-//       item.remove();
-//     }
-//   });
-// }
+//my remove all is not working, and i dont know why
 
 
 
@@ -88,28 +90,3 @@ let todos = [
 
 
 
-
-
-
-
-/*
-
-populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a
-// new todo to the bottom of the todo list. These new todos will need the
-// completed and delete buttons adding like normal.
-function addNewTodo(event) {
-  // The code below prevents the page from refreshing when we 
-  //click the 'Add Todo' button.
-  event.preventDefault();
-  // Write your code here... and remember to reset the input
-  // field to be blank after creating a todo!
-}
-
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-function deleteAllCompletedTodos() {
-  // Write your code here...
-}
-
-*/ 
