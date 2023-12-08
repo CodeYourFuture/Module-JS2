@@ -17,14 +17,14 @@ form{
 
 #todo-container{
     background-color: white;
-    width: 20em;
+    min-width: 25em;
     margin-top: 1em;
 }
 
 ul{
     padding: 5px 8px;
     text-wrap: pretty;
-    min-width: 15em;
+    min-width: 20em;
 }
 
 ul>li{
