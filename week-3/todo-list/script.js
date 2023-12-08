@@ -17,6 +17,8 @@ function populateTodoList(todos) {
     span.appendChild(secondI);
     secondI.addEventListener("click", () => {
       listItem.remove();
+      let index = todos.indexOf(item);
+      todos.splice(index, 1);
     });
     firstI.addEventListener("click", () => {
       listItem.classList.toggle("completed");
