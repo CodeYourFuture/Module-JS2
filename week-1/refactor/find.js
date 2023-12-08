@@ -1,9 +1,9 @@
 // Refactor the implementation of find to use a for...of loop
 
 function find(list, target) {
-  for (const e of list) {
-    if (e === target) {
-      return list.indexOf(e)
+  for (const item of list) {
+    if (item === target) {
+      return list.indexOf(item)
     }
   } return -1
 
