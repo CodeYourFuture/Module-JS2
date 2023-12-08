@@ -1,1 +1,54 @@
 
+
+body {
+    background-color: #f8d7da; /* Cor de fundo rosa bebê */
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #remove-all-completed {
+    background-color: #dc3545; /* Cor vermelha para o botão "Remove all completed" */
+  }
+  
+  .fa .fa-trash-o{
+font-size:24px"
+
+  }
+
+button {
+
+  font-size:24px
+  "fa fa-trash-o"
+}

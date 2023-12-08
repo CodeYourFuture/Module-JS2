@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+body {
+    background-color: #87CEEB; /* Céu azul claro */
+    overflow: hidden; /* Para evitar que as borboletas apareçam fora do corpo da página */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Garante que a página ocupe a altura total da viewport */
+  }
+  
+  h1 {
+    font-size: 2em; /* Tamanho do texto centralizado */
+  }
+  
+  #new-quote {
+    font-size: 1.5em; /* Tamanho do botão "New quote" */
+  }
+  
+  #auto-play {
+    font-size: 1.5em; /* Tamanho do checkbox "Auto-play" */
+  }
+  
+
+  
