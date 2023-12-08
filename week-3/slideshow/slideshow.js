@@ -22,7 +22,7 @@ function adcElemento(){
     const newDiv = document.createElement("div");
     const newHOne = document.createElement("h1");
 newDiv.appendChild(newHOne)
-newHOne.innerText = "Gatinhos Fofinhos Para Memis"
+newHOne.innerText = "Gatinhos Fofinhos Para Meme"
 
 const divNova = document.getElementById("carousel-img");
 document.body.insertBefore(newDiv, divNova)
