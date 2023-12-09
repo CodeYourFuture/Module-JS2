@@ -1,1 +1,162 @@
+:root {
+    --primary-color: #4caf50;
+    --danger-color: #d9534f;
+    --body-background-color: #f4f4f4;
+    --form-max-width: 400px;
+    --form-padding: 20px;
+    --form-border: 1px solid #ccc;
+    --form-border-radius: 8px;
+    --input-padding: 10px;
+    --button-padding: 10px 15px;
+    --last-child-margin-top: 10px;
+}
 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--body-background-color);
+}
+
+form {
+    max-width: var(--form-max-width);
+    margin: 20px auto;
+    padding: var(--form-padding);
+    border: var(--form-border);
+    border-radius: var(--form-border-radius);
+    background-color: #fff;
+
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: var(--input-padding);
+    margin-bottom: var(--input-padding);
+    box-sizing: border-box;
+}
+
+button {
+    padding: var(--button-padding);
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   }
+
+button:hover {
+    background-color: #45a049;
+    /* Darken the primary color on hover */
+}
+
+#remove-all-completed {
+    background-color: var(--danger-color);
+}
+
+#remove-all-completed:hover {
+    background-color: #c9302c;
+    /* Darken the danger color on hover */
+}
+
+div:last-child {
+    margin-top: var(--last-child-margin-top);
+}
+
+.todo-list{
+    
+    justify-items: center;
+    justify-content: center;
+    width: var(--form-max-width);
+        margin: 20px auto;
+        padding: var(--form-padding);
+        border: var(--form-border);
+        border-radius: var(--form-border-radius);
+        background-color: #fff;
+
+}
+
+#list{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    margin: -5px;
+}
+#todo-list {
+    list-style: none;
+}
+
+#deadlineInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 234px;   
+}
+
+
+/* The container */
+.custom-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
