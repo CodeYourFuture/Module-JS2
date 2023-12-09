@@ -26,3 +26,37 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+
+function countWords(str) {
+  const cleanedStr = str.replace(/[.,?!]/g, '').toLowerCase();
+  const arrayedStr = cleanedStr.split(' ');
+  const setOfUnique = new Set(arrayedStr);
+
+  const objectOfWords = {};
+  const arrayOfKeyvalue=[];
+
+  for (let item of setOfUnique) {
+    
+    if(item.length!=0){  //use this if statement to avoid counting and assigning white spaces
+      const keyObject=item;
+      const valueObject = arrayedStr.filter(word => word === item ).length; // this line checks and count for each words
+      objectOfWords[keyObject] = valueObject; // assigning to the empty object 
+      arrayOfKeyvalue.push([keyObject,valueObject]);
+    }
+    
+    
+  }
+
+  const sortedKeyvalue=arrayOfKeyvalue.sort((a,b)=>a[1]-b[1]);
+  const orderedObject={};
+  for(let [key,value] of sortedKeyvalue){
+    orderedObject[key]=value;
+
+  }
+
+  return orderedObject;
+}
+
+console.log(countWords("hello world! hELLo aGiaN? ? ?"));
+console.log(countWords("you and I and You and me! ? "));

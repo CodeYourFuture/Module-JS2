@@ -21,3 +21,42 @@ const books = [
   },
 ];
 
+function listStructure(){
+  // createing a li tag for 
+  const listItem=document.createElement('li');
+  listItem.className='list-item';
+
+  // p tag to hold title of the book
+  const titleOfBook=document.createElement('p');
+  titleOfBook.className='title-author';
+  
+
+  // img tag to hold books image
+  const bookImage=document.createElement('img');
+  bookImage.className='book-image';
+
+  listItem.appendChild(titleOfBook);
+  //listItem.appendChild(authorOfBook);
+  listItem.appendChild(bookImage);
+
+  const bookList=document.getElementById('reading-list');
+  bookList.appendChild(listItem);
+}
+
+
+books.forEach(element => {
+  listStructure();
+  const listItem=document.querySelector('.list-item:last-child');
+  const titleAuthor= listItem.querySelector('.title-author');
+  titleAuthor.innerHTML=`<strong>${element.title}</strong> written by <strong>${element.author}</strong>`;
+  //listItem.querySelector('.author').textContent=element.author;
+  listItem.querySelector('.book-image').src=element.bookCoverImage;
+  if(element.alreadyRead===true){
+    listItem.style.backgroundColor = 'green';
+  }
+  else{
+    listItem.style.backgroundColor='red';
+  }
+
+});
+

@@ -3,13 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Quote Generator</title>
     <script defer src="quotes.js"></script>
   </head>
   <body>
-    <h1>hello there</h1>
-    <p id="quote"></p>
-    <p id="author"></p>
-    <button type="button" id="new-quote">New quote</button>
+    <div id="container">
+      <p id="quote"></p>
+      <p id="author"></p>
+      <button type="button" id="new-quote">New quote</button>
+      <div id="check-box-container">
+        <input type="checkbox" id="check-box" name="auto-quote">
+        <label for="check-box">Turn on to show random quotes every <span id="second-for-quote"></span> seconds</label>
+
+      </div>
+    </div>
+    
   </body>
 </html>
+
+
