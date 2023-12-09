@@ -47,7 +47,13 @@ function populateTodoList(todos) {
 
   completedButton.addEventListener('click',function(){
     todoItem.classList.toggle('completed');
-    element.completed=!element.completed;
+    
+    if (element.completed) {
+    todoItem.classList.add('checked');
+  } else {
+    todoItem.classList.remove('checked');
+  }
+  element.completed=!element.completed;
   })
 
   deleteButton.addEventListener('click',function(){
@@ -117,8 +123,15 @@ addToDoButton.addEventListener('click',addNewTodo);
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
+  const list=document.querySelectorAll("#todo-list li");
+  list.forEach(item=>{
+      if (item.classList.contains('checked')) {
+      item.remove();
+  }
   
+})
 }
+
 
 const removeAllCompletedButton=document.getElementById("remove-all-completed");
 removeAllCompletedButton.addEventListener('click',deleteAllCompletedTodos);
@@ -194,7 +207,7 @@ function updateDeadLineCalculator(deadLineProperty) {
   }
 
   else{
-    return 'Date is not set';
+    return 'Date not been set';
   }
 
 }
