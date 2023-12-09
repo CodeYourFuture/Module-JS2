@@ -13,3 +13,16 @@
 h1 {
   text-align: center;
 }
+
+.timer-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#alarm-image{
+  width: 4em;
+  height: 4em;
+  margin: 2px;
+}

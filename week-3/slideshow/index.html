@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
-    <script defer src="slideshow.js"></script>
-  </head>
-  <body>
-    <img id="carousel-img" src="./assets/cute-cat-a.png" alt="cat-pic" />
-    <button type="button" id="backward-btn">Backwards</button>
-    <button type="button" id="forward-btn">Forward</button>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Slide Show</title>
+  <script defer src="slideshow.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <img id="carousel-img" src='' alt="cat-pic" />
+    <div class="button-container">
+      <button type="button" id="auto-backward-btn">Auto Backward</button>
+      <button type="button" id="backward-btn">Backwards</button>
+      <button type="button" id="stop-btn">Stop</button>
+      <button type="button" id="forward-btn">Forward</button>
+      <button type="button" id="auto-forward-btn">Auto Forward</button>
+    </div>
+    <div id="input-container">
+      <input type="text" id="slideshow-timer" />
+      <button type="submit" id="timer-submit">Set Slide Time</button>
+    </div>
+
+  </div>
+
+</body>
+
 </html>
