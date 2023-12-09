@@ -24,6 +24,8 @@ forwardBtn.addEventListener("click", function () {
     num++;
   }
   carouselImg.src = images[num];
+  clearInterval(intervalId);
+  clearInterval(intervalId2);
 });
 
 backwardBtn.addEventListener("click", function () {
