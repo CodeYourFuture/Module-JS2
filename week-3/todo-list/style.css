@@ -1,1 +1,55 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
 
+body{
+    background-image: url('assets/world.jpg');
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+form{
+    align-self: left;
+    margin-top: 1em;
+}
+
+#todo-container{
+    background-color: white;
+    min-width: 25em;
+    margin-top: 1em;
+}
+
+ul{
+    padding: 5px 8px;
+    text-wrap: pretty;
+    min-width: 20em;
+}
+
+ul>li{
+    min-width: inherit;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    border-bottom: solid 2px black;
+    font-size: large;
+    white-space: pre-line;
+
+    /* Allow for line breaks in the text */
+    word-break: break-all;
+    /* Break long words onto the next line */
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+.dead-line{
+    word-wrap: break-word;
+    display: inline-block;
+    margin-left: 3px;
+
+}
