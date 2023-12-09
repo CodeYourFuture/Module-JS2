@@ -16,6 +16,9 @@
 // pickFromArray(['a','b','c','d'])     // maybe returns 'c'
 
 // You don't need to change this function
+
+document.addEventListener('DOMContentLoaded',function(){
+
 function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
@@ -490,4 +493,50 @@ const quotes = [
   },
 ];
 
+
+
+const buttonQuoteMaker=document.getElementById('new-quote');
+const quoteContainer=document.getElementById('quote');
+const authorContainer=document.getElementById('author');
+
+const showQuote=function showQ(){
+  const arrayOfQuotes=pickFromArray(quotes);
+  quoteContainer.textContent=arrayOfQuotes.quote;
+  authorContainer.textContent=arrayOfQuotes.author;
+}
+//document.body.addEventListener('load',showQuote)
+
+buttonQuoteMaker.addEventListener('click',showQuote);
+showQuote();
+
+  const checkBoxValidator=document.getElementById("check-box");
+
+  // change the time of random quotes 
+  const secondsToChangeQuote=2;
+  const quoteCahngerPerTime=document.getElementById('second-for-quote');
+  quoteCahngerPerTime.textContent=secondsToChangeQuote;
+
+
+  function forCheckBox(checkBoxValidator){
+    if(checkBoxValidator.checked==true){
+      checkBoxInterval=setInterval(function(){
+        showQuote();
+      },secondsToChangeQuote*1000)
+    }
+    else if(checkBoxValidator.checked==false){
+      clearInterval(checkBoxInterval);
+    }
+  }
+  checkBoxValidator.addEventListener('change',function(){
+  forCheckBox(checkBoxValidator)
+});
+
+
+});
+
+
+console.log(pickFromArray(quotes));
 // call pickFromArray with the quotes array to check you get a random quote
+
+
+

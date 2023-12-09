@@ -11,6 +11,9 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+for (const value in author) {
+  console.log(author[value]);
 }
+
+//it should've printed key's in the object but showed an error that author is not iterable . probably 
+// we have to use for..in.. loop for key/value objects with some extra changes `author[value]` to print thet real value not the key.
