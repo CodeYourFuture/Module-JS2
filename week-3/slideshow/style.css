@@ -1,5 +1,36 @@
 /** Write your CSS in here **/
+.carousel {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
 #carousel-img {
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
+}
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  background-color: darkblue;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+button {
+  padding: 10px;
+  background-color: #ccc;
+  margin: 4px;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: white;
+  color: black;
 }
