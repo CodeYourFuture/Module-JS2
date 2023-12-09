@@ -6,11 +6,16 @@ function populateTodoList(todos) {
     const listItem = document.createElement("li");
     list.appendChild(listItem);
     listItem.textContent = item.task;
+    // Create and append a checkbox
+    const checkBox = document.createElement("input");
+    checkBox.type = "checkbox";
+    listItem.appendChild(checkBox);
+
     const span = document.createElement("span");
     listItem.appendChild(span);
     span.classList.add("badge", "bg-primary", "rounded-pill");
-    const firstI = document.createElement("i");
-    firstI.classList.add("fa", "fa-check");
+    // const firstI = document.createElement("i");
+    // firstI.classList.add("fa", "fa-check");
     span.appendChild(firstI);
     const secondI = document.createElement("i");
     secondI.classList.add("fa", "fa-trash");
@@ -20,8 +25,9 @@ function populateTodoList(todos) {
       let index = todos.indexOf(item);
       todos.splice(index, 1);
     });
-    firstI.addEventListener("click", () => {
-      listItem.classList.toggle("completed");
+      // Add a change event listener to the checkbox
+    checkBox.addEventListener("change", () => {
+      listItem.classList.toggle("completed", checkBox.checked);
     });
   });
 }
