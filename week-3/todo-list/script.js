@@ -113,7 +113,6 @@ function addNewTodo(event) {
         
     inputBox.value='';
     document.getElementById('todo-date').value='';
-      console.log(todos);
 }
 
 
@@ -123,13 +122,19 @@ addToDoButton.addEventListener('click',addNewTodo);
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-  const list=document.querySelectorAll("#todo-list li");
-  list.forEach(item=>{
-      if (item.classList.contains('checked')) {
-      item.remove();
-  }
+  const list=document.querySelectorAll(".completed");
   
-})
+  list.forEach(item=>{
+    item.remove();
+  })
+
+  for(let element of todos){
+    if(element.completed===true){
+      let index=todos.indexOf(element);
+      todos.splice(index,1);
+    }
+  }
+  console.log(todos);
 }
 
 
