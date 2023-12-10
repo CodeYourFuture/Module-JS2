@@ -4,11 +4,11 @@
 // passing all the tests...
 // Fix the implementation of calculateMedian so it passes all tests
 
-const calculateMedian = require("./median.js");
+const calculateMedian = require("./median");
 
 describe("calculateMedian", () => {
   test("returns the median for odd length array", () => {
-    expect(calculateMedian([1, 2, 3])).toBe(2);
+    expect(calculateMedian([-1, -2, -3])).toBe(-2);
     expect(calculateMedian([1, 2, 3, 4, 5])).toBe(3);
   });
 

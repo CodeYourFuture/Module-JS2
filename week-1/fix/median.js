@@ -3,6 +3,7 @@
 //If you're in the week-1 directory, you can run npm test -- fix to run the tests in the fix directory
 
  function calculateMedian(list) {
+  
   const listsToSort= list.sort((a, b) => a - b);
   const middleIndex = Math.floor(listsToSort.length / 2);
   const elementsInMiddle = listsToSort.slice(middleIndex - 1, middleIndex + 1);
