@@ -1,5 +1,6 @@
 function dedupe(item) {
     let arr = [];
+    
     const mySet = new Set();
     for (const elements of item){
         if(!mySet.has(elements)){
@@ -7,6 +8,7 @@ function dedupe(item) {
       mySet.add(elements);
         }
     }
+
     return arr;
 }
 
