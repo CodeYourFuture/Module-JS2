@@ -9,5 +9,6 @@ function find(list, target) {
   }
   return -1;
 }
+console.log(find([3, 2, 6, 9], 2));
 
 module.exports = find;
