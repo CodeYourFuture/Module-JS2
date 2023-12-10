@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <form>
-      <div>
-        <input type="text" placeholder="New todo..." />
-      </div>
-      <div>
-        <button type="submit">Add Todo</button>
-        <button
-          type="button"
-          id="remove-all-completed"
-          class="btn btn-primary mb-3"
-        >
-          Remove all completed
-        </button>
-      </div>
-    </form>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <form id="todo-form">
+    <div>
+      <input type="text" id="todoInput" placeholder="New todo..." maxlength="20"/>
+      <input type="datetime-local" id="deadlineInput" />
+    </div>
+    <div>
+      <button type="button" id="addTodoBtn">Add Todo</button>
+      <button type="button" id="remove-all-completed" class="btn btn-primary mb-3">
+        Remove all completed
+      </button>
+    </div>
+  </form>
+  <div class="todo-list">
+    <h4 id="list">todo-list</h4>
+  <ul id="todo-list">
+    <!-- Todos will be added here -->
+  </ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

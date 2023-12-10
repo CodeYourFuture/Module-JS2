@@ -1,1 +1,129 @@
+:root {
+    --primary-color: #4caf50;
+    --danger-color: #d9534f;
+    --body-background-color: #f4f4f4;
+    --form-max-width: 400px;
+    --form-padding: 20px;
+    --form-border: 1px solid #ccc;
+    --form-border-radius: 8px;
+    --input-padding: 10px;
+    --button-padding: 10px 15px;
+    --last-child-margin-top: 10px;
+}
 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--body-background-color);
+}
+
+form {
+    max-width: var(--form-max-width);
+    margin: 20px auto;
+    padding: var(--form-padding);
+    border: var(--form-border);
+    border-radius: var(--form-border-radius);
+    background-color: #fff;
+
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: var(--input-padding);
+    margin-bottom: var(--input-padding);
+    box-sizing: border-box;
+}
+
+button {
+    padding: var(--button-padding);
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   }
+
+button:hover {
+    background-color: #45a049;
+    /* Darken the primary color on hover */
+}
+
+#remove-all-completed {
+    background-color: var(--danger-color);
+}
+
+#remove-all-completed:hover {
+    background-color: #c9302c;
+    /* Darken the danger color on hover */
+}
+
+div:last-child {
+    margin-top: var(--last-child-margin-top);
+}
+
+.todo-list{
+    
+    justify-items: center;
+    justify-content: center;
+    width: var(--form-max-width);
+        margin: 20px auto;
+        padding: var(--form-padding);
+        border: var(--form-border);
+        border-radius: var(--form-border-radius);
+        background-color: #fff;
+
+}
+
+#list{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    margin: -5px;
+}
+#todo-list {
+    list-style: none;
+}
+
+#deadlineInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 234px;   
+}
+
+
+.custom-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox+label::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.custom-checkbox:checked+label::before {
+    content: "✔";
+    font-size: 20px;
+    line-height: 2vh;
+    text-align: center;
+    color: green;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+label::before {
+    content: "\2714"; 
+}
