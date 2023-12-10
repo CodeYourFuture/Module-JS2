@@ -15,7 +15,6 @@ function max(maxlist) {
          }
     const maxString= Math.max.apply(null, arr);
     return maxString;
-    // return Math.min.apply(null, result);
   }
   
   module.exports = max;
