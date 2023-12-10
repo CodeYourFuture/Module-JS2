@@ -11,6 +11,7 @@ describe("calculateMedian", () => {
     expect(calculateMedian([-1, -2, -3])).toBe(-2);
     expect(calculateMedian([1, 2, 3, 4, 5])).toBe(3);
   });
+  
 
   test("returns the average of middle values for even length array", () => {
     expect(calculateMedian([1, 2, 3, 4])).toBe(2.5);
