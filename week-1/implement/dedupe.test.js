@@ -12,11 +12,13 @@ E.g. dedupe([5, 1, 1, 2, 3, 2, 5, 8]) target output: [5, 1, 2, 3, 8]
 
 // Acceptance Criteria:
 
+const dedupe = require("./dedupe");
+
 // Given an empty array
 // When passed to the dedupe function
 // Then it should return an empty array
 
-const dedupe = require("./dedupe");
+
 
 describe("dedupe", () => {
     test("given an empty array, it returns an empty array", () => {
@@ -38,4 +40,5 @@ test("given array with no duplicates, it return a copy of the original array", (
 test("given array with strings or numbers, it should remove the duplicate values", () => {
     expect(dedupe([3, 3, 6, "er", "er", 4])).toEqual([3, 6,"er", 4]);
   });
+  
 });
