@@ -11,11 +11,11 @@
 <body>
   <form id="todo-form">
     <div>
-      <input type="text" id="todoInput" placeholder="New todo..." />
+      <input type="text" id="todoInput" placeholder="New todo..." maxlength="20"/>
       <input type="datetime-local" id="deadlineInput" />
     </div>
     <div>
-      <button type="submit">Add Todo</button>
+      <button type="button" id="addTodoBtn">Add Todo</button>
       <button type="button" id="remove-all-completed" class="btn btn-primary mb-3">
         Remove all completed
       </button>

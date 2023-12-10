@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const removeAllCompletedButton = document.getElementById(
     "remove-all-completed"
   );
+  const addTodoBtn = document.getElementById("addTodoBtn");
 
   let todos = [
-    { task: "Wash the dishes", completed: false, deadline: "" },
-    { task: "Do the shopping", completed: false, deadline: "" },
+    // { task: "Wash the dishes", completed: false, deadline: "" },
+    // { task: "Do the shopping", completed: false, deadline: "" },
   ];
 
   function populateTodoList() {
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     todos.forEach((todo, index) => {
       const li = document.createElement("li");
-      const checkbox = document.createElement("input");
+      const checkbox = createCustomCheckbox();
       const label = document.createElement("label");
       const deadlineText = document.createElement("span");
       const deleteIcon = document.createElement("span");
@@ -100,8 +101,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Event listeners
   todoForm.addEventListener("submit", addNewTodo);
+  addTodoBtn.addEventListener("click", addNewTodo);
   removeAllCompletedButton.addEventListener("click", deleteAllCompletedTodos);
 
   // Initial population of the todo list
   populateTodoList();
 });
+function createCustomCheckbox() {
+  const checkbox = document.createElement("input");
+  checkbox.className = "custom-checkbox";
+  checkbox.type = "checkbox";
+
+  // Add the click event listener after creating the checkbox
+  checkbox.onclick = () => {
+    console.log("Checkbox checked before click:", checkbox.checked);
+    checkbox.checked = !checkbox.checked; // Toggle checkbox state
+    console.log("Checkbox checked after click:", checkbox.checked);
+
+    const li = checkbox.parentNode; // Get the list item containing the checkbox
+    const task = li.querySelector("label").textContent; // Get the task text
+  };
+
+  return checkbox;
+}
