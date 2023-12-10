@@ -8,6 +8,7 @@ function find(list, target) {
     }
   }
   return -1;
+  
 }
 
 module.exports = find;
