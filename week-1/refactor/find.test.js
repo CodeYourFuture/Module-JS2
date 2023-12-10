@@ -1,12 +1,13 @@
 // Refactored version of find should still pass the tests below:
 
-const find = require("./find.js");
+const find = require("./find");
 
 test("returns index when target is in array", () => {
   const currentOutput = find(["a", "b", "c", "d"], "c");
   const targetOutput = 2;
 
   expect(currentOutput).toBe(targetOutput);
+  
 });
 
 test("returns -1 when target not in array", () => {
