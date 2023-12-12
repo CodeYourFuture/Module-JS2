@@ -1,4 +1,19 @@
 const dedupe = require("./dedupe.js");
+
+
+describe("dedupe", () => {
+  test("Given an array with strings or number Then it should remove the duplicate values", () => {
+    expect(dedupe(['a','a','a','b','b','c'])).toStrictEqual(['a','b','c']);
+    expect(dedupe([5, 1, 1, 2, 3, 2, 5, 8])).toStrictEqual([5,1,2,3,8]);
+  });
+
+  test("Given an array with no dublicate should return the array", () => {
+    expect(dedupe([1, 2, 3, 4])).toStrictEqual([1, 2, 3, 4]);
+    expect(dedupe(["a", "b", "c"])).toStrictEqual(["a", "b", "c"]);
+  });
+
+});
+
 /*
 Dedupe Array
 

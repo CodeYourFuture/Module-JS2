@@ -9,5 +9,6 @@ function summation(arr) {
 
   return summ;
 }
-let arr = [4, "as", 1, 3, 7, "y"];
-console.log("Summation for given array is " + summation(arr));
+console.log("Summation for given array is " + summation([4, "as", 1, 3, 7, "y"]));
+
+module.exports = summation;

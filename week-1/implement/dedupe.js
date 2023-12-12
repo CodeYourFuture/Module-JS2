@@ -4,3 +4,7 @@ function dedupe(arr) {
 }
 
 console.log(dedupe(arr));
+
+
+module.exports = dedupe;
+
