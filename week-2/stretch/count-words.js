@@ -26,3 +26,31 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+function countWords(string) {
+  // first logic
+  /* const wordsArray = string
+    .split('')
+    .filter((word) => {
+      return word.search(/^[a-zA-Z0-9\s]+$/) != -1
+    })
+    .join('')
+    .toLowerCase()
+    .split(' ') */
+
+  // second logic (less support due match() method)
+  const wordsArray = string
+    .toLowerCase()
+    .match(/[a-zA-Z0-9]+/g) || []; /* return an words array with just alphanumerical characters, searching the entire string /g */
+
+  let result = wordsArray.reduce((object, word) => {
+    // !object.hasOwnProperty(word) ? object[word] = 1 : object[word]++;
+    object[word] = (object[word] || 0) + 1; /* ChatGPT suggestion */
+    return object;
+  }, {});
+
+  return result;
+}
+
+
+module.exports = countWords;
