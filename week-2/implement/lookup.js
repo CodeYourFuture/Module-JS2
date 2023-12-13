@@ -1,4 +1,4 @@
-// lookup.js
+
 function lookup(pairs) {
   const result = {};
 
