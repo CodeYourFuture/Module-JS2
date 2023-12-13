@@ -38,7 +38,7 @@ function countWords(string) {
     .toLowerCase()
     .split(' ') */
 
-  // second logic (less support due match() method)
+  // second logic
   const wordsArray = string
     .toLowerCase()
     .match(/[a-zA-Z0-9]+/g) || []; /* return an words array with just alphanumerical characters, searching the entire string /g */
