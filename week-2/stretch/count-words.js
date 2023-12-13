@@ -41,16 +41,24 @@ function countWords(string) {
   // second logic
   const wordsArray = string
     .toLowerCase()
-    .match(/[a-zA-Z0-9]+/g) || []; /* return an words array with just alphanumerical characters, searching the entire string /g */
+    .match(/[a-zA-Z0-9]+/g) || []; /* return an words array with just alphanumerical characters, searching the entire string */
 
-  let result = wordsArray.reduce((object, word) => {
+  const wordCount = wordsArray.reduce((object, word) => {
     // !object.hasOwnProperty(word) ? object[word] = 1 : object[word]++;
     object[word] = (object[word] || 0) + 1; /* ChatGPT suggestion */
     return object;
   }, {});
 
-  return result;
-}
+  const sortedWordCount = Object
+    .entries(wordCount) /* return an array with subarray for each property */
+    .sort((a, b) => b[1] - a[1]) /* sort the array in descending order */
+    .reduce(
+      (object, [word, count]) => {
+        object[word] = count;
+        return object
+      }, {}); /* return an object using the sorted array */
 
+  return sortedWordCount
+}
 
 module.exports = countWords;
