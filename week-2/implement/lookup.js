@@ -1,17 +1,16 @@
-function createLookup() {
-  // implementation here
+// lookup.js
+function lookup(pairs) {
+  const result = {};
+
+  for (let i = 0; i < pairs.length; i++) {
+    const pair = pairs[i];
+    const country = pair[0];
+    const currency = pair[1];
+    result[country] = currency;
+  }
+
+  return result;
 }
 
-/* ======= Test suite is provided below... =====
- */
+module.exports = lookup;
 
-test("converts a single pair of currency codes", () => {
-  expect(createLookup([["GB", "GBP"]])).toEqual({
-    GB: "GBP",
-  });
-  expect(createLookup([["DE", "EUR"]])).toEqual({
-    DE: "EUR",
-  });
-});
-
-test.todo("creates a country currency code lookup for multiple codes");
