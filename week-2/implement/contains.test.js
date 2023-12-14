@@ -1,4 +1,4 @@
-const contains = require("./contains.js");
+// const contains = require("./contains.js");
 
 /*
 Implement a function called contains that checks an object contains a
