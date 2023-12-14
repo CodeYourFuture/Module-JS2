@@ -27,8 +27,10 @@ function populateTodoList() {
      checkbox.addEventListener("change", function (event) {
        if (event.target.checked) {
          listItem.setAttribute("class", "strike");
+         item.completed = true;
        } else {
          listItem.setAttribute("class", "no-strike");
+         item.completed = false;
        }
      });
 
@@ -49,11 +51,16 @@ function populateTodoList() {
        populateTodoList(); //refresh the todo list
      });
 
+     function removeCompletedItems() {
+       if (item.completed === true) {
+        let completedItem = item.completed === true;
+         let index = todos.indexOf(completedItem);
+          todos.splice(index);
+         document.querySelector(".strike").remove();
+       }
+     }
      //remove all button
-     removeAllButton.addEventListener("click", () => {
-       document.querySelector(".strike").remove();
-      //  populateTodoList();
-     });
+     removeAllButton.addEventListener("click", removeCompletedItems);
 
      todoList.appendChild(listItem);
    }
