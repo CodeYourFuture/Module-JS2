@@ -5,7 +5,6 @@ const removeAllButton = document.getElementById("remove-all-completed");
 function addNewTodo() {
   let input = document.querySelector("input").value;
   todos[todos.length] = { task: input, completed: false };
-  console.log(todos);
   populateTodoList();
 }
 
@@ -15,7 +14,6 @@ function removeCompleted() {
     if (item.completed) {
       let index = todos.indexOf(item);
       indexesToExclude.push(index);
-      console.log(indexesToExclude);
       document.querySelector(".strike").remove();
     }
   }
