@@ -7,7 +7,6 @@ function createLookup(codePairs) {
   // implementation here
   const objResult  = {};
   for(const [countCode, currencyCode] of codePairs){
-   // const [countCode, currencyCode] = prop;
     objResult [countCode] = currencyCode;
   }
   const blockString = JSON.stringify(objResult, null, 2);
