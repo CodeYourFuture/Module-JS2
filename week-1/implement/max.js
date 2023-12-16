@@ -14,3 +14,5 @@ const array1 = [30, 50, 10, 40];
 const array2 = ["hey", 10, "hi", 60, 10];
 console.log(max(array1));
 console.log(max(array2));
+
+module.exports = max;

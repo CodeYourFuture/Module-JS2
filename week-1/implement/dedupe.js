@@ -5,7 +5,9 @@ function dedupe(list) {
       dedupeArray.push(letter);
     }
   }
-  return dedupeArray.length === 0 ? "Is an empty array" : dedupeArray;
+  return dedupeArray.length === 0
+    ? "given an empty array, it returns an empty array"
+    : dedupeArray;
 }
 
 console.log(dedupe([]));
