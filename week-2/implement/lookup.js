@@ -9,15 +9,13 @@ function createLookup(codePairs) {
   for(const [countCode, currencyCode] of codePairs){
     objResult [countCode] = currencyCode;
   }
-  const blockString = JSON.stringify(objResult, null, 2);
-  return blockString ;
+  return objResult;
 }
-const countryCurrencyPairs =  [['US', 'USD'], ['CA', 'CAD']];
-console.log(createLookup(countryCurrencyPairs))
 
 
 /* ======= Test suite is provided below... =====
  */
+
 module.exports = createLookup;
 
 //const lookup = require("./lookup")
