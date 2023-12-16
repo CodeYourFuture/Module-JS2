@@ -3,8 +3,7 @@
 // This program should log out the title, how many it serves and the ingredients.
 // Each ingredient should be logged on a new line
 // How can you fix it?
-// Ans: we can fixed it by using dote notation 'recipe.ingredients'. and for ingredient to logged each item on a new line , we have to use for-of loop to iterate each items of ingredient in a new line.
-
+// Ans: To access the 'ingredients' property of an object named 'recipe', we can use the dot notation 'recipe.ingredients'. In order to log each item of the 'ingredients' property on a new line, we need to use a for-of loop to iterate through each item of the 'ingredients' array and print it on a new line.
 const recipe = {
   title: "bruschetta",
   serves: 2,
