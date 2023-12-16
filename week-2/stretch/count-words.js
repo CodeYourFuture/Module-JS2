@@ -26,3 +26,17 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+function countWords(str){
+const  string= str.split(" ");
+const counts = {};
+    string.forEach(string => {          // .forEach method is iterate over each array element.It is similat to for (let i = 0; i < items.length; i++)}  
+      counts[string] = (counts[string] || 0) + 1
+    })
+    return counts;
+  }
+
+  const result =  countWords("you and me and you")
+  console.log(result);
+
+
