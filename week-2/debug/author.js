@@ -1,6 +1,6 @@
-// Predict and explain first...
+// a: Predict and explain first...
 //Ans: It caused an error because the object variable was not assigned a property value.
-// This program attempts to log out all the property values in the object.
+// b: This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
 // Ans: It caused an error because the object variable was not assigned a property value by default objects are not iterable in javaScript.
 // therefore, we need to iterate over the property values
