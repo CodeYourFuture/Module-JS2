@@ -12,6 +12,8 @@ function createLookup(codePairs) {
   return objResult;
 }
 
+const replace = createLookup([['US', 'USD'], ['CA', 'CAD']]);
+console.log(replace )
 
 /* ======= Test suite is provided below... =====
  */
