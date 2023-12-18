@@ -1,8 +1,8 @@
 // Predict and explain first...
-//Ans: You used for- of loop to iterate each properties of object and log out(value) which cause as error because it can iterate value.
+//Ans: It caused an error because the object variable was not assigned a property value.
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
-// Ans: by default objects are not iterable in java
+// Ans: It caused an error because the object variable was not assigned a property value by default objects are not iterable in javaScript.
 // therefore, we need to iterate over the property values
 // "Object.values(author))" - author is an object bring out the values
 
