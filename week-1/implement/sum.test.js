@@ -27,3 +27,27 @@ E.g. sum(['hey', 10, 'hi', 60, 10]), target output: 80 (ignore any non-numerical
 // Given an array containing non-number values
 // When passed to the sum function
 // Then it should ignore the non-numerical values and return the sum of the numerical elements
+
+const sumNumber = require("./sum.js");
+
+test("given an empty array, returns 0", () => {
+    expect(sumNumber([])).toBe(0);
+  });
+
+  test("given an array with one number, returns that number", () => {
+    expect(sumNumber([6])).toBe(6);
+    expect(sumNumber([10])).toBe(10);
+  });
+
+  test("an array with negative numbers, return the correct total sum", () => {
+    expect(sumNumber([-2, -5, -1, -3])).toBe(-11);
+    expect(sumNumber([-2, 4, 1.8, 0])).toBe(3.8);
+});
+
+test("an array with decimal numbers, return the correct total sum", () => {
+    expect(sumNumber([1.2, 0.4, 0.6, 0.4])).toBe(2.6);
+});
+
+test("ignore the non-numerical values, return the sum of numerical elements", () => {
+    expect(sumNumber([1, 'h', 2, 5, 'e'])).toBe(8);
+});
