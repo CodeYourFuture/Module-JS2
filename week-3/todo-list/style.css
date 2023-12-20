@@ -1,1 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
 
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin: 17px;
+    background-color: #fff;
+    color: black;
+    font-size: x-large;
+  }
+  
+  body {
+    background-image: url(https://chrisowen101.github.io/ToDoListSolution/assets/world.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto 100%;
+    /* padding: 10px; */
+  }
+
+  body img {
+    width: 30%;
+    height: 30%;
+  }
+
+  .container {
+    margin: 0rem 0rem 0rem 26rem;
+  }
+
+  .todo-app {
+    width: 100%;
+    max-width: 699px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 6px 4px 60px;
+    border-radius: 6px;
+  }
+
+  .todo-app h2 {
+
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+    font-size: 17px;
+    font-weight: 100;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 12px;
+  }
+  
+  input {
+    padding: 12px;
+    width: 50%;
+    border-radius: 3px;
+    border: solid 0.3px gray;
+  }
+
+
+  .add-btn {
+    border: none;
+    outline: none;
+    padding: 12px 30px;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+    margin: 12px;
+    border-radius: 3px;
+  }
+
+  .delete-btn {
+    padding: 12px;
+    border-radius: 3px;
+    border: none;
+    background-color: blue;
+    color: white;
+  }
+  
+  ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(https://cdn-icons-png.flaticon.com/128/10914/10914668.png);
+    background-size: cover;
+    background-position: center;
+    top: 13px;
+    left: 8px;
+  }
+
+  ul li.checked {
+    color: red;
+    text-decoration: line-through;
+  }
+
+  ul li.checked::before {
+    background-image: url(https://cdn-icons-png.flaticon.com/128/5610/5610944.png);
+  }
+  
+  ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: red;
+    line-height: 40px;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  ul li span:hover {
+    background: black;
+    border-radius: 50%;
+  }

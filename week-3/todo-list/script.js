@@ -1,25 +1,64 @@
-function populateTodoList(todos) {
-  let list = document.getElementById("todo-list");
-  // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
+
+function populateTodoList() {
+  if (inputBox.value === "") {
+    alert("You must write a task");
+  } else {
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listContainer.appendChild(li);
+    let span = document.createElement("span");
+    span.innerHTML = "🗑";
+    // cross code \u00d7
+    li.appendChild(span);
+  }
+  inputBox.value = "";
+  // after type in input it should  kep empty the input filed
+  saveData();
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-let todos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
+// writing test for click function
+listContainer.addEventListener(
+  "click",
+  function (e) {
+    if (e.target.tagName === "LI") {
+      //to check if the tag name of a target element is "LI" (list item)
+      e.target.classList.toggle("checked");
+      // we call the toggle function to toggle if the chec
+      saveData();
+      
+    } else if (e.target.tagName === "SPAN") {
+      e.target.parentElement.remove();
+      saveData();
+    }
+  },
+  false
+);
 
-populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
-function addNewTodo(event) {
-  // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-  event.preventDefault();
-  // Write your code here... and remember to reset the input field to be blank after creating a todo!
+// we save our data in the local storage through saveData function
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML);
 }
+// to display data we write localStorage.getItem("data")
 
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-function deleteAllCompletedTodos() {
-  // Write your code here...
+// display the data whenever we open or refresh the browser
+
+function showList() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+//showList();
+// calling the function
+
+function deleteList() {
+  // Get the reference to the ul element
+  var list = document.querySelector(".checked");
+
+  // Check if the ul element exists
+  if (list) {
+    // Remove the ul element from its parent
+    list.parentNode.removeChild(list);
+  } else {
+    console.log("UL element not found");
+  }
 }
