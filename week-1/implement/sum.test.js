@@ -49,5 +49,5 @@ test("an array with decimal numbers, return the correct total sum", () => {
 });
 
 test("ignore the non-numerical values, return the sum of numerical elements", () => {
-    expect(sumNumber([1, 'h', 2, 5, 'e'])).toBe(8);
+    expect(sumNumber([1, `h`, 2, 5, `e`])).toBe(8);
 });
