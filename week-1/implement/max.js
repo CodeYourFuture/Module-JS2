@@ -16,7 +16,4 @@ function findMaximumNum (list){
 }
 // console.log([-2,'@',6,3]);
 
-
-
-  
 module.exports = findMaximumNum;
