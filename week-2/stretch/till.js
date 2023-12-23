@@ -25,6 +25,8 @@ const totalAmount = totalTill(till);
 console.log(totalAmount);
 
 module.exports = totalTill;
+
+
 // a) What is the target output when totalTill is called with the till object
 //Ans: the target out when called the till object is 10
 //30

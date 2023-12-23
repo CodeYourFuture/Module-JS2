@@ -9,12 +9,8 @@ for (let key in obj) {
   return false;
 };
  
-
-//const invalidInput = {a: 6, b: 8};
-//console.log(contains({ obj: invalidInput,propName: 'b' })); // false
-
-//const object = {a: 3, c: 7}
-//console.log(contains({obj: object, propName: 'b'})) // false
+const object = {a: 3, c: 7}
+console.log(contains({obj: object, propName: 'b'})) // false
 
 
 

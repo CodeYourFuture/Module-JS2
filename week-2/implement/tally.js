@@ -8,8 +8,8 @@ function tally(items){
     })
     return counts;
 }
-//const listOfItems = tally(['a', 'a', 'a']);
-//console.log(listOfItems);
+const items = tally(['a', 'a', 'a']);
+console.log(items);
 
 module.exports = tally;
  

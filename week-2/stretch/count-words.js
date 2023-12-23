@@ -37,8 +37,8 @@ const counts = {};
     return counts ;
   }
 
-  //const result =  countWords("You! and Me and you")
- //console.log(result);
+  const result =  countWords("You! and Me and you")
+ console.log(result);
 
   module.exports = countWords;
 

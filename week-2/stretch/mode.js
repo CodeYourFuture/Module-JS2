@@ -37,9 +37,8 @@ function calculateMode(list) {
   const mode = highestFrequency(freqs);
   return mode;
 }
-// const result1 = [5, "6", 8, 8, null, 9, 9];
-// const result = calculateMode(result1)
-// const result2 = highestFrequency(result)
-// console.log(result2);
+const freqs = [5, "6", 8, 8, null, 9, 9];
+const result = calculateMode(freqs)
+console.log(result);
 module.exports = calculateMode;
 
