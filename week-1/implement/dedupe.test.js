@@ -11,6 +11,7 @@ E.g. dedupe([5, 1, 1, 2, 3, 2, 5, 8]) target output: [5, 1, 2, 3, 8]
 */
 
 // Acceptance Criteria:
+const calculateMedian = require("./dedupe.js");
 
 // Given an empty array
 // When passed to the dedupe function
