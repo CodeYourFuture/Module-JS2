@@ -1,5 +1,6 @@
 // Predict and explain first...
-
+// Should show all the values for the keys of the object, but it didn't work because needs the method
+// Object.values()
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
 
