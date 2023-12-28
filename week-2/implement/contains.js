@@ -1,13 +1,11 @@
 function contains(object, property) {
-  if (typeof object !== `object` || Array.isArray(obj)) {
+  if (typeof object !== `object` || Array.isArray(object)) {
     return false;
   }
   return object.hasOwnProperty(property);
 }
 
 module.exports = contains;
-
-const contains = require("./contains.js");
 
 // 'a' property exists in the object
 const obj1 = { a: 1, b: 2 };
