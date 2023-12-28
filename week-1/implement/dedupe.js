@@ -42,7 +42,7 @@ function dedupe(arr) {
   // Converting the incoming array into a Set data structure.
   // Set data structure stores only unique (non-repeating) values.
 
-  if (deduplicateArray.size === Array.length) {
+  if (deduplicateArray.size === arr.length) {
     return arr;
     //This compares the length of the original array with the size of the Set. If the size of the Set (deduplicateArray.size) is the same as the original array's length (arr.length), it means there are no repeating elements in the array.
   } else {

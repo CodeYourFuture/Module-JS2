@@ -28,8 +28,8 @@ describe("dedupe function", () => {
   });
 
   test("given an array with duplicates, it removes the duplicate values", () => {
-    const arrayWithDuplicates = [5, 1, 1, 2, 3, 2, 5, 8];
-    const expectedOutput = [5, 1, 2, 3, 8];
+    const arrayWithDuplicates = [4, 1, 1, 2, 8, 9, 3, 2, 4, 8];
+    const expectedOutput = [4, 1, 2, 8, 9, 3];
     expect(dedupe(arrayWithDuplicates)).toEqual(expectedOutput);
     //  This test checks if the function removes duplicate values and returns the expected output.
   });
@@ -38,6 +38,7 @@ describe("dedupe function", () => {
 // Given an empty array
 // When passed to the dedupe function
 // Then it should return an empty array
+test.todo("given an empty array, it returns an empty array");
 
 // Given an array with no duplicates
 // When passed to the dedupe function
