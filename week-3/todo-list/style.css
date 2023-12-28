@@ -1,3 +1,77 @@
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    
+}
+form{
+    margin-top: 40px;
+    background-color:white;
+
+}
 .completed {
     text-decoration: line-through;
+}
+
+ul>li{
+   list-style: none;
+   border-bottom: .3px solid  rgb(84, 5, 244);
+   padding-left: 2 rem;
+   position: relative;
+   text-align: center;
+   display: flex;
+   justify-content: space-between;
+
+   
+}
+
+.check-box{
+   width: 10px;
+   height: 10px;
+   border: .5px solid rgb(84, 5, 244);
+   border-radius:100% ;
+   display: inline-block;
+   position: absolute;
+   left: -0.9rem;
+   top: 0.4rem;
+   font-size: 0.7rem;
+   color:rgb(84, 5, 244);
+
+   
+}
+.{
+    
+}
+
+.fa,
+fa-trash{
+    width: 50px;
+    margin-left: 100px;
+}
+#input-todo{
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+    border-color: rgb(132, 0, 255);
+}
+#add-button{
+  border:0  rgb(132, 0, 255);
+  background-color: rgb(132, 0, 255);
+  border-radius: 3px;
+  color:white;
+  margin-left:0.5rem;
+}
+#remove-all-completed{
+  border:1px solid rgb(132, 0, 255);
+  background-color: white;
+  border-radius: 3px;
+  color:rgb(132, 0, 255);
+  margin-top: 0.5rem;
 }
