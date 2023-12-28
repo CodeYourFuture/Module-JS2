@@ -67,21 +67,29 @@ function addNewTodo(event) {
 
   // console.log(todos);
 }
-const deletAll = document.getElementById("remove-all-completed");
-deletAll.addEventListener(
-  "click",
-  deleteAllCompletedTodo
-); /*--> ino khodam neveshtam*/
 
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-  const incompletedTodos = todos.filter((item) => !item.completed);
-  // Update the todos array
+  const list = document.querySelectorAll(".completed");
 
-  // Repopulate the todo list
-  populateTodoList(incompletedTodos);
+  list.forEach((item) => {
+    item.remove();
+  });
+
+  for (let element of todos) {
+    if (element.completed === true) {
+      let index = todos.indexOf(element);
+      todos.splice(index, 1);
+    }
+  }
+  console.log(todos);
 }
+const removeAllCompletedButton = document.getElementById(
+  "remove-all-completed"
+);
+removeAllCompletedButton.addEventListener("click", deleteAllCompletedTodos);
+
 document.getElementById("date").min = new Date().toISOString().split("T")[0];
 // minTime.min = new date();
 function setDate() {}
