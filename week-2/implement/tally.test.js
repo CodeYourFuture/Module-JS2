@@ -29,3 +29,37 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+function tally(array) {
+  // Ensure input is an array
+  if (!Array.isArray(array)) {
+    throw new TypeError("Input must be an array");
+  }
+
+  // Handle empty array case
+  if (array.length === 0) {
+    return {};
+  }
+
+  // Initialize a counts object to store item frequencies
+  const counts = {};
+
+  // Iterate through the array, counting occurrences
+  for (const item of array) {
+    counts[item] = (counts[item] || 0) + 1; // Efficiently handle item existence
+  }
+
+  // Return the counts object
+  return counts;
+}
+
+// Test cases
+console.log(tally(['a']));              // Output: { a: 1 }
+console.log(tally(['a', 'a', 'a']));     // Output: { a: 3 }
+console.log(tally(['a', 'a', 'b', 'c'])); // Output: { a: 2, b: 1, c: 1 }
+
+// Invalid input handling
+try {
+  tally("hello");
+} catch (error) {
+  console.error(error.message); // Output: Input must be an array
+}
