@@ -30,3 +30,15 @@ const totalAmount = totalTill(till);
 // c) What does coin * quantity evaluate to inside the for...of loop?
 
 // d) Write a test for this function to check it works and then fix the implementation of totalTill
+function totalTill(till) {
+  let total = 0;
+
+  for (const [coinName, quantity] of Object.entries(till)) {
+    const coinValue = Number(coinName.replace("p", "")); // Parse coin value from string
+    total += coinValue * quantity;
+  }
+
+  return `£${total / 100}`;
+}
+//The original code assumed coin was a number, but it's a string.
+//The fix parses coinValue from the string (e.g., "50p" becomes 50) using Number and replace.

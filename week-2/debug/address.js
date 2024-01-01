@@ -27,7 +27,7 @@ const address = {
   postcode: "XYZ 123",
 };
 
-console.log(`My house number is ${address.houseNumber}`);
+console.log(`My house number is ${address[houseNumber]}`);
 
 
 //To access a property of an object, you should use dot notation (object.propertyName). 
