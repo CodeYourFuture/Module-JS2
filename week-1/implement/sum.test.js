@@ -30,7 +30,8 @@ test("This test checks if the only element of array displays the same number as 
 // Then it should still return the correct total sum
 test("This test checks the numbers in the array are being added correctly", function () {
     expect(sum([2, 4, 7, 3, 9])).toBe(25);
-    expect(sum([5, 9, 10, 20, 11])).toBe(55);
+    expect(sum([5, -9, 10, 20, -11])).toBe(15);
+    expect(sum([-2,-4,-6,-8])).toBe(-20)
 });
 
 
