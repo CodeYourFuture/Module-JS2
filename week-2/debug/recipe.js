@@ -10,6 +10,13 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
+// console.log(`${recipe.title} serves ${recipe.serves}
+//   ingredients:
+// ${recipe}`);
+// this does not work because recipe does not include .ingredients and to show ingredients in a new line you need a for loop 
+
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+  ingredients:`);
+  for(ingredients of recipe.ingredients){
+  console.log(ingredients)
+ }

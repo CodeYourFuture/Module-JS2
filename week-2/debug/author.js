@@ -11,6 +11,12 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
+// for (const value of author) { // this will not give correct answer because this is not how to access the values inside an object 
+//   console.log(value);
+// }
+
+// correct way would be to use object.values(author)
+
+for (const value of Object.values(author)) { 
   console.log(value);
 }

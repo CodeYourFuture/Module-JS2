@@ -12,4 +12,5 @@ const address = {
   postcode: "XYZ 123",
 };
 
-console.log(`My house number is ${address[0]}`);
+console.log(`My house number is ${address[0]}`); // this will not give the correct answer because there is a 0 on the array and instead it should be .housenumber 
+console.log(`My house number is ${address.houseNumber}`);
