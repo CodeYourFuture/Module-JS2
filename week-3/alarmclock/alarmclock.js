@@ -43,7 +43,7 @@ const stopAlarmButton = document.getElementById("stop");
 stopAlarmButton.addEventListener("click", stopAlarm);
 function stopAlarm() {
   pauseAlarm();
-  document.body.style.backgroundImage = "url(./images/background-2.jpg)";
+  document.body.style.backgroundImage = "url(./images/background-3.jpg)";
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "cover";
 }
