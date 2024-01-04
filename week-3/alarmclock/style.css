@@ -1,15 +1,95 @@
-.centre {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  background-image: url(./images/background-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#alarmSection {
+  margin: 10vw;
+  padding: 1.5vw 4vw;
+  border-radius: 2vw;
+  box-shadow: 2px 10px 20px 10px rgb(38, 55, 66);
+  cursor: pointer;
+  position: relative;
+}
+
+/* .centre {
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-#alarmSet {
-  margin: 20px;
-}
+} */
 
 h1 {
   text-align: center;
+  margin-top: 1.5vw;
+  margin-bottom: 4vw;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3vw;
+  color: #003049;
+  text-shadow: 1.8px 2px 2px rgb(33, 11, 11);
+}
+
+.alarm-set {
+  width: 25vw;
+  font-size: 1.5vw;
+  color: rgb(6, 49, 90);
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4vw;
+  transition: 0.3s;
+  margin-left: 0.4vw;
+}
+
+.alarm-set:focus{
+    border: 2.5px solid rgb(163, 159, 159);
+}
+
+#alarmControl {
+  border-radius: 0.2vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 4vw;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1vw;
+}
+
+#set,
+#pause,
+#stop {
+  padding: 1vw 2vw;
+  background-color: rgb(6, 49, 90);
+  color: white;
+  font-size: 1.2vw;
+  border: none;
+  border-radius: 2vw;
+  transition: 0.3s;
+  box-shadow: 2px 5px 10px 2px rgb(38, 55, 66);
+  cursor: pointer;
+}
+
+#set:hover,
+#pause:hover,
+#stop:hover {
+  background-color: aliceblue;
+  border: none;
+  border-radius: 0.5rem;
+  transform: scale(1.1);
+  color: rgb(6, 49, 90);
 }
