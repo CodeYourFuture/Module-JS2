@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Title here</title>
-  </head>
-  <body>
-    <div class="centre">
-      <h1 id="timeRemaining">Time Remaining: 00:00</h1>
-      <label for="alarmSet">Set time to:</label>
-      <input id="alarmSet" type="number" />
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Alarm clock app</title>
+</head>
+
+<body>
+  <section id="alarmSection">
+    <h1 id="timeRemaining">Time Remaining: 00:00</h1>
+    <label for="alarmSet" class="alarm-set">Set time to:</label>
+    <input id="alarmSet" class="alarm-set" type="number" />
+    <div id="alarmControl">
       <button id="set" type="button">Set Alarm</button>
+      <button id="pause" type="button">Pause Alarm</button>
       <button id="stop" type="button">Stop Alarm</button>
     </div>
     <script src="alarmclock.js"></script>
-  </body>
+  </section>
+</body>
+
 </html>
