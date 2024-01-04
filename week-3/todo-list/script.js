@@ -32,9 +32,16 @@ function populateTodoList(todos) {
 
     // Add a change event listener to the checkbox
     checkBox.addEventListener("click", () => {
-      listItem.classList.toggle("completed");
-      checkBox.classList.toggle("fa-solid");
-      checkBox.classList.toggle("fa-check");
+      if (item.completed === false) {
+        listItem.classList.toggle("completed");
+        checkBox.classList.toggle("fa-solid");
+        checkBox.classList.toggle("fa-check");
+      }
+
+      item.completed = !item.completed;
+      // if (item.completed === false) {
+      //   item.completed = true;
+      // }
     });
   });
 }
@@ -71,19 +78,25 @@ function addNewTodo(event) {
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-  const list = document.querySelectorAll(".completed");
-
-  list.forEach((item) => {
+  const deleteList = document.querySelectorAll(".completed");
+  deleteList.forEach((item) => {
+    // console.log(item);
+    // for (const todoElement of todos) {
+    //   if (item.textContent === todoElement.task) {
+    //     todoElement.completed = true;
+    //   }
+    // }
     item.remove();
   });
 
-  for (let element of todos) {
+  for (const element of todos) {
     if (element.completed === true) {
-      let index = todos.indexOf(element);
-      todos.splice(index, 1);
+      const elementIndex = todos.indexOf(element);
+      todos.splice(elementIndex, 1);
+      // console.log(element);
     }
   }
-  console.log(todos);
+  // console.log(todos);
 }
 const removeAllCompletedButton = document.getElementById(
   "remove-all-completed"
