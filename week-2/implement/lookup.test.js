@@ -1,3 +1,5 @@
+const createLookup = require('./lookup');
+
 /*
 
 Create a lookup object of key value pairs from an array of code pairs
@@ -29,3 +31,32 @@ It should return:
    'CA': 'CAD'
  }
 */
+
+test("converts a single pair of currency codes", () => {
+  expect(createLookup([["GB", "GBP"]])).toEqual({
+    GB: "GBP",
+  });
+  expect(createLookup([["DE", "EUR"]])).toEqual({
+    DE: "EUR",
+  });
+});
+
+test("converts multiple pairs of currency codes", () => {
+  expect(createLookup([["US", "USD"], ["CA", "CAD"], ["GB", "GBP"]])).toEqual({
+    US: "USD",
+    CA: "CAD",
+    GB: "GBP",
+  });
+})
+
+const isNotAnArrayError = "Input must be an array with ata least one country code and currency pair"
+
+test("throws an error if the input is not an array", () => {
+  expect(() => createLookup([])).toThrowError(new Error(isNotAnArrayError));
+  expect(() => createLookup([[]])).toThrowError(new Error(isNotAnArrayError));
+  expect(() => createLookup(123)).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup("string")).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup({})).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup(null)).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup(undefined)).toThrow(new Error(isNotAnArrayError));
+});

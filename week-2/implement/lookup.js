@@ -1,17 +1,16 @@
-function createLookup() {
-  // implementation here
+function createLookup(countryAndCurrencyArray) {
+  if (!Array.isArray(countryAndCurrencyArray) || countryAndCurrencyArray.length === 0 || countryAndCurrencyArray[0].length === 0) {
+    throw new Error("Input must be an array with ata least one country code and currency pair");
+  }
+  const countryAndCurrencyObject = countryAndCurrencyArray.reduce((obj, [countryCode, currency]) => {
+    obj[countryCode] = currency;
+    return obj;
+  }, {});
+  return countryAndCurrencyObject;
 }
 
 /* ======= Test suite is provided below... =====
  */
+// Test suite moved to test file
 
-test("converts a single pair of currency codes", () => {
-  expect(createLookup([["GB", "GBP"]])).toEqual({
-    GB: "GBP",
-  });
-  expect(createLookup([["DE", "EUR"]])).toEqual({
-    DE: "EUR",
-  });
-});
-
-test.todo("creates a country currency code lookup for multiple codes");
+module.exports = createLookup;
