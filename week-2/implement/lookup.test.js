@@ -48,3 +48,14 @@ test("converts multiple pairs of currency codes", () => {
     GB: "GBP",
   });
 })
+
+const isNotAnArrayError = "Input must be an array with ata least one country code and currency pair"
+
+test("throws an error if the input is not an array", () => {
+  expect(() => createLookup([])).toThrowError(new Error(isNotAnArrayError));
+  expect(() => createLookup(123)).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup("string")).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup({})).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup(null)).toThrow(new Error(isNotAnArrayError));
+  expect(() => createLookup(undefined)).toThrow(new Error(isNotAnArrayError));
+});
