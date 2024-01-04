@@ -29,3 +29,32 @@ It should return:
    'CA': 'CAD'
  }
 */
+
+const createLookup = require("./lookup");
+
+test("converts a single pair of currency codes", () => {
+  expect(createLookup([["GB", "GBP"]])).toEqual({
+    GB: "GBP",
+  });
+  expect(createLookup([["DE", "EUR"]])).toEqual({
+    DE: "EUR",
+  });
+});
+
+test("creates a country currency code lookup for multiple codes", () => {
+  const inputPairs = [
+    ["US", "USD"],
+    ["CA", "CAD"],
+    ["GB", "GBP"],
+    ["DE", "EUR"],
+  ];
+
+  const expectedLookup = {
+    US: "USD",
+    CA: "CAD",
+    GB: "GBP",
+    DE: "EUR",
+  };
+
+  expect(createLookup(inputPairs)).toEqual(expectedLookup);
+});

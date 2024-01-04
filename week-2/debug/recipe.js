@@ -10,6 +10,16 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
+// console.log(`${recipe.title} serves ${recipe.serves}
+//   ingredients:
+// ${recipe}`);
+
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+  ingredients:`);
+
+for (const ingredient of recipe.ingredients) {
+  console.log(ingredient);
+}
+
+// Before fixing the bug, the code would produce an error due to the incorrect usage of the ${recipe} interpolation in the console.log statement.
+// The code attempts to interpolate the entire recipe object, which is not appropriate for formatting and logging the ingredients.

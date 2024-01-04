@@ -11,6 +11,19 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
+// for (const value of author) {
+//   console.log(value);
+// }
+
+for (const value in author) {
   console.log(value);
 }
+
+for (const property in author) {
+  const value = author[property];
+  console.log(value);
+}
+
+// Before fixing the bug, it would throw a TypeError.
+// This is because the for...of loop is attempting to iterate over an object (author) directly,
+// but objects are not iterable in the same way as arrays. We should use for...in instead.
