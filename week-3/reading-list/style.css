@@ -10,6 +10,8 @@ html,
 body {
   font-family: "Source Sans Pro", -apple-system, system-ui, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .site-footer {
@@ -24,7 +26,7 @@ body {
 
 .navbar-brand > img {
   max-height: 40px;
-  width: auto;
+  width: 35vw;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -120,11 +122,28 @@ body {
   margin-bottom: 0;
 }
 
+#content{
+  width: 80%;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+#reading-list{
+  gap: 1.5rem;
+  border: none;
+  font-weight: 500;
+}
+
+img{
+  height: 38vh;
+  width: 12.5vw;
+}
+
 .red {
   background-color: red;
 }
 
-.green{
+.green {
   background-color: green;
 }
 
