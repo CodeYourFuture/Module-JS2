@@ -53,6 +53,7 @@ const isNotAnArrayError = "Input must be an array with ata least one country cod
 
 test("throws an error if the input is not an array", () => {
   expect(() => createLookup([])).toThrowError(new Error(isNotAnArrayError));
+  expect(() => createLookup([[]])).toThrowError(new Error(isNotAnArrayError));
   expect(() => createLookup(123)).toThrow(new Error(isNotAnArrayError));
   expect(() => createLookup("string")).toThrow(new Error(isNotAnArrayError));
   expect(() => createLookup({})).toThrow(new Error(isNotAnArrayError));

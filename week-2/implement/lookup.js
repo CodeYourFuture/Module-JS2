@@ -1,5 +1,5 @@
 function createLookup(countryAndCurrencyArray) {
-  if (!Array.isArray(countryAndCurrencyArray) || countryAndCurrencyArray.length === 0) {
+  if (!Array.isArray(countryAndCurrencyArray) || countryAndCurrencyArray.length === 0 || countryAndCurrencyArray[0].length === 0) {
     throw new Error("Input must be an array with ata least one country code and currency pair");
   }
   const countryAndCurrencyObject = countryAndCurrencyArray.reduce((obj, [countryCode, currency]) => {
