@@ -17,10 +17,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* .carousel-section{
-  height: 100%;
-} */
-
 h2 {
   margin-bottom: 3rem;
   text-align: center;
@@ -68,7 +64,6 @@ h2 {
   border: none;
   border-radius: 0.5rem;
   transition: 0.3s;
-  /* box-shadow: 8px 8px 20px rgb(15, 32, 24); */
   box-shadow: 10px 10px 30px rgb(15, 32, 24);
   cursor: pointer;
 }
