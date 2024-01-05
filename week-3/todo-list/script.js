@@ -1,25 +1,68 @@
-function populateTodoList(todos) {
-  let list = document.getElementById("todo-list");
-  // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
+let todos = [];
+const todoList = document.getElementById("todo-list");
+const removeAllButton = document.getElementById("remove-all-completed");
+
+function addNewTodo() {
+  let input = document.querySelector("input").value;
+  todos[todos.length] = { task: input, completed: false };
+  populateTodoList();
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-let todos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
-
-populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
-function addNewTodo(event) {
-  // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-  event.preventDefault();
-  // Write your code here... and remember to reset the input field to be blank after creating a todo!
+function removeCompleted() {
+  const indexesToExclude = [];
+  for (const item of todos) {
+    if (item.completed) {
+      let index = todos.indexOf(item);
+      indexesToExclude.push(index);
+      document.querySelector(".strike").remove();
+    }
+  }
+  todos = todos.filter((value, index) => !indexesToExclude.includes(index));
 }
 
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-function deleteAllCompletedTodos() {
-  // Write your code here...
+function populateTodoList() {
+  let input = document.querySelector("input").value;
+  todoList.innerHTML = "";
+  for (const item of todos) {
+    let listItem = document.createElement("li");
+    let checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("id", todos.indexOf(item));
+    let listItemLabel = document.createElement("label");
+    listItemLabel.setAttribute("for", todos.indexOf(item));
+    listItemLabel.innerText = item.task;
+    listItem.appendChild(listItemLabel);
+    listItem.appendChild(checkbox);
+
+    // Check box line strike
+    checkbox.addEventListener("change", function (event) {
+      if (event.target.checked) {
+        listItem.setAttribute("class", "strike");
+        item.completed = true;
+      } else {
+        listItem.setAttribute("class", "no-strike");
+        item.completed = false;
+      }
+    });
+
+    //  //trash button
+    let trashSpan = document.createElement("span");
+    listItem.appendChild(trashSpan);
+    let trashIcon = document.createElement("i");
+    trashIcon.setAttribute("class", "fa fa-trash-o");
+    trashSpan.appendChild(trashIcon);
+
+    //  //delete task event
+
+    trashSpan.addEventListener("click", () => {
+      let index = todos.indexOf(item);
+      if (index > -1) {
+        todos.splice(index, 1);
+      }
+      populateTodoList(); //refresh the todo list
+    });
+    todoList.appendChild(listItem);
+  }
 }
+
+// populateTodoList(); // populate Todo List when the page loads

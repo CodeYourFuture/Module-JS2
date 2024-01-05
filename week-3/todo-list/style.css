@@ -1,1 +1,73 @@
+body {
+  background-image: url("https://cdn11.bigcommerce.com/s-l2xlls5oyw/images/stencil/500x500/products/26481/33610/8f7f9b1c-c03d-4ac0-9269-531fe241c6f1__48808.1661169644.jpg?c=1");
+}
 
+h1 {
+  text-align: center;
+  margin-top: 6rem;
+  color: rgb(73, 6, 197);
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+#todo-list li {
+  list-style: none;
+}
+
+form {
+  border: 3px rgb(73, 6, 197) double;
+  text-align: center;
+  margin-left: 25rem;
+  margin-right: 25rem;
+  margin-top: 3rem;
+  padding-bottom: 20rem;
+  padding-top: 5rem;
+  font-size: larger;
+  background-color: white;
+}
+
+#text-box {
+  width: 20rem;
+  height: 2rem;
+}
+
+button {
+  padding: 0.5rem;
+  width: 10rem;
+  margin-top: 1rem;
+  background-color:  rgb(73, 6, 197);
+  color: white;
+  border-color:  rgb(73, 6, 197);
+  font-size: small;
+}
+
+button:hover {
+  background-color: white;
+  color:  red;
+  font-size: medium;
+  border-color: white;
+}
+
+h3 {
+  font-style: italic;
+}
+
+
+
+.fa .fa-trash-o {
+  font-size: 48px;
+  color: red;
+}
+
+li {
+  font-size: large;
+  margin-bottom: 1rem;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.no-strike{
+    text-decoration: none;
+}
