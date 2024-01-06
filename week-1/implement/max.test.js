@@ -9,7 +9,10 @@ E.g. max(['hey', 10, 'hi', 60, 10]), target output: 60 (sum ignores any non-nume
 // Given an empty array
 // When passed to the max function
 // Then it should return -Infinity
-test.todo("given an empty array, returns -Infinity");
+const max = require("./max.js");
+test("given an empty array, returns -Infinity", () => {
+  expect(max([])).toBe(-Infinity);
+});
 
 // Given an array with one number
 // When passed to the max function
