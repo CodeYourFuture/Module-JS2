@@ -26,3 +26,35 @@ test.todo("given an empty array, returns -Infinity");
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+
+const max = require("./max.js");
+
+test("given an empty array, returns -Infinity", () => {
+  const input = [];
+  const result = max(input);
+  expect(result).toBe(-Infinity);
+});
+
+test("given an array with one number, returns that number", () => {
+  const input = [42];
+  const result = max(input);
+  expect(result).toBe(42);
+});
+
+test("given an array with both positive and negative numbers, returns the largest number overall", () => {
+  const input = [30, -10, 50, 20, -5];
+  const result = max(input);
+  expect(result).toBe(50);
+});
+
+test("given an array with decimal numbers, returns the largest decimal number", () => {
+  const input = [1.5, 2.3, 0.8, 4.7];
+  const result = max(input);
+  expect(result).toBe(4.7);
+});
+
+test("given an array with non-number values, returns the max and ignores non-numeric values", () => {
+  const input = [10, 'hello', 20, 'world', '42', true, false];
+  const result = max(input);
+  expect(result).toBe(20);
+});

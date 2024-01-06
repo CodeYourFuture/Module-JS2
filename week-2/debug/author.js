@@ -4,13 +4,15 @@
 // But it isn't working. Explain why first and then fix the problem
 
 const author = {
-  firstName: "Zadie",
-  lastName: "Smith",
-  occupation: "writer",
-  age: 40,
-  alive: true,
-};
-
-for (const value of author) {
-  console.log(value);
-}
+    firstName: "Zadie",
+    lastName: "Smith",
+    occupation: "writer",
+    age: 40,
+    alive: true,
+  };
+  
+  for (const key in author) {
+    const value = author[key];
+    console.log(value);
+  }
+  

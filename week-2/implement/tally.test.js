@@ -1,31 +1,48 @@
-/**
- * tally array
- *
- * In this task, you'll need to implement a function called tally
- * that will take a list of items and count the frequency of each item
- * in an array
- *
- * For example:
- *
- * tally(['a']), target output: { a: 1 }
- * tally(['a','a','a']), target output: { a: 3 }
- * tally(['a','a','b','c']), target output: { a : 2, b: 1, c: 1 }
- */
+const tally = require("./tally.js");
 
-// Acceptance criteria:
+test("returns an object with the count for a single item", () => {
+  const items = ['a'];
+  const expectedCount = { 'a': 1 };
 
-// Given a function called tally
-// When passed an array of items
-// Then it should return an object containing the count for each unique item
+  const result = tally(items);
 
-// Given an empty array
-// When passed to tally
-// Then it should return an empty object
+  expect(result).toEqual(expectedCount);
+});
 
-// Given an array with duplicate items
-// When passed to tally
-// Then it should return counts for each unique item
+test("returns an object with counts for duplicate items", () => {
+  const items = ['a', 'a', 'a'];
+  const expectedCount = { 'a': 3 };
 
-// Given an invalid input like a string
-// When passed to tally
-// Then it should throw an error
+  const result = tally(items);
+
+  expect(result).toEqual(expectedCount);
+});
+
+test("returns an object with counts for multiple unique items", () => {
+  const items = ['a', 'a', 'b', 'c'];
+  const expectedCount = { 'a': 2, 'b': 1, 'c': 1 };
+
+  const result = tally(items);
+
+  expect(result).toEqual(expectedCount);
+});
+
+test("returns an empty object for an empty array", () => {
+  const items = [];
+  const expectedCount = {};
+
+  const result = tally(items);
+
+  expect(result).toEqual(expectedCount);
+});
+
+test("throws an error for invalid input (string)", () => {
+  const items = 'invalid input';
+
+  expect(() => {
+    tally(items);
+  }).toThrowError("Input must be an array");
+});
+
+
+  

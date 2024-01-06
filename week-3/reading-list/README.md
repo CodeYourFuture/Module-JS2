@@ -32,3 +32,4 @@ Try and outline your strategy / approach for solving this problem before you get
 The end result should look something like this
 
 ![reading-list](reading-list.png)
+

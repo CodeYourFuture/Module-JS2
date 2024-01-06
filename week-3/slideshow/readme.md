@@ -26,6 +26,7 @@ Level 1 challenge screenshot example.
 
 # Level 2 Challenge
 
+
 Make auto-forward and auto-back buttons to _automatically_ move in that direction through the list of images.
 
 Here's a screenshot example from a completed level 2 challenge.

@@ -29,3 +29,17 @@ It should return:
    'CA': 'CAD'
  }
 */
+
+const createLookup = require("./createLookup.js");
+
+test("returns an object with country codes as keys and currency codes as values", () => {
+  const countryCurrencyPairs = [['US', 'USD'], ['CA', 'CAD']];
+  const expectedLookup = {
+    'US': 'USD',
+    'CA': 'CAD'
+  };
+
+  const result = createLookup(countryCurrencyPairs);
+
+  expect(result).toEqual(expectedLookup);
+});
