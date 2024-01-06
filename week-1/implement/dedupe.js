@@ -12,4 +12,4 @@ function dedupe(list) {
 
 module.exports = dedupe;
 
-console.log(dedupe([]));
+console.log(dedupe(["a", "a", "a", "b", "b", "c"]));
