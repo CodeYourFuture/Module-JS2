@@ -9,26 +9,60 @@
 // into smaller functions using the stages above
 
 function calculateMode(list) {
-  // track frequency of each value
-  let freqs = new Map();
-
-  for (let num of list) {
-    if (typeof num !== "number") continue;
-
-    freqs.set(num, (freqs.get(num) || 0) + 1);
-  }
-
-  // Find the value with the highest frequency
-  let maxFreq = 0;
-  let mode;
-  for (let [num, freq] of freqs) {
-    if (freq > maxFreq) {
-      mode = num;
-      maxFreq = freq;
+    // track frequency of each value
+    let freqs = new Map();
+  
+    for (let num of list) {
+      if (typeof num !== "number") continue;
+  
+      freqs.set(num, (freqs.get(num) || 0) + 1);
     }
+  
+    // Find the value with the highest frequency
+    let maxFreq = 0;
+    let mode;
+    for (let [num, freq] of freqs) {
+      if (freq > maxFreq) {
+        mode = num;
+        maxFreq = freq;
+      }
+    }
+  
+    return maxFreq === 0 ? NaN : mode;
   }
-
-  return maxFreq === 0 ? NaN : mode;
-}
-
-module.exports = calculateMode;
+  
+  module.exports = calculateMode;
+  function trackFrequency(list) {
+    let freqs = new Map();
+  
+    for (let num of list) {
+      if (typeof num !== "number") continue;
+  
+      freqs.set(num, (freqs.get(num) || 0) + 1);
+    }
+  
+    return freqs;
+  }
+  
+  function findMode(freqs) {
+    let maxFreq = 0;
+    let mode;
+  
+    for (let [num, freq] of freqs) {
+      if (freq > maxFreq) {
+        mode = num;
+        maxFreq = freq;
+      }
+    }
+  
+    return maxFreq === 0 ? NaN : mode;
+  }
+  
+  function calculateMode(list) {
+    const freqs = trackFrequency(list);
+    const mode = findMode(freqs);
+    return mode;
+  }
+  
+  module.exports = calculateMode;
+  

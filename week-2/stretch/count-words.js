@@ -26,3 +26,29 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(inputString) {
+    // Remove punctuation and convert the string to lowercase
+    const cleanedString = inputString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '').toLowerCase();
+  
+    // Split the cleaned string into words
+    const words = cleanedString.split(' ');
+  
+    const wordCount = {};
+  
+    // Iterate through the words and count their occurrences
+    for (const word of words) {
+      if (wordCount[word]) {
+        wordCount[word]++;
+      } else {
+        wordCount[word] = 1;
+      }
+    }
+  
+    return wordCount;
+  }
+  
+  // Example usage:
+  const inputString = "you and me and you";
+  const result = countWords(inputString);
+  console.log(result); // { you: 2, and: 2, me: 1 }
+  
