@@ -10,4 +10,6 @@ function dedupe(list) {
     : dedupeArray;
 }
 
+module.exports = dedupe;
+
 console.log(dedupe([]));
