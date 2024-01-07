@@ -14,9 +14,9 @@ module.exports = calculateMedian; */
 // function should be to calculate the median value of a given list, but the calculateMedian function isn't actually computing the median of the list. Instead of finding the median element of the list, this function is extracting the element from the middle index of the list and returning it.
 
 function calculateMedian(list) {
-  const middleIndex = (list.length - 1) / 2;
+  const middleIndex = Math.floor((list.length - 1) / 2);
   if (list.length % 2 === 0) {
-    return (list[Math.floor(middleIndex)] + list[Math.ceil(middleIndex)]) / 2;
+    return (list[middleIndex] + list[middleIndex + 1]) / 2;
   } else {
     return list[middleIndex];
   }

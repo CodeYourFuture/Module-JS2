@@ -1,7 +1,4 @@
 function findMax(arr) {
-  if (arr.length === 0) {
-    return -Infinity; //
-  }
   let maxNum = -Infinity;
 
   /*for(let i= 0; i < arr.length; i++) {
@@ -10,7 +7,7 @@ function findMax(arr) {
     // for loop iterates through each element of an array and iterates arr.length times: It visits all elements of the array. same with for (let num of arr) {}  */
 
   for (let num of arr) {
-    if (typeof num === `number` && !isNaN(num) && num > maxNum) {
+    if (!isNaN(num) && num > maxNum) {
       maxNum = num;
     }
   }
