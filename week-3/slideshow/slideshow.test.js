@@ -146,8 +146,10 @@ describe("Level 2 challenge", () => {
     const image = page.window.document.querySelector("#carousel-img");
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
     const autoBackBtn = page.window.document.querySelector("#auto-backward");
-    const interval = 2000;
-
+    const intervalInput = page.window.document.querySelector("#delay-time__input");
+    intervalInput.value = 2;
+    const interval = page.window.document.querySelector("#delay-time__input").value * 1000;
+    
     expect(image).toHaveAttribute("src", images[0]);
 
     userEvent.click(autoForwardBtn);
@@ -173,7 +175,9 @@ describe("Level 2 challenge", () => {
     const image = page.window.document.querySelector("#carousel-img");
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
     const autoBackBtn = page.window.document.querySelector("#auto-backward");
-    const interval = 2000;
+    const intervalInput = page.window.document.querySelector("#delay-time__input");
+    intervalInput.value = 2;
+    const interval = page.window.document.querySelector("#delay-time__input").value * 1000;
 
     expect(image).toHaveAttribute("src", images[0]);
 
@@ -201,7 +205,9 @@ describe("Level 2 challenge", () => {
     const autoForwardBtn = page.window.document.querySelector("#auto-forward");
     const autoBackBtn = page.window.document.querySelector("#auto-backward");
     const stopBtn = page.window.document.querySelector("#stop");
-    const interval = 2000;
+    const intervalInput = page.window.document.querySelector("#delay-time__input");
+    intervalInput.value = 2;
+    const interval = page.window.document.querySelector("#delay-time__input").value * 1000;
 
     expect(image).toHaveAttribute("src", images[0]);
 

@@ -5,8 +5,9 @@ const images = [
 ];
 
 const imageContainer = document.getElementById("carousel-img");
-const forwardButton = document.getElementById("forward-btn");
-const backwardButton = document.getElementById("backward-btn");
+
+const delayTime = document.querySelector('#delay-time__input')
+
 
 let actualImg = 0;
 let intervalId
@@ -37,12 +38,14 @@ function handleForward() {
 
 function handleAutoBackward() {
     disableAllButtons()
-    intervalId = setInterval(handleBackward, 2000);
+    intervalId = setInterval(handleBackward, delayTime.value * 1000);
+
 }
 
 function handleAutoForward() {
     disableAllButtons()
-    intervalId = setInterval(handleForward, 2000);
+    intervalId = setInterval(handleForward, delayTime.value * 1000);
+
 }
 
 function handleStop() {
@@ -57,4 +60,5 @@ window.onload = function () {
     document.querySelector('#auto-backward').addEventListener('click', handleAutoBackward);
     document.querySelector('#auto-forward').addEventListener('click', handleAutoForward);
     document.querySelector('#stop').addEventListener('click', handleStop);
+    document.querySelector('#delay-time__input').defaultValue = 1;
 }
