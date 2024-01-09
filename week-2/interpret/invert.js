@@ -11,17 +11,21 @@ function invert(obj) {
 
   for (const [key, value] of Object.entries(obj)) {
     invertedObj.key = value;
+    //console.log(invertedObj);
   }
 
   return invertedObj;
 }
+console.log(invert({ a: 1 }));
+console.log(invert({ a: 1, b: 2 }));
 
 // a) What is the current return value when invert is called with { a : 1 }
-
+//{ key: 1}
 // b) What is the current return value when invert is called with { a: 1, b: 2 }
-
+//{key: 2}
 // c) What is the target return value when invert is called with {a : 1, b: 2}
 
 // c) What does Object.entries return? Why is it needed in this program?
+// return the value of keys in the object, is important to extract the key-value pairs of an object into an array.
 
 // d) Explain why the current return value is different from the target output
