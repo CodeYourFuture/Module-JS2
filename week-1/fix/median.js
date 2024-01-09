@@ -9,3 +9,6 @@ function calculateMedian(list) {
 }
 
 module.exports = calculateMedian;
+
+console.log(calculateMedian(["2", "3", "1"
+]));
