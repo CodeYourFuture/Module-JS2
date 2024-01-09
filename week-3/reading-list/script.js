@@ -17,7 +17,7 @@ function loadBooks() {
     let htmlImg = document.createElement("img");
 
     booksList.appendChild(htmlLi);
-    htmlLi.setAttribute("alreadyRead", alreadyRead)
+    htmlLi.setAttribute("class", alreadyRead ? "green" : "red")
 
     htmlLi.appendChild(htmlPTitle);
     htmlPTitle.textContent = title;
