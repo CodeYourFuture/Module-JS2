@@ -5,7 +5,9 @@ body {
   display: grid;
   grid-template-areas:
     "img img"
-    "back forward";
+    "back forward"
+    "autoback autoforward"
+    "stop stop";
   place-items: center;
   gap: 0.5rem;
 }
@@ -36,6 +38,12 @@ button:hover {
   background-color: #002281;
 }
 
+button:disabled {
+  opacity: 0.5;
+  background-color: initial;
+  cursor: not-allowed;
+}
+
 #backward-btn {
   grid-area: back;
   justify-self: right;
@@ -44,4 +52,23 @@ button:hover {
 #forward-btn {
   grid-area: forward;
   justify-self: left;
+}
+
+#auto-backward {
+  grid-area: autoback;
+  justify-self: right;
+}
+
+#auto-forward {
+  grid-area: autoforward;
+  justify-self: left; 
+}
+
+#stop {
+  grid-area: stop;
+  justify-self: center;
+}
+
+#stop:hover {
+  background-color: #810000;
 }
