@@ -1,1 +1,36 @@
-/** Write your CSS in here **/
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  margin-top: 5em;
+}
+
+#quote {
+  font-size: 1.5em;
+  color: #555;
+}
+
+#author {
+  font-style: italic;
+  color: #777;
+}
+
+button {
+  font-size: 1em;
+  padding: 8px 16px;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #1967d2;
+}
