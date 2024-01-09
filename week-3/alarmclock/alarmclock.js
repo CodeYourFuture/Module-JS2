@@ -5,13 +5,15 @@ function setAlarm() {
 
   timeRemaining.innerHTML = `Time Remaining: ${convertSecondsToMinutes(alarmTimeRemaining)}`;
 
+  // Start the interval
   let intervalAlarmId = setInterval(() => {
     alarmTimeRemaining--;
     timeRemaining.innerHTML = `Time Remaining: ${convertSecondsToMinutes(alarmTimeRemaining)}`;
   }, 1000);
 
+  // Stop the interval when it reaches 0 and plays the alarm
   setTimeout(() => {
-    clearInterval(intervalAlarmId); // Stop the interval
+    clearInterval(intervalAlarmId); 
     playAlarm()
   }, alarmTimeInput * 1000);
 }
