@@ -1,14 +1,12 @@
 function setAlarm() {
   let timeRemaining = document.querySelector('#timeRemaining')
-  let alarmTimeInput = document.querySelector('#alarmSet').value
+  let alarmTimeInput = document.querySelector('#alarmSet').valueAsNumber
   let alarmTimeRemaining = alarmTimeInput
 
   timeRemaining.innerHTML = `Time Remaining: ${convertSecondsToMinutes(alarmTimeRemaining)}`;
-  console.log(convertSecondsToMinutes(alarmTimeRemaining));
 
   let intervalAlarmId = setInterval(() => {
     alarmTimeRemaining--;
-    console.log(convertSecondsToMinutes(alarmTimeRemaining));
     timeRemaining.innerHTML = `Time Remaining: ${convertSecondsToMinutes(alarmTimeRemaining)}`;
   }, 1000);
 

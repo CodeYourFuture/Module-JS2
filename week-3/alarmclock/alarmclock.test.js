@@ -66,7 +66,7 @@ test("should update the heading while counting down", () => {
   button.click();
 
   for (let i = 18; i > 0; i--) {
-    jest.runOnlyPendingTimers();
+    jest.advanceTimersByTime(1000);
     const seconds = `${i}`.padStart(2, "0");
     expect(heading).toHaveTextContent(`Time Remaining: 00:${seconds}`);
   }
