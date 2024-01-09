@@ -1,6 +1,6 @@
 function setAlarm() {
   let timeRemaining = document.querySelector('#timeRemaining')
-  let alarmTimeInput = document.querySelector('#alarmSet').valueAsNumber
+  let alarmTimeInput = document.querySelector('#alarmSet').value
   let alarmTimeRemaining = alarmTimeInput
 
   timeRemaining.innerHTML = `Time Remaining: ${convertSecondsToMinutes(alarmTimeRemaining)}`;
@@ -14,7 +14,8 @@ function setAlarm() {
   // Stop the interval when it reaches 0 and plays the alarm
   setTimeout(() => {
     clearInterval(intervalAlarmId); 
-    playAlarm()
+    playAlarm();
+    document.body.style.backgroundColor = "red";
   }, alarmTimeInput * 1000);
 }
 
@@ -45,6 +46,8 @@ function playAlarm() {
 
 function pauseAlarm() {
   audio.pause();
+  document.body.style.backgroundColor = "initial";
+  document.querySelector('#alarmSet').value = "";
 }
 
 window.onload = setup;
