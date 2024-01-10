@@ -5,9 +5,15 @@ return li[Math.floor(Math.random() * li.length)];
 }
 
 
-// function pickFromArray(choices) {
-//   return choices[Math.floor(Math.random() * choices.length)];
-// }
+function bookTitle(event){
+  const name = document.getElementById("titleName");
+  const reading = readingList(books);
+  name.innerText = reading.title;
+  const getAuthor = document.getElementById("author");
+  getAuthor.innerText = reading.author;
+  };
+
+
 const books = [
   {
     title: "The Design of Everyday Things",
@@ -30,19 +36,3 @@ const books = [
   },
 ];
 
-function bookTitle(){
-const nameTitle = document.getElementById("titleName");
-const currentTitle = readingList(books)
-// console.log(currentTitle)
-nameTitle.innerText= currentTitle.title; 
-const getAuthor = document.getElementById("author");
-getAuthor.innerText = currentTitle.author;
-};
-
-
-// function getQoutes(evet){
-//   const quoteParagahraph = document.getElementById("quote");
-//   const currentQuote = pickFromArray(quotes);
-//   quoteParagahraph.innerText = currentQuote.quote;
-//   const quoteParagahraph2 = document.getElementById("author");
-//   quoteParagahraph2.innerText = currentQuote.author;
