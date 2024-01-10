@@ -4,22 +4,23 @@ function populateTodoList(todos) {
     let htmlLi = document.createElement("li");
     htmlLi.className = "todo-item";
 
-    let checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-    checkBox.checked = element.completed;
+    let checkBox = document.createElement("i");
+    checkBox.className = `fa-solid fa-check ${element.completed ? 'checked' : 'unchecked'}`
+    checkBox.addEventListener("click", function (e) {
+      handleChecked(e.target.parentElement)
+    });
     htmlLi.appendChild(checkBox);
 
-    let deleteTask = document.createElement("button");
-    deleteTask.textContent = "Delete";
-    deleteTask.className = "delete-button";
-    deleteTask.addEventListener("click", function(e) {
+    let deleteTask = document.createElement("i");
+    deleteTask.className = "delete-button fa-solid fa-trash";
+    deleteTask.addEventListener("click", function (e) {
       handleDeleteTask(e.target.parentElement)
     });
     htmlLi.appendChild(deleteTask);
 
     let taskText = document.createElement("p");
     taskText.textContent = element.task;
-    taskText.className = "task-text";
+    taskText.className = `task-text ${element.completed ? 'checked' : 'unchecked'}`;
     htmlLi.appendChild(taskText);
     list.appendChild(htmlLi);
   });
@@ -42,4 +43,21 @@ function deleteAllCompletedTodos() {
 function handleDeleteTask(task) {
   let list = document.getElementById("todo-list");
   list.removeChild(task);
+}
+
+function handleChecked(task) {
+  let list = document.getElementById("todo-list");
+  let taskText = task.childNodes[2].innerText
+
+  todos.forEach(todo => {
+    if (todo.task === taskText) {
+      todo.completed = !todo.completed;
+      return todo;
+    }
+  });
+  console.log(todos);
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+  populateTodoList(todos)
 }
