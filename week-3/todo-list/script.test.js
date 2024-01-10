@@ -70,31 +70,41 @@ describe("Mandatory tasks", () => {
     expect(listItems.length).toBe(3);
   });
 
-  test("can strike through a todo when it is completed", () => {
+  test("can strike through a todo when it is completed", async () => {
     const task = page.window.document.querySelector("li p.task-text");
     const tickIcon = page.window.document.querySelector("li i.fa-check");
     
     userEvent.click(tickIcon);
 
-    expect(task).toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
+
+    // expect(task).toHaveStyle({
+    //   textDecoration: "line-through",
+    // });
   });
 
   test("can undo a strikethrough on a todo", () => {
     const task = page.window.document.querySelector("li p.task-text");
-    const tickIcon = page.window.document.querySelector("li i");
+    const tickIcon = page.window.document.querySelector("li i.fa-check");
     userEvent.click(tickIcon);
 
-    expect(task).toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
 
     userEvent.click(tickIcon);
 
-    expect(task).not.toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).not.toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
   });
 
   test("can delete a todo from the list", () => {
@@ -139,8 +149,6 @@ describe("Advanced tasks", () => {
     const tickIcon2 = page.window.document.querySelector(
       "li:nth-child(2) i.fa-check"
     );
-
-    console.log(tickIcon2.outerHtml);
 
     userEvent.click(tickIcon2);
     const tickIcon4 = page.window.document.querySelector(

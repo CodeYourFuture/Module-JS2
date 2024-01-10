@@ -6,16 +6,12 @@ function populateTodoList(todos) {
 
     let checkBox = document.createElement("i");
     checkBox.className = `fa-solid fa-check ${element.completed ? 'checked' : ''}`
-    checkBox.addEventListener("click", function (e) {
-      handleChecked(e.target.parentElement)
-    });
+    checkBox.setAttribute("onclick", "handleChecked(this.parentElement)")
     htmlLi.appendChild(checkBox);
 
     let deleteTask = document.createElement("i");
     deleteTask.className = "delete-button fa-solid fa-trash";
-    deleteTask.addEventListener("click", function (e) {
-      handleDeleteTask(e.target.parentElement)
-    });
+    deleteTask.setAttribute("onclick", "handleDeleteTask(this.parentElement)")
     htmlLi.appendChild(deleteTask);
 
     let taskText = document.createElement("p");
