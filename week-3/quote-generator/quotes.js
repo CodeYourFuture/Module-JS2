@@ -504,3 +504,19 @@ generateQuote();
 document.getElementById("new-quote").addEventListener("click", function () {
     generateQuote();
 });
+
+
+let intervalId;
+
+document.getElementById("auto-play").addEventListener('change', function() {
+  if (this.checked) {
+   intervalId = window.setInterval(function () {
+     generateQuote();
+   }, 5000);
+   document.getElementById("auto-play-label").innerText = "auto-play:ON";
+  } else {
+    clearInterval(intervalId); 
+    document.getElementById("auto-play-label").innerText = "auto-play:OFF";
+  }
+});
+

@@ -34,3 +34,17 @@ button {
     padding: 1.2rem;
     font-size: 1.5rem;
 }
+
+.switch {
+    align-self: end;
+    font-size: 2rem;
+    padding-top: 1.5rem;
+}
+
+#auto-play-label {
+    font-size: 2rem;
+}
+
+.switch input {
+    transform: scale(1.5);
+}
