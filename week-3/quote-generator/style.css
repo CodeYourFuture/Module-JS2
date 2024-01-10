@@ -1,1 +1,36 @@
 /** Write your CSS in here **/
+
+:root {
+    --yellow:rgb(244, 168, 60);
+
+}
+
+body {
+    background-color:var(--yellow);
+}
+
+.main {
+    background-color: white;
+    color: var(--yellow);
+    font-size: 3rem;
+    margin: 7rem;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    font-size: 7rem;
+}
+.quote-line{
+    display: flex;
+}
+#author, #new-quote {
+    align-self: end;
+}
+button {
+    background-color: var(--yellow);
+    border: none;
+    color: white;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+}
