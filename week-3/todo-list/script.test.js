@@ -71,28 +71,28 @@ describe("Mandatory tasks", () => {
   });
 
   test("can strike through a todo when it is completed", () => {
-    const li = page.window.document.querySelector("li");
-    const tickIcon = page.window.document.querySelector("li i");
-
+    const task = page.window.document.querySelector("li p.task-text");
+    const tickIcon = page.window.document.querySelector("li i.fa-check");
+    
     userEvent.click(tickIcon);
 
-    expect(li).toHaveStyle({
+    expect(task).toHaveStyle({
       textDecoration: "line-through",
     });
   });
 
   test("can undo a strikethrough on a todo", () => {
-    const li = page.window.document.querySelector("li");
+    const task = page.window.document.querySelector("li p.task-text");
     const tickIcon = page.window.document.querySelector("li i");
     userEvent.click(tickIcon);
 
-    expect(li).toHaveStyle({
+    expect(task).toHaveStyle({
       textDecoration: "line-through",
     });
 
     userEvent.click(tickIcon);
 
-    expect(li).not.toHaveStyle({
+    expect(task).not.toHaveStyle({
       textDecoration: "line-through",
     });
   });
@@ -100,7 +100,7 @@ describe("Mandatory tasks", () => {
   test("can delete a todo from the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
     const button = page.window.document.querySelector("#submit");
-    const input = page.window.document.querySelector("#todoInput");
+    const input = page.window.document.querySelector("#taskInput");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
@@ -123,7 +123,7 @@ describe("Advanced tasks", () => {
   test("can remove all completed todos", () => {
     const todoList = page.window.document.querySelector("#todo-list");
     const button = page.window.document.querySelector("#submit");
-    const input = page.window.document.querySelector("#todoInput");
+    const input = page.window.document.querySelector("#taskInput");
 
     userEvent.type(input, "Do CYF coursework");
     userEvent.click(button);
@@ -139,6 +139,9 @@ describe("Advanced tasks", () => {
     const tickIcon2 = page.window.document.querySelector(
       "li:nth-child(2) i.fa-check"
     );
+
+    console.log(tickIcon2.outerHtml);
+
     userEvent.click(tickIcon2);
     const tickIcon4 = page.window.document.querySelector(
       "li:nth-child(4) i.fa-check"
