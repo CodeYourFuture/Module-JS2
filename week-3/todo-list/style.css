@@ -67,34 +67,34 @@ i {
   cursor: pointer;
 }
 
-i.fa-check.checked {
-  color: #f4f4f4;
-  background-color: #4caf50;
-  padding: 0.2rem;
-  transition: all 0.3s ease-in-out;
-}
-
-i.fa-check.unchecked {
+.fa-check {
   color: #f4f4f4;
   background-color: #ccc;
   padding: 0.2rem;
   transition: all 0.3s ease-in-out;
 }
 
-i.fa-check:hover {
+.fa-check.checked {
+  color: #f4f4f4;
+  background-color: #4caf50;
+  padding: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-check:hover {
   color: #f4f4f4;
   background-color: #4caf50;
   transform: scale(1.2);
   transition: all 0.3s ease-in-out;
 }
 
-i.fa-trash {
+.fa-trash {
   color: #c20000;
   padding: 0.2rem;
   transition: all 0.3s ease-in-out;
 }
 
-i.fa-trash:hover {
+.fa-trash:hover {
   color: #f4f4f4;
   background-color: #c20000;
   padding: 0.2rem;
@@ -102,6 +102,12 @@ i.fa-trash:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.todo-item p {
+.task-text {
   margin: 0;
+  font-size: 1.2rem;
+}
+
+.task-text.checked {
+  text-decoration: line-through;
+  color: #ccc;
 }

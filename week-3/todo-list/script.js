@@ -5,7 +5,7 @@ function populateTodoList(todos) {
     htmlLi.className = "todo-item";
 
     let checkBox = document.createElement("i");
-    checkBox.className = `fa-solid fa-check ${element.completed ? 'checked' : 'unchecked'}`
+    checkBox.className = `fa-solid fa-check ${element.completed ? 'checked' : ''}`
     checkBox.addEventListener("click", function (e) {
       handleChecked(e.target.parentElement)
     });
@@ -20,7 +20,7 @@ function populateTodoList(todos) {
 
     let taskText = document.createElement("p");
     taskText.textContent = element.task;
-    taskText.className = `task-text ${element.completed ? 'checked' : 'unchecked'}`;
+    taskText.className = `task-text ${element.completed ? 'checked' : ''}`;
     htmlLi.appendChild(taskText);
     list.appendChild(htmlLi);
   });
@@ -42,6 +42,8 @@ function deleteAllCompletedTodos() {
 
 function handleDeleteTask(task) {
   let list = document.getElementById("todo-list");
+  let taskText = task.childNodes[2].innerText
+  todos = todos.filter(todo => todo.task !== taskText);
   list.removeChild(task);
 }
 
