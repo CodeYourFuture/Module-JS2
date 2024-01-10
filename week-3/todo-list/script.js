@@ -26,6 +26,8 @@ function populateTodoList(todos) {
   });
 }
 
+document.getElementById("remove-all-completed").addEventListener("click", deleteAllCompletedTodos);
+
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
@@ -35,20 +37,30 @@ populateTodoList(todos);
 
 function addNewTodo(event) {
   event.preventDefault();
+  let taskDescription = event.srcElement[0].value;
+  let task = { task: taskDescription, completed: false };
+  todos.push(task);
+  cleanToDoListHtml()
+  populateTodoList(todos);
+  event.srcElement[0].value = "";
 }
 
 function deleteAllCompletedTodos() {
+  todos = todos.filter(todo => !todo.completed);
+
+  cleanToDoListHtml()
+  populateTodoList(todos);
 }
 
 function handleDeleteTask(task) {
-  let list = document.getElementById("todo-list");
   let taskText = task.childNodes[2].innerText
   todos = todos.filter(todo => todo.task !== taskText);
-  list.removeChild(task);
+
+  cleanToDoListHtml()
+  populateTodoList(todos);
 }
 
 function handleChecked(task) {
-  let list = document.getElementById("todo-list");
   let taskText = task.childNodes[2].innerText
 
   todos.forEach(todo => {
@@ -57,9 +69,14 @@ function handleChecked(task) {
       return todo;
     }
   });
-  console.log(todos);
+
+  cleanToDoListHtml()
+  populateTodoList(todos);
+}
+
+function cleanToDoListHtml() {
+  let list = document.getElementById("todo-list");
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  populateTodoList(todos)
 }

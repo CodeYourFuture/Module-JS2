@@ -45,6 +45,14 @@ button:hover {
   transition: all 0.3s ease;
 }
 
+#remove-all-completed {
+  background-color: #dc3545;
+}
+
+#remove-all-completed:hover {
+  background-color: #911622;
+}
+
 #todo-list {
   display: grid;
   grid-template-columns: 1fr;

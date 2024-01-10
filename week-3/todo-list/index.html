@@ -8,9 +8,9 @@
   </head>
   <body>
     <h1>Todo List</h1>
-    <form>
+    <form onsubmit="return addNewTodo(event)">
       <div>
-        <input type="text" placeholder="New todo..." />
+        <input id="taskInput" type="text" placeholder="New todo..." />
       </div>
       <div>
         <button type="submit">Add Todo</button>
