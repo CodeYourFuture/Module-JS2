@@ -1,1 +1,25 @@
 /** Write your CSS in here **/
+body{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 95%);
+    text-align: center;
+}
+
+h1{
+    color: hsl(0, 0%, 30%);
+    font-size: 3em;
+    text-align: center;
+ }
+
+ {
+    align-items: center; 
+}
+
+
+button{
+    background-color: hsl(120, 100%, 40%);
+    color: white;
+    font-size: 1.5em;
+    border: none;
+     border-radius: 5px;
+}
