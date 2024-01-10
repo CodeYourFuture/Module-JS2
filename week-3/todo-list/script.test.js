@@ -58,7 +58,7 @@ describe("Mandatory tasks", () => {
   test("can add a new todo to the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
     const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+    const input = page.window.document.querySelector("#taskInput");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
