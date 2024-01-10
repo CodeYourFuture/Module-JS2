@@ -57,7 +57,7 @@ describe("Mandatory tasks", () => {
 
   test("can add a new todo to the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
+    const button = page.window.document.querySelector("#submit");
     const input = page.window.document.querySelector("#taskInput");
     const todoText = "Do CYF coursework";
 
@@ -99,7 +99,7 @@ describe("Mandatory tasks", () => {
 
   test("can delete a todo from the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
+    const button = page.window.document.querySelector("#submit");
     const input = page.window.document.querySelector("#todoInput");
     const todoText = "Do CYF coursework";
 
@@ -122,7 +122,7 @@ describe("Mandatory tasks", () => {
 describe("Advanced tasks", () => {
   test("can remove all completed todos", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
+    const button = page.window.document.querySelector("#submit");
     const input = page.window.document.querySelector("#todoInput");
 
     userEvent.type(input, "Do CYF coursework");

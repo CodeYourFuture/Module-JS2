@@ -37,12 +37,12 @@ populateTodoList(todos);
 
 function addNewTodo(event) {
   event.preventDefault();
-  let taskDescription = event.srcElement[0].value;
+  let taskDescription = document.getElementById("taskInput").value;
   let task = { task: taskDescription, completed: false };
   todos.push(task);
   cleanToDoListHtml()
   populateTodoList(todos);
-  event.srcElement[0].value = "";
+  document.getElementById("taskInput").value.value = "";
 }
 
 function deleteAllCompletedTodos() {

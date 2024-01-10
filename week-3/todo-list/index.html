@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Todo List</h1>
-    <form onsubmit="return addNewTodo(event)">
-      <div>
-        <input id="taskInput" type="text" placeholder="New todo..." />
-      </div>
-      <div>
-        <button type="submit" class="btn">Add Todo</button>
-        <button
-          type="button"
-          id="remove-all-completed"
-          class="btn btn-primary mb-3"
-        >
-          Remove all completed
-        </button>
-      </div>
-    </form>
-    <ul id="todo-list">
-      
-    </ul>
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/bd683bb7da.js" crossorigin="anonymous"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>Todo List</h1>
+  <form>
+    <div>
+      <input id="taskInput" type="text" placeholder="New todo..." />
+    </div>
+    <div>
+      <button type="submit" id="submit" onclick="addNewTodo(event)">Add Todo</button>
+      <button type="button" id="remove-all-completed" class="btn btn-primary mb-3">
+        Remove all completed
+      </button>
+    </div>
+  </form>
+  <ul id="todo-list">
+
+  </ul>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/bd683bb7da.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
