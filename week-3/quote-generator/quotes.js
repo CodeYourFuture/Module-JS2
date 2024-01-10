@@ -498,12 +498,10 @@ const currentQuote = pickFromArray(quotes);
 quoteParagahraph.innerText = currentQuote.quote;
 const quoteParagahraph2 = document.getElementById("author");
 quoteParagahraph2.innerText = currentQuote.author;
-// console.log(currentQuote)
-// const button = document.getElementById("new-quote");
+
 }
 getQoutes();
-//when the used click the button. 
-//display the quote
+
 const button = document.getElementById("new-quote");
 function eventhandler(event){
   console.log("click");
@@ -514,13 +512,13 @@ button.addEventListener("click", getQoutes);
 const checkBox = document.getElementById("check-box");
 
 setInterval(() => {
-  // console.log("love");
+  
   if(checkBox.checked){
     console.log("On", getQoutes());
   }else{
     console.log("Off")
   }
-  // getQoutes();
+
 }, 5000);
 
 const autoPlay = document.getElementById("auto-play-text")
@@ -533,49 +531,3 @@ checkBox.addEventListener("change",function(){
 });
 
 
-// button.addEventListener("click", function (event) {
-//   event.preventDefault();
-//   const pElement = document.createComment("p")
-//   pElement.innerText = "hey";
-//   document.body.appendChild(pElement);
-// })
-
-
-// const pElement = document.createComment("p")
-// pElement.innerText = checkBox ;
-// pElement.body.appendChild(pElement);  
-
-// checkBox.addEventListener("change",function(event){
-//   if(event.target.checked){
-//     console.log("On");
-//   }else{
-//     console.log("Off")
-//   }
-// });
-
-// const autoPlayCheckbox = document.getElementById("check-box");
-//     const autoPlayStatusElement = document.getElementById("auto-play-status");
-
-//     autoPlayCheckbox.addEventListener('change', function() {
-//       if (autoPlayCheckbox.checked) {
-//         // When auto-play is turned on
-//         autoPlayStatusElement.textContent = "Auto-play: ON";
-
-//         // Additional logic for auto-play behavior (e.g., changing quotes every 60 seconds)
-//         // setInterval(function() {
-//         //   // Call a function to get and display a new quote here
-//         //   console.log("New quote displayed!");
-//         // }, 60000); // 60 seconds interval
-//       } else {
-//         // When auto-play is turned off
-//         autoPlayStatusElement.textContent = "";
-//         // Additional logic to stop auto-play (e.g., clearing intervals)
-//         // clearInterval(/* Your interval ID here */);
-//       }
-//     });
-// let quoteObject = pickFromArray(quotes);
-// console.log(quoteObject);
-// quote.addEventListener("click", );
-
-// call pickFromArray with the quotes array to check you get a random quote
-// console.log(pickFromArray(quotes));
