@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleAutoPlay() {
     if (autoplayToggle.checked) {
-      autoPlayInterval = setInterval(displayQuote, 10000);
+      autoPlayInterval = setInterval(displayQuote, 5000);
       autoplayStatus.textContent = "Auto-play: ON";
     } else {
       clearInterval(autoPlayInterval);
