@@ -1,1 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  height: 100vh;
+  justify-content: center;
+  background: url(./assets/world.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+}
+
+form {
+  height: 80vh;
+  width: 40vw;
+  background: rgb(244, 238, 230);
+  border: 4px solid grey;
+  border-radius: 0.6vw;
+  box-shadow: 5px 7px rgb(11, 13, 15);
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  gap: 1vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+h3 {
+  background-color: #003049;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 1vw 10vw;
+  font-size: 1.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.todo-task {
+  display: grid;
+  gap: 1.5vw;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  font-size: 1vw;
+  padding: 0.4vw 2vw;
+}
+
+::placeholder {
+  font-style: italic;
+  font-size: 1vw;
+}
+
+.date-todo {
+  font-size: 1.3vw;
+  color: #003049;
+  font-weight: 500;
+}
+
+#todo-date {
+  font-style: italic;
+  color: #003049;
+  padding: 0.2vw 1.2vw;
+}
+
+span {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-end;
+  gap: 6vw;
+}
+.completed {
+  text-decoration: line-through;
+}
+
+.list-of-items {
+  display: flex;
+  margin-top: 2vw;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+li {
+  border-bottom: 1px solid #c9cfd3;
+}
+
+.todo-check {
+  position: relative;
+  display: flex;
+  order: -1;
+}
+
+.todo-check,
+.fa {
+  cursor: pointer;
+  height: 1.5vw;
+  width: 1.5vw;
+}
+
+.addBtn {
+  display: flex;
+  gap: 6vw;
+  margin-top: 0.5vw;
+}
+
+#submit-btn,
+#remove-all-completed {
+  font-size: 1.2vw;
+  cursor: pointer;
+  height: 5vh;
+  background-color: #003049;
+  border: none;
+  border-radius: 0.2vw;
+  color: white;
+  padding-inline: 1vw;
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+}
+
+.btn-primary:hover,
+.submit-button:hover {
+  background-color: rgb(126, 40, 9);
+}
