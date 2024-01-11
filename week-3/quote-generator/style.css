@@ -1,26 +1,53 @@
 /** Write your CSS in here **/
 
-body{
-    font-family: Arial, sans-serif;
-    background-color: hsl(0, 0%, 95%);
-    text-align: center;
+/** Write your CSS in here **/
+
+
+:root {
+    --yellow:rgb(244, 168, 60);
+
 }
 
-h1{
-    color: hsl(120, 100%, 40%);
-    font-size: 3em;
-    text-align: center;
- }
-
- {
-    align-items: center; 
+body {
+    background-color:var(--yellow);
 }
 
-
-button{
-    background-color: hsl(120, 100%, 40%);
-    color: white;
-    font-size: 1.5em;
+.main {
+    background-color: white;
+    color: var(--yellow);
+    font-size: 2rem;
+    margin: 7rem;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+span{
+    font-size: 6rem;
+}
+.quote-line{
+    display: flex;
+}
+#author, #new-quote,  #autoplay-status {
+    align-self: end;
+}
+button {
+    background-color: var(--yellow);
     border: none;
-     border-radius: 5px;
+    color: white;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.switch {
+    align-self: end;
+    font-size: 2rem;
+    padding-top: 1.5rem;
+}
+
+#autoplay-toggle {
+    font-size: 2rem;
+}
+
+.switch input {
+    transform: scale(1.5);
 }
