@@ -1,28 +1,41 @@
 
-var myVar;
-var timer = document.getElementById("alarmSet");
-var countDownSeconds;
+let myVar;                                           // decleared three variable
+let timer; 
+let countDownSeconds;
 
-startTime();
 function startTime() {
+  timer = document.getElementById("alarmSet");                 
+  countDownSeconds = parseInt(timer.value); 
   myVar = setInterval(start, 1000);
-  document.getElementById("timerr").innerHTML = timer.value;
-  countDownSeconds = timer.value;
+  document.getElementById("timerr").innerHTML = formatTime(countDownSeconds);
 }
+
 function start() {
   countDownSeconds--;
-  document.getElementById("timerr").innerHTML = countDownSeconds;
-  if (countDownSeconds == -1) {
+  document.getElementById("timerr").innerHTML = formatTime(countDownSeconds);
+  if (countDownSeconds === 0) {
     stop();
-    document.getElementById("timerr").innerHTML = "0";
-  } else if (countDownSeconds === 0) {
     playAlarm();
   }
 }
+
 function stop() {
   clearInterval(myVar);
 }
-// function setAlarm() { }
+
+// function formate "mm:ss"
+function formatTime(seconds) { 
+  const minutes = Math.floor(seconds / 60);                // to convert seconds into minutes like, 120/60 = 2 minutes;
+  const remainingSeconds = seconds % 60;                    // here what if we have remainder like, 75 / 60 =  1 minutes and 15 seconds
+  return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;                 //this mean when second is < 10 add 0 like, minutes is 3 and second is 5 so the result in string "3:05"                       
+}
+
+
+function setAlarm() {
+  stop();                                             // to stop countdown 
+  startTime();                                         // to start count down when the new valu input
+}
+
 
 
 
