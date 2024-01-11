@@ -1,3 +1,45 @@
+
+document.addEventListener("DOMContentLoaded", function () {
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+  const newQuoteButton = document.getElementById("new-quote");
+  const autoplayToggle = document.getElementById("autoplay-toggle");
+  const autoplayStatus = document.getElementById("autoplay-status");
+
+  let autoPlayInterval;
+
+  function pickFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function displayQuote() {
+    const randomQuote = pickFromArray(quotes);
+    quoteElement.textContent = randomQuote.quote;
+    authorElement.textContent = randomQuote.author;
+  }
+
+  function toggleAutoPlay() {
+    if (autoplayToggle.checked) {
+      autoPlayInterval = setInterval(displayQuote, 5000);
+      autoplayStatus.textContent = "Auto-play: ON";
+    } else {
+      clearInterval(autoPlayInterval);
+      autoplayStatus.textContent = "Auto-play: OFF";
+    }
+  }
+
+  // Initial display on page load
+  displayQuote();
+
+  // Button click event
+  newQuoteButton.addEventListener("click", displayQuote);
+
+  // Autoplay toggle event
+  autoplayToggle.addEventListener("change", toggleAutoPlay);
+});
+
+//.................................................................
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
