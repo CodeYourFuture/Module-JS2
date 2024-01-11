@@ -1,4 +1,4 @@
-/ for the tests, do not modify this array of books
+// for the tests, do not modify this array of books
 
 
 
