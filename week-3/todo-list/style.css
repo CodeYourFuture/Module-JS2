@@ -1,1 +1,148 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://chrisowen101.github.io/ToDoListSolution/assets/world.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin: 17px;
+  background-color: #7C9521;
+  color: #1D1D1B;
+  font-size: x-large;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  margin: 100px auto 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
+  padding: 1rem;
+  margin-bottom: 0;
+  background-color: #f7941d;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  font-weight: 600;
+  color: #1D1D1B;
+  border-radius: 8px 8px 0 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+input {
+  padding: 12px;
+  width: 70%;
+  border-radius: 4px;
+  border: 1px solid #7C9521;
+  font-size: 16px;
+}
+
+.add-btn,
+.delete-btn {
+  padding: 12px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-btn {
+  background-color: #00A6D4;
+  border: none;
+}
+
+.delete-btn {
+  background-color: #f7941d;
+  border: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  font-size: 18px;
+  padding: 12px 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+ul li::before {
+  content: "";
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(https://cdn-icons-png.flaticon.com/128/10914/10914668.png);
+  background-size: cover;
+  background-position: center;
+  margin-right: 12px;
+}
+
+ul li.checked {
+  color: #888;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(https://cdn-icons-png.flaticon.com/128/5610/5610944.png);
+}
+
+ul li span {
+  margin-left: auto;
+  font-size: 24px;
+  color: #f7941d;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+ul li:hover {
+  background-color: #f5f5f5;
+}
+
+ul li span:hover {
+  color: #1D1D1B;
+}
+
