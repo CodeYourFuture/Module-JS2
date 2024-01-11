@@ -30,11 +30,11 @@ button {
   border-radius: 5px;
 }
 
-/
+/* Additional styles  */
 body {
   background-color: #f7941d; 
 }
 
 .container-title {
-  color: #00A6D4; /
+  color: #00A6D4; 
 }
