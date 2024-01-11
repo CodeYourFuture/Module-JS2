@@ -1,6 +1,6 @@
 
-let myVar;                                           // decleared three variable
-let timer; 
+let myVar;                                           // decleared three variable the purpose is shown inside "function startTime()".
+let timer;                   
 let countDownSeconds;
 
 function startTime() {
