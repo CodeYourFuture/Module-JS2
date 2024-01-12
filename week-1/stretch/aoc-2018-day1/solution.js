@@ -18,10 +18,9 @@ let currentFrequency = 0;
 
 //  Process each frequency change to calculate the resultant frequency
 for (let i = 0; i < frequencyChanges.length; i++) {
-  const change = frequencyChanges[i];
+  currentFrequency = frequencyChanges[i];
 
   // Update the current frequency by applying the frequency change
-  currentFrequency += change;
 }
 
 // Log the resulting frequency to the console
