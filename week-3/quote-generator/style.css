@@ -1,1 +1,63 @@
 /** Write your CSS in here **/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-color: #f08f3a;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 2% auto 0 auto;
+  color: #ffffff;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.quoteSquare {
+  height: 280px;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #ffffff;
+}
+
+#quote {
+  font-size: 2rem;
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #f08f3a;
+}
+
+#author {
+  font-size: 1.6rem;
+  margin-top: 3%;
+  text-align: right;
+  margin-right: 5%;
+  color: #f08f3a;
+}
+
+button {
+  height: 50px;
+  width: 120px;
+  font-size: 1.2rem;
+  margin-right: 5%;
+  margin-top: 3%;
+  color: #ffffff;
+  background-color: #f08f3a;
+}
+
+.btn {
+  display: flex;
+  justify-content: right;
+}
