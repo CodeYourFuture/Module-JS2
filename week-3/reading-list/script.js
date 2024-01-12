@@ -26,7 +26,7 @@ function renderBooks() {
   const container = document.body;
 
   books.forEach((book) => {
-    const bookElement = document.createElement("div");
+    const bookElement = document.createElement("li");
     bookElement.classList.add("book", book.alreadyRead ? "read" : "not-read");
 
     const titleElement = document.createElement("h3");
