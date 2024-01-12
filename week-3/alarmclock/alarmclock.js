@@ -23,6 +23,11 @@ function start() {
 function stop() {
   clearInterval(myVar);
 }
+<<<<<<< HEAD
+=======
+
+//function setAlarm() { }
+>>>>>>> 070220da50bda0ad47d79beb7df9a4ed4957e288
 
 // DO NOT EDIT BELOW HERE
 

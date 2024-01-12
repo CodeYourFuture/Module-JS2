@@ -26,3 +26,22 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+
+function countWords(str) {
+  let newString = str.replace(/[.,/#!$%^&*;:{}=\-_`?~()]/g, "");
+  let newString1 = newString.toLowerCase();
+  const words = newString1.split(/\s+/);
+  const wordCounts = [];
+
+  for (const word of words) {
+    if (word in wordCounts) {
+      wordCounts[word]++;
+    } else {
+      wordCounts[word] = 1;
+    }
+  }
+  return wordCounts;
+}
+
+console.log(countWords("you and me and me and you"));
+console.log(countWords("you, And me? and me! and You!"));

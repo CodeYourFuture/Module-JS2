@@ -20,4 +20,31 @@ const books = [
     bookCoverImage: "https://blackwells.co.uk/jacket/l/9780135957059.jpg",
   },
 ];
+// Starting with the code to get the function
 
+function renderBooks() {
+  const container = document.body;
+
+  books.forEach((book) => {
+    const bookElement = document.createElement("li");
+    bookElement.classList.add("book", book.alreadyRead ? "read" : "not-read");
+
+    const titleElement = document.createElement("h3");
+    titleElement.textContent = book.title;
+
+    const authorElement = document.createElement("p");
+    authorElement.textContent = `By ${book.author}`;
+
+    const imageElement = document.createElement("img");
+    imageElement.src = book.bookCoverImage;
+    imageElement.alt = book.title;
+
+    bookElement.appendChild(titleElement);
+    bookElement.appendChild(authorElement);
+    bookElement.appendChild(imageElement);
+
+    container.appendChild(bookElement);
+  });
+}
+
+renderBooks();
