@@ -5,14 +5,17 @@
 // Then it should return the total amount in pounds
 
 function totalTill(till) {
-  let total = 0;
+  let totalPence = 0;
 
   for (const [coin, quantity] of Object.entries(till)) {
-    console.log(coin * quantity);
-    total += coin * quantity;
+    const numericValue = parseFloat(coin.replace(/[^\d.]/g, ""));
+    totalPence += numericValue * quantity;
   }
 
-  return `£${total / 100}`;
+  const pounds = Math.floor(totalPence / 100);
+  const pence = (totalPence % 100).toFixed(0).padStart(2, "0"); // Padding pence with leading zero if needed
+
+  return `${pounds}.${pence}£`;
 }
 
 const till = {
@@ -21,7 +24,11 @@ const till = {
   "50p": 4,
   "20p": 10,
 };
+
+module.exports = totalTill;
+
 const totalAmount = totalTill(till);
+console.log(totalAmount); //total amount in pounds (£)
 
 // a) What is the target output when totalTill is called with the till object
 
