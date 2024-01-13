@@ -1,17 +1,11 @@
-function createLookup() {
-  // implementation here
+function createLookup(givenArray) {
+  let newObject = {};
+  for (let element of givenArray) {
+    newObject[element[0]] = element[1];
+  }
+  return newObject;
 }
-
+console.log(createLookup([["abc", "def"]]));
 /* ======= Test suite is provided below... =====
  */
-
-test("converts a single pair of currency codes", () => {
-  expect(createLookup([["GB", "GBP"]])).toEqual({
-    GB: "GBP",
-  });
-  expect(createLookup([["DE", "EUR"]])).toEqual({
-    DE: "EUR",
-  });
-});
-
-test.todo("creates a country currency code lookup for multiple codes");
+module.exports = createLookup;

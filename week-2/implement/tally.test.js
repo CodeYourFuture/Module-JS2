@@ -1,3 +1,4 @@
+const tally = require("./tally.js");
 /**
  * tally array
  *
@@ -14,18 +15,35 @@
 
 // Acceptance criteria:
 
-// Given a function called tally
-// When passed an array of items
-// Then it should return an object containing the count for each unique item
+describe("testing for tally", () => {
+  // Given a function called tally
+  // When passed an array of items
+  // Then it should return an object containing the count for each unique item
+  test("when an array with items, returns an object with counts for each item", () => {
+    expect(tally(["a", "b", "c"])).toEqual({ a: 1, b: 1, c: 1 });
+    expect(tally(["a"])).toEqual({ a: 1 });
+  });
 
-// Given an empty array
-// When passed to tally
-// Then it should return an empty object
+  // Given an empty array
+  // When passed to tally
+  // Then it should return an empty object
+  test("when an empty array, returns an empty object", () => {
+    expect(tally([])).toEqual({});
+  });
 
-// Given an array with duplicate items
-// When passed to tally
-// Then it should return counts for each unique item
+  // Given an array with duplicate items
+  // When passed to tally
+  // Then it should return counts for each unique item
+  test("when an array with duplicated items, returns an object with counts for each item", () => {
+    expect(tally(["a", "b", "b"])).toEqual({ a: 1, b: 2 });
+    expect(tally(["a", "a", "a"])).toEqual({ a: 3 });
+  });
 
-// Given an invalid input like a string
-// When passed to tally
-// Then it should throw an error
+  // Given an invalid input like a string
+  // When passed to tally
+  // Then it should throw an error
+  test("when an array with items, returns an object with counts for each item", () => {
+    expect(() => tally("aaa")).toThrowError(TypeError);
+    expect(() => tally(123)).toThrowError("Given value is not an Array");
+  });
+});
