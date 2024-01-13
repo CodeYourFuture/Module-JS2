@@ -24,3 +24,4 @@ module.exports = calculateMedian; // this is to link this file with the test fil
 //3. if step 2 gives two numbers 
 //   a. add the two numbers and divide by 2 
 //4. if step 2 gives one number return that number as median 
+
