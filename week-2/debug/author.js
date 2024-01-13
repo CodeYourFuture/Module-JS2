@@ -11,6 +11,6 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
+for (const value of Object.keys(author)) {    // Objects are not iterable because of which it couldn't print everything 
   console.log(value);
 }

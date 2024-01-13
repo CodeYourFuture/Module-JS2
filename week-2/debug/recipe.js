@@ -12,4 +12,4 @@ const recipe = {
 
 console.log(`${recipe.title} serves ${recipe.serves}
   ingredients:
-${recipe}`);
+${recipe.ingredients}`);                // The object is being called rather than the key
