@@ -8,4 +8,7 @@ function calculateMedian(list) {
   return median;
 }
 
+const list = [1, 2, 3];
+console.log(calculateMedian(list));
+
 module.exports = calculateMedian;
