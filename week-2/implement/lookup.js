@@ -3,6 +3,7 @@ function createLookUp(currencyPairs) {
 
   // here  we're using a loop to go through every individual array inside the main array
   for (const pair of currencyPairs) {
+    // array in her bir elemanını tek tek almanı sağlar.
     const [countryCode, currencyCode] = pair; // this extracts country and currency codes from the inner array
     lookup[countryCode] = currencyCode; //  here we assign the country code as the key AND currency code as its value
   }

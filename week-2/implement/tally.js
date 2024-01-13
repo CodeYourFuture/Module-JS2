@@ -10,7 +10,7 @@ function tally(listOfItems) {
     let eachItem = listOfItems[i];
 
     if (count[eachItem]) {
-      count[eachItem]++;
+      count[eachItem]++; // artiyorsa say
     } else {
       count[eachItem] = 1;
     }
