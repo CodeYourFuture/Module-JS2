@@ -26,3 +26,21 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(str) {
+  const words = str
+    .replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, "")
+    .toLowerCase();
+  const wordList = words.split(" ");
+  const newObj = {};
+  for (let x of wordList) {
+    if (newObj.hasOwnProperty(x)) {
+      newObj[x]++;
+    } else {
+      newObj[x] = 1;
+    }
+  }
+  delete newObj[""];
+  return newObj;
+}
+
+console.log(countWords("ethem ./&%+ AAAAqsdfasdf asdv asdv . g"));

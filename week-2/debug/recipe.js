@@ -10,6 +10,8 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
-console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+console.log(
+  `${recipe.title} serves ${
+    recipe.serves
+  }\ningredients:\n${recipe.ingredients.join("\n")}`
+); //to log it we need to call ingeridients from recipe object and join \n to it
