@@ -1,5 +1,11 @@
-function createLookup() {
+function createLookup(countryCurrencyPairs) {
   // implementation here
+  const lookup = {};
+  for (const pair of countryCurrencyPairs) {
+    const [countryCode, currencyCode] = pair;
+    lookup[countryCode] = currencyCode;
+  }
+  return lookup;
 }
 
 /* ======= Test suite is provided below... =====
