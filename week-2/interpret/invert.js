@@ -10,18 +10,20 @@ function invert(obj) {
   const invertedObj = {};
 
   for (const [key, value] of Object.entries(obj)) {
-    invertedObj.key = value;
+    invertedObj[value] = key;
   }
 
   return invertedObj;
 }
 
-// a) What is the current return value when invert is called with { a : 1 }
+console.log(invert({ a: 1, b: 2, c: 3 }));
 
-// b) What is the current return value when invert is called with { a: 1, b: 2 }
+// a) What is the current return value when invert is called with { a : 1 }           a : 1
 
-// c) What is the target return value when invert is called with {a : 1, b: 2}
+// b) What is the current return value when invert is called with { a: 1, b: 2 }      a : 1 , b : 2
 
-// c) What does Object.entries return? Why is it needed in this program?
+// c) What is the target return value when invert is called with {a : 1, b: 2}        1 : a , 2 : b
 
-// d) Explain why the current return value is different from the target output
+// c) What does Object.entries return? Why is it needed in this program?              gives us an array with arrays which hold each key-value object has
+
+// d) Explain why the current return value is different from the target output        because we need to assign values as new keys and keys as new values
