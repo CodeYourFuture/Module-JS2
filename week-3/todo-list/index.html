@@ -3,25 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
+    <title>to do list</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form>
-      <div>
-        <input type="text" placeholder="New todo..." />
+    <nav>
+      <h1>TODO LIST</h1>
+    </nav>
+    <div class="container">
+      <div class="todo-app">
+        <h2>Add new todo</h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="New todo..." />
+
+          <button class="add-btn" onclick="populateTodoList()">Add todo</button>
+          <button class="delete-btn" onclick="deleteList()">
+            Remove all completed
+          </button>
+        </div>
+        <ul id="list-container"></ul>
       </div>
-      <div>
-        <button type="submit">Add Todo</button>
-        <button
-          type="button"
-          id="remove-all-completed"
-          class="btn btn-primary mb-3"
-        >
-          Remove all completed
-        </button>
-      </div>
-    </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
