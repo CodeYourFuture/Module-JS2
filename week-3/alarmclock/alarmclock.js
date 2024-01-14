@@ -1,18 +1,18 @@
 
-let myVar;                                           // decleared three variable the purpose is shown inside "function startTime()".
+let variable;                                           // decleared three variable the purpose is shown inside "function startTime()".
 let timer;                   
 let countDownSeconds;
 
 function startTime() {
   timer = document.getElementById("alarmSet");                 
   countDownSeconds = parseInt(timer.value); 
-  myVar = setInterval(start, 1000);
+  variable = setInterval(start, 1000);
   document.getElementById("timerr").innerHTML = formatTime(countDownSeconds);
 }
 
 function start() {
   countDownSeconds--;
-  document.getElementById("timerr").innerHTML = formatTime(countDownSeconds);
+  document.getElementById("timerr").textContent = formatTime(countDownSeconds);
   if (countDownSeconds === 0) {
     stop();
     playAlarm();
@@ -20,7 +20,7 @@ function start() {
 }
 
 function stop() {
-  clearInterval(myVar);
+  clearInterval(variable);
 }
 
 // function formate "mm:ss"
