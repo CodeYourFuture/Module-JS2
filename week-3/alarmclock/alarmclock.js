@@ -7,7 +7,7 @@ function startTime() {
   timer = document.getElementById("alarmSet");                 
   countDownSeconds = parseInt(timer.value); 
   variable = setInterval(start, 1000);
-  document.getElementById("timerr").innerHTML = formatTime(countDownSeconds);
+  document.getElementById("timerr").textContent = formatTime(countDownSeconds);
 }
 
 function start() {
