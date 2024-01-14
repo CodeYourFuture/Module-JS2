@@ -2,6 +2,7 @@
 
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
+// it was write of instead of in and also and add array to value 
 
 const author = {
   firstName: "Zadie",
@@ -11,6 +12,6 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+for (const value in author) {
+  console.log(author[value]);
 }
