@@ -8,8 +8,8 @@
   align-items: center;
 }
 #carousel-img {
-  width: 15rem;
-  height: 16rem;
+  max-width: 80%;
+  max-height: 80%;
 }
 .btn-wrapper {
   display: flex;

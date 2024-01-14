@@ -16,27 +16,27 @@ const forwardBtn = document.querySelector("#forward-btn");
 const backwardBtn = document.querySelector("#backward-btn");
 const carouselImg = document.querySelector("#carousel-img");
 
-let num = 0;
+let currentIndex = 0;
 forwardBtn.addEventListener("click", function () {
-  if (num === images.length - 1) {
-    num = 0;
+  if (currentIndex === images.length - 1) {
+    currentIndex = 0;
   } else {
-    num++;
+    currentIndex++;
   }
-  carouselImg.src = images[num];
-  clearInterval(intervalId);
-  clearInterval(intervalId2);
+  carouselImg.src = images[currentIndex];
+  clearInterval(autoForwardInterval);
+  clearInterval(autoBackwardInterval);
 });
 
 backwardBtn.addEventListener("click", function () {
-  if (num === 0) {
-    num == images.length - 1;
+  if (currentIndex === 0) {
+    currentIndex = images.length - 1;
   } else {
-    num--;
+    currentIndex--;
   }
-  carouselImg.src = images[num];
-  clearInterval(intervalId);
-  clearInterval(intervalId2);
+  carouselImg.src = images[currentIndex];
+  clearInterval(autoForwardInterval);
+  clearInterval(autoBackwardInterval);
 });
 
 // creating Auto Forward button
@@ -47,24 +47,24 @@ autoForwardButton.setAttribute("id", "btn");
 autoForwardButton.textContent = "Auto Forward";
 carouselDiv.append(autoForwardButton);
 
-let intervalId;
+let autoForwardInterval;
 //add event listener for auto forward button
 autoForwardButton.addEventListener("click", function () {
-  intervalId = setInterval(function () {
-    if (num === 0) {
-      num++;
-      carouselImg.src = images[num];
+  autoForwardInterval = setInterval(function () {
+    if (currentIndex === 0) {
+      currentIndex++;
+      carouselImg.src = images[currentIndex];
     } else {
-      num++;
-      carouselImg.src = images[num];
+      currentIndex++;
+      carouselImg.src = images[currentIndex];
     }
 
-    if (num === images.length - 1) {
-      clearInterval(intervalId);
-      num--;
+    if (currentIndex === images.length - 1) {
+      clearInterval(autoForwardInterval);
+      currentIndex--;
     }
   }, 2000);
-  clearInterval(intervalId2);
+  clearInterval(autoBackwardInterval);
 });
 
 // Append the button to the body or another HTML element
@@ -78,8 +78,8 @@ carouselDiv.append(buttonStop);
 
 //add event listener for stop button
 buttonStop.addEventListener("click", function () {
-  clearInterval(intervalId);
-  clearInterval(intervalId2);
+  clearInterval(autoForwardInterval);
+  clearInterval(autoBackwardInterval);
 });
 
 //creating Auto Backward
@@ -89,16 +89,20 @@ autoBackwardButton.setAttribute("id", "btn");
 autoBackwardButton.textContent = "Auto Backward";
 carouselDiv.append(autoBackwardButton);
 //add event listener for Auto Backward button;
-let intervalId2;
+let autoBackwardInterval;
 autoBackwardButton.addEventListener("click", function () {
-  if (num === 0) {
-    alert("you must begin with Forward or Auto-Forward Button!");
+  if (currentIndex === 0) {
+    currentIndex = images.length - 1;
+  } else {
+    currentIndex--;
+    carouselImg.src = images[currentIndex];
   }
-  intervalId2 = setInterval(function () {
-    if (num > 0) {
-      num--;
-      carouselImg.src = images[num];
+
+  autoBackwardInterval = setInterval(function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      carouselImg.src = images[currentIndex];
     }
   }, 2000);
-  clearInterval(intervalId);
+  clearInterval(autoForwardInterval);
 });
