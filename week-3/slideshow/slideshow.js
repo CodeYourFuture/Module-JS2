@@ -1,4 +1,5 @@
 const images = [
+    "./assets/cutest-cat.jpg",
     "./assets/cute-cat-a.png",
     "./assets/cute-cat-b.jpg",
     "./assets/cute-cat-c.jpg",
