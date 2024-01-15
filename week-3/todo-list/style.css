@@ -6,15 +6,16 @@ body{
     background-size: auto 100%;
     background-image: url("./assets/world.jpg");
 }
-form{
+/* form{
    margin-left: 600px;
   
-}
+} */
 .completed{
     text-decoration: line-through;
     color: rgb(24, 27, 24);
 }
 form{
+    margin-left: 600px;
     background-color: white;
     width: 40%;
     border-radius: 6px;
@@ -34,18 +35,63 @@ form{
     padding-top: 15px;
     display: block; 
 }
+
+.style-list{
+    list-style: none;
+    background-color: rgb(215, 211, 211);
+    font-size : "1.2em";
+    position: relative;
+    width: 70%;
+    padding: 20px;
+    border-radius: 7px;
+    margin-right: 800px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.layout{
+    position: absolute;
+    display: inline-block;
+    left: 20px;
+    padding-left:300px;
+    top: 50%;
+    padding-top: 20px;
+    transform: translateY(-50%);
+}
 .btn{
     display: inline;
+    text-align: center;
     display: flex;
     gap: 10px;
     padding-bottom: 30px;
     padding-left: 8px;
 }
+
+
 button{
+    padding: 15px 15px;
+    font-weight: bold;
     font-size: 1em;
     border: none;
     border-radius: 6px;
     color: white;
     background-color: rgb(69, 69, 233);
-   
-}
+   }
+
+   @media screen and (max-width: 768px) {
+    form{
+        align-items: flex-start;
+        justify-content: start;
+        width: 100%;
+        margin-bottom: 30px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+    .line{
+        width: 100%;
+   }
+   button{
+    background-color: burlywood;
+   }
+
+   }
