@@ -29,3 +29,23 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+const createTally = require("./tally.js");
+
+describe ("tally", () => {
+    test("returns empty object when passed through an empty array", () => {
+        expect(createTally([])).toEqual({});
+    });
+    test("returns an error when passed through an invalid input", () => {
+        expect(createTally('hello')).toEqual('Error');
+    });
+    test("returns single items in the array", () => {
+        expect(createTally(['a'])).toEqual({a: 1});
+    });
+    test("returns single duplicate items in the array", () => {
+        expect(createTally(['a','a','a'])).toEqual({a: 3});
+    });
+    test("returns multiple duplicate items in the array", () => {
+        expect(createTally(['a','a','b','c'])).toEqual({a: 2, b: 1, c: 1});
+    });
+})
