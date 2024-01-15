@@ -66,7 +66,7 @@ test("should update the heading while counting down", () => {
   button.click();
 
   for (let i = 18; i > 0; i--) {
-    jest.runOnlyPendingTimers();
+    jest.advanceTimersByTime(1000);
     const seconds = `${i}`.padStart(2, "0");
     expect(heading).toHaveTextContent(`Time Remaining: 00:${seconds}`);
   }
@@ -76,15 +76,20 @@ test("should count down every 1000 ms", () => {
   const input = page.window.document.querySelector("#alarmSet");
   const button = page.window.document.querySelector("#set");
 
-  const mockTimer = jest.fn();
-  page.window.setTimeout = mockTimer;
-  page.window.setInterval = mockTimer;
+  const mockSetTimeout = jest.fn();
+  const mockSetInterval = jest.fn();
+
+  page.window.setTimeout = mockSetTimeout;
+  page.window.setInterval = mockSetInterval;
 
   input.value = "19";
   button.click();
 
-  expect(mockTimer).toHaveBeenCalledTimes(1);
-  expect(mockTimer).toHaveBeenLastCalledWith(expect.any(Function), 1000);
+  expect(mockSetInterval).toHaveBeenCalledTimes(1);
+  expect(mockSetInterval).toHaveBeenCalledWith(expect.any(Function), 1000);
+
+  expect(mockSetTimeout).toHaveBeenCalledTimes(1);
+  expect(mockSetTimeout).toHaveBeenCalledWith(expect.any(Function), 19000);
 });
 
 test("should play audio when the timer reaches zero", () => {

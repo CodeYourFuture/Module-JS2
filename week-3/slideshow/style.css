@@ -1,1 +1,104 @@
 /** Write your CSS in here **/
+body {
+  background-color: #5f5f5f;
+
+  display: grid;
+  grid-template-areas:
+    "img img"
+    "back forward"
+    "autoback autoforward"
+    "delaytime delaytime"
+    "stop stop";
+  place-items: center;
+  gap: 0.5rem;
+}
+img {
+  grid-area: img;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-height: 60vh;
+}
+
+button {
+  width: 250px;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+  box-shadow: inset 0 0 5px rgba(245, 245, 245, 0.767);
+
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #002281;
+}
+
+button:disabled {
+  opacity: 0.5;
+  background-color: initial;
+  cursor: not-allowed;
+}
+
+#backward-btn {
+  grid-area: back;
+  justify-self: right;
+}
+
+#forward-btn {
+  grid-area: forward;
+  justify-self: left;
+}
+
+#auto-backward {
+  grid-area: autoback;
+  justify-self: right;
+}
+
+#auto-forward {
+  grid-area: autoforward;
+  justify-self: left; 
+}
+
+#delay-time {
+  grid-area: delaytime;
+  justify-self: center;
+  color: #f5f5f5;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+
+  margin: 0.5rem;
+}
+
+#delay-time__input {
+  margin-left: 0.5rem;
+  padding: 0 0.5rem;
+
+  width: 2.5rem;
+  height: 1.5rem;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  
+  font-size: 1rem;
+  text-align: center;
+
+  background-color: #f5f5f5;
+  color: #333;
+  box-shadow: inset 0 0 5px rgba(245, 245, 245, 0.767);
+}
+
+#stop {
+  grid-area: stop;
+  justify-self: center;
+}
+
+#stop:hover {
+  background-color: #810000;
+}
