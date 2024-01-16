@@ -43,6 +43,10 @@ img_list.push(img_list.shift());
 
 });
 
+
+const buttonClick = document.getElementById("autoBack");
+const autoPlay = document.getElementById("status");
+
 let autoBackEnabled = false;
 
 setInterval(() => {
@@ -51,10 +55,6 @@ setInterval(() => {
       add_image();
   }
 }, 5000);
-
-const buttonClick = document.getElementById("autoBack");
-const autoPlay = document.getElementById("status");
-
 
 buttonClick.addEventListener("click", function () {
   autoBackEnabled = !autoBackEnabled;
@@ -65,6 +65,8 @@ buttonClick.addEventListener("click", function () {
   }
 });
 
+const forwordButton = document.getElementById("autoForward");
+
 let autoForwardButton = false;
 setInterval(() => {
   if (autoForwardButton) {
@@ -72,8 +74,6 @@ setInterval(() => {
       add_image();
   } 
 }, 5000);
-
-const forwordButton = document.getElementById("autoForward");
 
 forwordButton.addEventListener("click", function () {
   autoForwardButton= !autoForwardButton;
@@ -84,10 +84,12 @@ forwordButton.addEventListener("click", function () {
   }
 });
 
+const stopButton = document.getElementById("stopButton");
+stopButton.addEventListener("click", stop);
+
 function stop(){
   autoForwardButton = false;
   autoBackEnabled = false;
   autoPlay.textContent = "";
 }
-const stopButton = document.getElementById("stopButton");
-stopButton.addEventListener("click", stop);
+
