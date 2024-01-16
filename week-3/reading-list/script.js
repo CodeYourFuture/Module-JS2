@@ -1,4 +1,29 @@
-// for the tests, do not modify this array of books
+function readingList(books){
+
+const readingList = document.getElementById("reading-list");
+
+for (const bookItem of books){
+const list = document.createElement("li");
+
+if (bookItem.alreadyRead === true){
+  list.setAttribute("class", "green")
+} else{
+  list.setAttribute("class", "red");
+}
+
+const p = document.createElement("p");
+p.innerText = `${bookItem.title} by ${bookItem.author}`;
+
+readingList.appendChild(list);
+list.appendChild(p);
+
+const image = document.createElement("img");
+image.src = bookItem.bookCoverImage;
+list.appendChild(image);
+}
+}
+
+
 const books = [
   {
     title: "The Design of Everyday Things",
@@ -21,3 +46,4 @@ const books = [
   },
 ];
 
+readingList(books);
