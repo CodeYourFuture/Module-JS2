@@ -1,31 +1,4 @@
-
 let img_list;
-
-// Describe this function...
-
-function add_image() {
-  add_carousel();
-  carousel();
-}
-
-// Describe this function...
-function add_carousel() {
-    let element_imageI = document.getElementById('image');
-    element_imageI.setAttribute("src", img_list.slice(-1)[0]);
- 
-}
-
-// Describe this function...
-function carousel() {
-  if (img_list) {
-    let element_imageJ = document.getElementById('image');
-    element_imageJ.setAttribute("src", img_list[0]);
-  } else {
-    let element_imageK = document.getElementById('image');
-    element_imageK.setAttribute("src", img_list.slice(-1)[0]);
-  }
-}
-
 
 let element_image = document.getElementById('image');
  img_list = [
@@ -36,6 +9,27 @@ let element_image = document.getElementById('image');
   ];
 element_image.setAttribute("src", img_list[0]);
 
+
+function add_carousel() {
+    let element_imageI = document.getElementById('image');
+    element_imageI.setAttribute("src", img_list.slice(-1)[0]);
+ 
+}
+
+function carousel() {
+  if (img_list) {
+    let element_imageJ = document.getElementById('image');
+    element_imageJ.setAttribute("src", img_list[0]);
+  } else {
+    let element_imageK = document.getElementById('image');
+    element_imageK.setAttribute("src", img_list.slice(-1)[0]);
+  }
+}
+
+function add_image() {
+  add_carousel();
+  carousel();
+}
 
 document.getElementById('previous').addEventListener('click', (event) => {
     img_list.unshift(img_list.pop());
@@ -55,17 +49,14 @@ setInterval(() => {
   if (autoBackEnabled) {
     img_list.unshift(img_list.pop());
       add_image();
-     console.log("On");
-  } else {
-    console.log("Off");
   }
 }, 5000);
 
-// function getButtionFeature(){
-  const buttonClick = document.getElementById("autoBack");
-  const autoPlay = document.getElementById("status");
-buttonClick.addEventListener("click", function () {
+const buttonClick = document.getElementById("autoBack");
 const autoPlay = document.getElementById("status");
+
+
+buttonClick.addEventListener("click", function () {
   autoBackEnabled = !autoBackEnabled;
   if (autoBackEnabled) {
     autoPlay.textContent = "auto-Backword ON";
@@ -74,19 +65,15 @@ const autoPlay = document.getElementById("status");
   }
 });
 
-// let autoForwardButton = false;
+let autoForwardButton = false;
 setInterval(() => {
   if (autoForwardButton) {
     img_list.push(img_list.shift());
       add_image();
-     console.log("On");
-  } else {
-    console.log("Off");
-  }
+  } 
 }, 5000);
 
 const forwordButton = document.getElementById("autoForward");
-let autoForwardButton = false;
 
 forwordButton.addEventListener("click", function () {
   autoForwardButton= !autoForwardButton;
