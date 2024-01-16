@@ -4,11 +4,7 @@ function readingList(books) {
   for (const bookItem of books) {
     const list = document.createElement("li");
 
-    if (bookItem.alreadyRead === true) {
-      list.setAttribute("class", "green");
-    } else {
-      list.setAttribute("class", "red");
-    }
+    list.setAttribute("class", bookItem.alreadyRead ? "green" : "red");
 
     const p = document.createElement("p");
     p.innerText = `${bookItem.title} by ${bookItem.author}`;
