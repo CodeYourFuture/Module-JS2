@@ -1,1 +1,20 @@
 /** Write your CSS in here **/
+/* body{
+    padding: 50px;
+    margin: 50px;
+} */
+#image{
+    width: 50%;
+    height: 40%;
+}
+button{
+    display: inline;
+    margin: 15px;
+    padding: 15px 15px;
+}
+.hr{
+    border: 1px solid gray;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
