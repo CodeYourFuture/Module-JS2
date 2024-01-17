@@ -8,7 +8,7 @@ const images = [
 // Write your code here
 
 let index = 0;
-const interval = 2000;
+const interval = 1000;
 const carouselImage = document.getElementById("carousel-img");
 const imageIndex = document.getElementById("img-index");
 
@@ -43,10 +43,15 @@ function previousImage(){
   setCarouselImage();
 }
 
-
+let forwardIntervalId;
 const autoForwardBtn = document.getElementById("auto-forward-btn");
 autoForwardBtn.addEventListener("click", function () {
-    setInterval(() => {
+    forwardIntervalId = setInterval(() => {
         nextImage();
     }, interval);
+});
+
+const stopBtn = document.getElementById("stop-btn");
+stopBtn.addEventListener("click", function () {
+   clearInterval(forwardIntervalId);
 });
