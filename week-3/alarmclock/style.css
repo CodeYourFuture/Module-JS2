@@ -13,3 +13,7 @@
 h1 {
   text-align: center;
 }
+
+.invalidInput {
+  border-color: red;
+}
