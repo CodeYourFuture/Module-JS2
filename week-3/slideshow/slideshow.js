@@ -19,7 +19,7 @@ forwardBtn.addEventListener("click", function () {
 
 const backwardsBtn = document.getElementById("backward-btn");
 backwardsBtn.addEventListener("click", function () {
-    previousImage();
+  previousImage();
 });
 
 function setCarouselImage() {
@@ -27,15 +27,15 @@ function setCarouselImage() {
   imageIndex.innerText = index;
 }
 
-function nextImage (){
-    index++;
-    if (index == images.length) {
-      index = 0;
-    }
-    setCarouselImage();
+function nextImage() {
+  index++;
+  if (index == images.length) {
+    index = 0;
+  }
+  setCarouselImage();
 }
 
-function previousImage(){
+function previousImage() {
   index--;
   if (index == -1) {
     index = images.length - 1;
@@ -46,20 +46,26 @@ function previousImage(){
 let forwardIntervalId;
 const autoForwardBtn = document.getElementById("auto-forward-btn");
 autoForwardBtn.addEventListener("click", function () {
-    forwardIntervalId = setInterval(() => {
-        nextImage();
-    }, interval);
+  stopIntervals();
+  forwardIntervalId = setInterval(() => {
+    nextImage();
+  }, interval);
 });
 
 const stopBtn = document.getElementById("stop-btn");
 stopBtn.addEventListener("click", function () {
-   clearInterval(forwardIntervalId);
-   clearInterval(backwardIntervalId);
+  stopIntervals();
 });
+
+function stopIntervals() {
+  clearInterval(forwardIntervalId);
+  clearInterval(backwardIntervalId);
+}
 
 let backwardIntervalId;
 const autoBackwardBtn = document.getElementById("auto-backward-btn");
 autoBackwardBtn.addEventListener("click", function () {
+  stopIntervals();
   backwardIntervalId = setInterval(() => {
     previousImage();
   }, interval);
