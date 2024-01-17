@@ -54,4 +54,13 @@ autoForwardBtn.addEventListener("click", function () {
 const stopBtn = document.getElementById("stop-btn");
 stopBtn.addEventListener("click", function () {
    clearInterval(forwardIntervalId);
+   clearInterval(backwardIntervalId);
+});
+
+let backwardIntervalId;
+const autoBackwardBtn = document.getElementById("auto-backward-btn");
+autoBackwardBtn.addEventListener("click", function () {
+  backwardIntervalId = setInterval(() => {
+    previousImage();
+  }, interval);
 });
