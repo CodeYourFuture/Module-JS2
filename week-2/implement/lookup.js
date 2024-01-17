@@ -15,4 +15,3 @@ return result;
 /* ======= Test suite is provided below... =====
  */
 module.exports = createLookup;
-console.log(createLookup([["US","USD"],["CA","CAD"],["GB","GBP"]]));

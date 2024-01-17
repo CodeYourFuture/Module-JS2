@@ -6,5 +6,4 @@ function countString(arr){
 }
 return count;
 }
-console.log(countString(['a','b','c','a','d','e','b','c','c','c']));
 module.exports = countString;
