@@ -20,7 +20,7 @@ function setAlarm() {
     alarmSet = alarmSet - 1;
     setTime(alarmSet);
     if (alarmSet == 0) {
-      setBackground("red", "white");
+      setBackground("yellow", "white");
       playAlarm();
       clearInterval(intervalId);
     }
