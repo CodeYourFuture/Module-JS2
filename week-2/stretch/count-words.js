@@ -26,3 +26,31 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(words) {
+  const count = {};
+  const wordSplit = words.split(" ");
+  const lower = wordSplit.map(word => word.toLowerCase());
+
+  for (let i = 0; i < wordSplit.length; i++) {
+    const element = lower[i];
+    const leng = element.length;
+
+    if (element[leng - 1] == "." || element[leng - 1] == "," || element[leng - 1] == "!" || element[leng - 1] == "?") {
+      const le = element.length - 1;
+      const nu = element.substring(0, le);
+
+      count[nu] = (count[nu] || 0) + 1;
+    } else {
+      count[element] = (count[element] || 0) + 1;
+    }
+  }
+const sortedKey = Object.keys(count).sort((a, b) => count[b] - count[a]);
+const sortCount ={};
+for(const key of sortedKey){
+sortCount[key]=count[key];
+
+}
+
+  return sortCount;
+}
+console.log(countWords("hello world how are you are you doing fine HELLO hello?"));
