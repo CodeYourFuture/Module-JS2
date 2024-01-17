@@ -1,9 +1,10 @@
 const images = [
-  "./assets/cute-cat-a.png",
+  "./assets/cute-cat-a.jpg",
   "./assets/cute-cat-b.jpg",
   "./assets/cute-cat-c.jpg",
   "./assets/cute-cat-d.jpg",
   "./assets/cute-cat-e.jpg",
+  "./assets/cute-cat-f.jpg",
 ];
 
 const forwardSlide = document.querySelector("#forward-btn");
