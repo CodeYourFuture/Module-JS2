@@ -21,3 +21,38 @@ const books = [
   },
 ];
 
+function renderBooks(book) {
+  const bookElement = document.createElement("li");
+
+  bookElement.style.backgroundColor = book.alreadyRead ? "green" : "red";
+
+  const titleElement = document.createElement("h3");
+  titleElement.textContent = book.title;
+  bookElement.appendChild(titleElement);
+
+  const authorElement = document.createElement("p");
+  authorElement.textContent = book.author;
+  bookElement.appendChild(authorElement);
+
+  const imageElement = document.createElement("img");
+  imageElement.src = book.bookCoverImage;
+  bookElement.appendChild(imageElement);
+
+  return bookElement;
+}
+
+function readingList() {
+  const readingList = document.getElementById("reading-list");
+
+  readingList.innerHTML = "";
+
+  books.forEach((book) => {
+    const bookElement = renderBooks(book);
+
+    readingList.appendChild(bookElement);
+  });
+}
+
+window.onload = function () {
+  readingList(books);
+};
