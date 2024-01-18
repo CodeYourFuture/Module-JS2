@@ -9,7 +9,7 @@ const address = {
   street: "Imaginary Road",
   city: "Manchester",
   country: "England",
-  postcode: "XYZ 123",
+  postcode: "XYZ 123"  //extra comma here 
 };
 
-console.log(`My house number is ${address[0]}`);
+console.log(`My house number is ${address.houseNumber}`); // it is an object not the array that's why index didn't work, need to refer to the key to make it work
