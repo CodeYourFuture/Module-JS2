@@ -20,6 +20,10 @@ function pickFromArray(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+function getRandomQuote() {
+  return pickFromArray(quotes);
+}
+
 // A list of quotes you can use in your app.
 // DO NOT modify this array, otherwise the tests may break!
 const quotes = [
@@ -489,5 +493,59 @@ const quotes = [
     author: "Zig Ziglar",
   },
 ];
+
+let autoPlayInterval; // Variable to store the interval ID
+
+// Function to start auto-generate
+function startAutoGenerate() {
+  autoPlayInterval = setInterval(() => {
+    displayRandomQuote();
+  }, 60000); // Change 60000 to 5000 for testing every 5 seconds
+}
+
+// Function to stop auto-generate
+function stopAutoGenerate() {
+  clearInterval(autoPlayInterval);
+}
+
+// Function to display a random quote
+function displayRandomQuote() {
+  const randomQuote = getRandomQuote();
+  displayQuote(randomQuote);
+}
+
+// Function to display a specific quote
+function displayQuote(quote) {
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+
+  quoteElement.textContent = quote.quote;
+  authorElement.textContent = quote.author;
+}
+
+// Event listener for the "New quote" button
+document.getElementById("new-quote").addEventListener("click", () => {
+  displayRandomQuote();
+});
+
+// Event listener for the auto-play toggle
+const autoPlayToggle = document.getElementById("auto-play-toggle");
+
+autoPlayToggle.addEventListener("change", () => {
+  if (autoPlayToggle.checked) {
+    startAutoGenerate();
+    document.getElementById("auto-play-status").textContent = "auto-play: ON";
+  } else {
+    stopAutoGenerate();
+    document.getElementById("auto-play-status").textContent = "auto-play: OFF";
+  }
+});
+
+// Initial display of a random quote
+displayRandomQuote();
+
+function getRandomQuote() {
+  return pickFromArray(quotes);
+}
 
 // call pickFromArray with the quotes array to check you get a random quote
