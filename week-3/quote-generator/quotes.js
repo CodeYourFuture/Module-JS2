@@ -1,3 +1,16 @@
+addEventListener("DOMContentLoaded", displayQuote);
+
+const quoteElement = document.querySelector("#quote");
+const authorElement = document.querySelector("#author");
+const newQuote = document.querySelector("#new-quote");
+
+function displayQuote() {
+  const randomQuote = pickFromArray(quotes);
+  quoteElement.textContent = randomQuote.quote;
+  authorElement.textContent = randomQuote.author;
+}
+
+newQuote.addEventListener("click", displayQuote);
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
