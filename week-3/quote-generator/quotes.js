@@ -6,8 +6,8 @@ const newQuote = document.querySelector("#new-quote");
 
 function displayQuote() {
   const randomQuote = pickFromArray(quotes);
-  quoteElement.textContent = randomQuote.quote;
-  authorElement.textContent = randomQuote.author;
+  quoteElement.textContent = `"${randomQuote.quote}"`;
+  authorElement.textContent = `- ${randomQuote.author}`;
 }
 
 newQuote.addEventListener("click", displayQuote);
