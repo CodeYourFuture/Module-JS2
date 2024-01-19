@@ -1,3 +1,16 @@
+const newQuote = document.querySelector("#new-quote");
+const quote = document.querySelector("#quote");
+const author = document.querySelector("#author")
+
+newQuote.addEventListener('click',getQuote);
+document.addEventListener("DOMContentLoaded",getQuote);
+
+function getQuote(){
+  const pickingQuote = pickFromArray(quotes)
+  quote.textContent = pickingQuote.quote;
+  author.textContent = pickingQuote.author;
+}
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
