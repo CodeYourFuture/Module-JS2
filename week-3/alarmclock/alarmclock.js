@@ -38,10 +38,10 @@ setAlarm();
 
 setInterval(() => {
   const spanTime = document.querySelector("span");
-  if (spanTime.textContent === "00:00") {
+  const inputTime = document.getElementById("alarmSet");
+  const inputValue = inputTime.value;
+  if (spanTime.textContent === "00:00" && inputValue !== "") {
     // playAlarm();
-
-    stop();
   } else if (spanTime.textContent != "00:00") {
     const currentSeconds =
       parseInt(spanTime.textContent.slice(3), 10) +
