@@ -13,3 +13,39 @@
 h1 {
   text-align: center;
 }
+
+input{
+  border-radius: 20px;
+  padding: 5px;
+  font-size: large;
+}
+
+label{
+  font-size: large;
+}
+
+button{
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0px 10px;
+  background-color: white;
+}
+
+p, button {
+  font-weight: 500;
+  font-size: large;
+}
+
+#box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+}
+
+.centre{
+  border: solid black 2px;
+  border-radius: 10px;
+  padding: 20px;
+}
