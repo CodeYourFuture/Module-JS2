@@ -1,11 +1,15 @@
 function setAlarm() {
+  const remainingTime = document.querySelector("#timeRemaining");
+  const alarmInput = document.getElementById("alarmSet");
+  const alarmTime = alarmInput.value;
+
+  let minutes = Math.floor(alarmTime / 60);
+  let seconds = alarmTime % 60;
+  remainingTime.innerText = `Time Remaining: ${minutes.toString().padStart(
+    2,
+    "0"
+  )}:${seconds.toString().padStart(2, "0")}`;
 }
-
-const remainingTime = document.querySelector('#timeRemaining');
-const input = document.querySelector('#alarmSet');
-const btnSet = document.querySelector('#set');
-const btnStop = document.querySelector('#stop');
-
 
 // DO NOT EDIT BELOW HERE
 
