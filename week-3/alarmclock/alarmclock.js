@@ -1,4 +1,11 @@
-function setAlarm() {}
+function setAlarm() {
+}
+
+const remainingTime = document.querySelector('#timeRemaining');
+const input = document.querySelector('#alarmSet');
+const btnSet = document.querySelector('#set');
+const btnStop = document.querySelector('#stop');
+
 
 // DO NOT EDIT BELOW HERE
 
