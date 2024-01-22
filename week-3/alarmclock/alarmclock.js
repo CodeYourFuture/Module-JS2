@@ -20,7 +20,7 @@ setAlarm();
 setInterval(() => {
   const spanTime = document.querySelector("span");
   if (spanTime.textContent === "00:00") {
-    // playAlarm();
+    playAlarm();
 
     // stop();
   } else if (spanTime.textContent != "00:00") {
