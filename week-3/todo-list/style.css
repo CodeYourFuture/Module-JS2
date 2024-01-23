@@ -3,13 +3,10 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: auto 100%;
+    background-size: auto;
     background-image: url("./assets/world.jpg");
 }
-/* form{
-   margin-left: 600px;
-  
-} */
+
 .completed{
     text-decoration: line-through;
     color: rgb(24, 27, 24);
@@ -79,6 +76,9 @@ button{
    }
 
    @media screen and (max-width: 768px) {
+    .layout{
+        padding-left:200px;
+    }
     form{
         align-items: flex-start;
         justify-content: start;

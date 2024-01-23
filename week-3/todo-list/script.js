@@ -1,11 +1,8 @@
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
 let todos = [
   { task: "Wash the dishes", completed: false },
   { task: "Do the shopping", completed: false },
 ];
 
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
 function addNewTodo(event) {
 
   let list = document.getElementById("todo-list");
@@ -14,11 +11,11 @@ function addNewTodo(event) {
   
   let li = document.createElement("li")
   li.classList.add("style-list");
-  list.appendChild(li);
-  
+    list.appendChild(li);
+
+    
   let container = document.createElement("span")
-    container.className = "badge bg-primary rounded-pill";
-      container.classList.add("layout");
+    container.classList.add("layout");
       list.appendChild(container);
 
       
@@ -28,6 +25,7 @@ function addNewTodo(event) {
     checkIcon.onclick = function() {
       li.classList.toggle("completed");
     }
+     container.appendChild(checkIcon);
    
 
     let trashIcon = document.createElement("i");
@@ -36,7 +34,6 @@ function addNewTodo(event) {
     trashIcon.onclick = function(){
       li.remove();
    };
-        container.appendChild(checkIcon);
         container.appendChild(trashIcon);
 
   let textNode = document.createTextNode(listValue);
@@ -51,11 +48,10 @@ function addNewTodo(event) {
 }
 
 
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos(event) {
   let todoList = document.getElementById("task-list");
-  let completedItems = document.querySelectorAll(".completed");
-  completedItems.forEach(function (item) {
+  let itemsTocompleted = document.querySelectorAll(".completed");
+  itemsTocompleted.forEach(function (item) {
     todoList.removeChild(item);
   });
 }
