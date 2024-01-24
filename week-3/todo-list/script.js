@@ -17,9 +17,18 @@ function addItem(task) {
 
   const iCheck = document.createElement("i");
   iCheck.setAttribute("class", "fa fa-check");
+  iCheck.addEventListener("click", function () {
+    const classList = item.classList;
+    classList.contains("done")
+      ? classList.remove("done")
+      : classList.add("done");
+  });
 
   const iTrash = document.createElement("i");
   iTrash.setAttribute("class", "fa fa-trash");
+  iTrash.addEventListener("click", function () {
+    list.removeChild(item);
+  });
 
   btnSpan.appendChild(iCheck);
   btnSpan.appendChild(iTrash);
@@ -59,6 +68,4 @@ function addNewTodo(event) {
 // Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
 function deleteAllCompletedTodos() {
   // Write your code here...
-
-  
 }
