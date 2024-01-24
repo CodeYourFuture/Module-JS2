@@ -4,29 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title here</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-
   </head>
   <body>
-    <ul id="todo-list">
-      
-    </ul>
-    <form>
-      <div>
-        <input id="todo-input" type="text" placeholder="New todo..." />
-      </div>
-      <div>
-        <button id="add-todo" type="submit">Add Todo</button>
-        <button
-          type="button"
-          id="remove-all-completed"
-          class="btn btn-primary mb-3"
-        >
-          Remove all completed
-        </button>
-      </div>
-    </form>
+    <container class="content">
+      <section class="list-group">
+        <ul id="todo-list" ></ul>
+      </section>
+      <section>
+        <form>
+          <div>
+            <input id="todo-input" type="text" placeholder="New todo..." />
+          </div>
+          <div>
+            <button id="add-todo" type="submit">Add Todo</button>
+            <button
+              type="button"
+              id="remove-all-completed"
+              class="btn btn-primary mb-3"
+            >
+              Remove all completed
+            </button>
+          </div>
+        </form>
+      </section>
+    </container>
   </body>
 </html>
