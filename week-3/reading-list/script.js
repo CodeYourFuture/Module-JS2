@@ -1,3 +1,23 @@
+function readingList(books) {
+  const readingList = document.getElementById("reading-list");
+
+  for (const item of books) {
+    const list = document.createElement("li");
+
+    list.setAttribute("class", item.alreadyRead ? "teal" : "red");
+
+    const p = document.createElement("p");
+    p.innerText = `${item.title} by ${item.author}`;
+
+    readingList.appendChild(list);
+    list.appendChild(p);
+
+    const image = document.createElement("img");
+    image.src = item.bookCoverImage;
+    list.appendChild(image);
+  }
+}
+
 // for the tests, do not modify this array of books
 const books = [
   {
@@ -21,3 +41,4 @@ const books = [
   },
 ];
 
+readingList(books);
