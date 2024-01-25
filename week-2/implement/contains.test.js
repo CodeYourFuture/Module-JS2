@@ -32,3 +32,35 @@ as the object doesn't contains a key of 'c'
 // Given invalid parameters like arrays
 // When passed to contains
 // Then it should return false or throw an error
+test('test if the object contains the given property',function()
+{
+const person01 = {name:'sab',
+age:'18',
+eyeColor:'black',};
+const currentOutput= true;
+const targetOutput= contains(person01,'age');
+expect(currentOutput).toBe(targetOutput);
+})
+test('test if the object contains the given property',function()
+{
+const person01 = {};
+const currentOutput= false;
+const targetOutput= contains(person01,'age');
+expect(currentOutput).toBe(targetOutput);
+})
+test('test if the object contains the given property',function()
+{
+const person01 = {name:'sab',
+age:'18',
+eyeColor:'black',};
+const currentOutput= false;
+const targetOutput= contains(person01,'surname');
+expect(currentOutput).toBe(targetOutput);
+})
+test('test if the object contains the given property',function()
+{
+const person01 = [1,2,3];
+const currentOutput= false;
+const targetOutput= contains(person01,'age');
+expect(currentOutput).toBe(targetOutput);
+})

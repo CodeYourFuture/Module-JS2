@@ -7,8 +7,12 @@
 
 // refactor calculateMode by splitting up the code
 // into smaller functions using the stages above
-
-function calculateMode(list) {
+function calculateMode(list){
+  const freqs = trackFrequency(list);
+  const mode = maximumFrequency(freqs);
+  return mode;
+  }
+function trackFrequency(list) {
   // track frequency of each value
   let freqs = new Map();
 
@@ -17,8 +21,10 @@ function calculateMode(list) {
 
     freqs.set(num, (freqs.get(num) || 0) + 1);
   }
-
+  return freqs;
+}
   // Find the value with the highest frequency
+  function maximumFrequency(freqs){
   let maxFreq = 0;
   let mode;
   for (let [num, freq] of freqs) {
@@ -30,5 +36,7 @@ function calculateMode(list) {
 
   return maxFreq === 0 ? NaN : mode;
 }
+
+console.log(calculateMode([2,4,'2',3,3,,1,'2',1]))
 
 module.exports = calculateMode;

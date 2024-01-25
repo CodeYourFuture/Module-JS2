@@ -4,8 +4,11 @@
 
 function calculateMedian(list) {
   const middleIndex = Math.floor(list.length / 2);
-  const median = list.splice(middleIndex, 1)[0];
-  return median;
+  const median = list[middleIndex];
+  if( list.length %2 == 0){
+    return (median + list[middleIndex-1])/2;
+    
+  }
+  else{return median;}
 }
-
 module.exports = calculateMedian;
