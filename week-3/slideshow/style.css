@@ -1,1 +1,30 @@
 /** Write your CSS in here **/
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 54, 59);
+}
+
+#box {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    width: 640px;
+    height: 360px;
+    margin: 50px 0px;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+button {
+    border: black solid 2px;
+    border-radius: 5px;
+    background-color: rgb(187, 202, 206);
+    padding: 10px 15px;
+    margin: 0px 5px;
+    font-size: large;
+}
