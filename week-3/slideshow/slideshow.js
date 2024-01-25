@@ -17,7 +17,7 @@ let currentIndex = 1;
 let autoIntervalID;
 
 function backward() {
-  currentIndex = (currentIndex - 1) % images.length;
+  currentIndex = (currentIndex -1 + images.length) % images.length;
   carouselImages.src = images[currentIndex];
 }
 
