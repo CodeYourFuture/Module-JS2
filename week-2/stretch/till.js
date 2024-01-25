@@ -35,7 +35,7 @@ console.log(totalAmount);
 // c) What does coin * quantity evaluate to inside the for...of loop?
 // it multiplies each pairs inside the loop 
 // d) Write a test for this function to check it works and then fix the implementation of totalTill
-test('calculate total amount in pound', (){
+test('calculate total amount in pound', () =>{
 const till = {
   "1p": 10,
   "5p": 6,

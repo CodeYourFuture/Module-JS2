@@ -31,8 +31,7 @@ function countWords(words) {
   const wordSplit = words.split(" ");
   const lower = wordSplit.map(word => word.toLowerCase());
 
-  for (let i = 0; i < wordSplit.length; i++) {
-    const element = lower[i];
+  for (const element of lower) {
     const leng = element.length;
 
     if (element[leng - 1] == "." || element[leng - 1] == "," || element[leng - 1] == "!" || element[leng - 1] == "?") {
