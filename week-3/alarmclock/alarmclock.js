@@ -17,22 +17,24 @@ function timeFormat(seconds) {
 
 setAlarm();
 
-setInterval(() => {
+function updateAlarm() {
   const spanTime = document.querySelector("span");
-  if (spanTime.textContent === "00:00") {
+  const inputTime = document.getElementById("alarmSet");
+  const inputValue = inputTime.value;
+  if (spanTime.textContent === "00:00" && inputValue !="") {
     playAlarm();
-
-    // stop();
-  } else if (spanTime.textContent != "00:00") {
+    
+  } else if (spanTime.textContent !== "00:00") {
     const currentSeconds =
       parseInt(spanTime.textContent.slice(3), 10) +
       parseInt(spanTime.textContent.slice(0, 2)) * 60;
 
     spanTime.textContent = timeFormat(currentSeconds - 1);
-    // pauseAlarm();
+    pauseAlarm();
   }
-}, 1000);
+}
 
+setInterval(updateAlarm, 1000);
 
 
 // DO NOT EDIT BELOW HERE
