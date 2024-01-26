@@ -8,18 +8,28 @@ function populateTodoList() {
     toDoListElement.innerText = todo.task;
     toDoListElement.classList.add(todo.task.replaceAll(" ", "-"));
 
-    if (todo.completed) {
-      toDoListElement.style.textDecoration = "line-through";
-    }
-
     const doneBtn = document.createElement("button");
     doneBtn.innerText = "Done";
+    doneBtn.classList.add("todo-btn");
+    doneBtn.classList.add("done-btn");
+    doneBtn.classList.add("right-gap");
 
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete";
+    deleteBtn.classList.add("todo-btn");
+    deleteBtn.classList.add("delete-btn");
 
-    toDoListElement.appendChild(doneBtn);
-    toDoListElement.appendChild(deleteBtn);
+    const span = document.createElement("span");
+
+    if (todo.completed) {
+      toDoListElement.style.textDecoration = "line-through";
+      toDoListElement.style.listStyleType = "disc";
+      doneBtn.innerText = "Undone";
+    }
+
+    span.appendChild(doneBtn);
+    span.appendChild(deleteBtn);
+    toDoListElement.appendChild(span);
     list.appendChild(toDoListElement);
   }
 }
@@ -55,30 +65,35 @@ let todos = [
 ];
 
 const list = document.createElement("ul");
+list.setAttribute("id", "todo-list");
 document.body.appendChild(list);
 
 const addBtn = document.querySelector("button");
+addBtn.classList.add("right-gap");
 const deleteAllBtn = document.getElementById("remove-all-completed");
 
 addBtn.addEventListener("click", addNewTodo);
 
 deleteAllBtn.addEventListener("click", deleteAllCompletedTodos);
 
-list.addEventListener("click", (event) => {
-  const target = event.target;
-  for (const todo of todos) {
-    if (todo.task.replaceAll(" ", "-") === target.parentNode.className)
-      if (target.innerText === "Done") {
-        todo.completed = true;
-        target.innerText = "Undone";
-      } else if (target.innerText === "Undone") {
-        todo.completed = false;
-        target.innerText = "Done";
-      } else if (target.innerText === "Delete") {
-        todos.splice(todos.indexOf(todo), 1);
+document
+  .getElementById("todo-list")
+  .addEventListener("click", function (event) {
+    const target = event.target;
+    const classSpan = target.parentNode;
+    const classLi = classSpan.parentNode.className;
+    for (let element of todos) {
+      if (element.task.replaceAll(" ", "-") === classLi) {
+        if (target.innerText === "Undone") {
+          element.completed = false;
+        } else if (target.innerText === "Done") {
+          element.completed = true;
+        } else if (target.innerText === "Delete") {
+          todos.splice(todos.indexOf(element), 1);
+        }
       }
-  }
-  populateTodoList();
-});
+    }
+    populateTodoList();
+  });
 
 window.onload = populateTodoList;
