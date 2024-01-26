@@ -21,9 +21,9 @@ body {
   height: 550px;
   border-radius: 40px;
   background: #124c63;
-  box-shadow: 25px 25px 75px rgb(29, 36, 34),
-    inset 5px 10px 10px rgba(121, 145, 143, 0.5),
-    inset 5px 5px 20px rgba(253, 244, 244, 0.25);
+  box-shadow: 25px 25px 75px rgb(72, 85, 81),
+    inset 5px 10px 10px rgba(148, 167, 165, 0.5),
+    inset 5px 5px 20px rgba(241, 239, 239, 0.25);
 }
 
 h1 {
