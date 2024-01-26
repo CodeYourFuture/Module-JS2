@@ -51,33 +51,29 @@ h1 {
 button[type="submit"],
 #remove-all-completed {
   display: inline-block;
-  width: 40%; /* Adjust the width as needed */
+  width: 40%;
   padding: 10px;
-  margin-right: 5%; /* Adjust the margin between buttons */
+  margin-right: 5%;
   border: none;
   border-radius: 7px;
-  background-color: hsl(218, 79%, 19%); /* Add Todo button color */
+  background-color: hsl(218, 79%, 19%);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 button[type="submit"]:hover {
-  background-color: #3e1c7c; /* Change color on hover */
+  background-color: #3e1c7c;
 }
 
-/* Remove all completed button */
 #remove-all-completed {
-  background-color: hsl(
-    218,
-    79%,
-    19%
-  ); /* Adjust Remove all completed button color */
-  margin-right: 0; /* No margin on the right for the last button */
-  transition: background-color 0.3s ease; /* Add smooth transition effect */
+  background-color: hsl(218, 79%, 19%);
+  margin-right: 0;
+  transition: background-color 0.3s ease;
 }
 #remove-all-completed:hover {
-  background-color: #3e1c7c; /* Change color on hover */
+  background-color: #3e1c7c;
 }
 
 /* Add space between buttons */
