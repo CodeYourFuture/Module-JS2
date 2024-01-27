@@ -3,13 +3,82 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: `Poppins`;
+  font-family: "Poppins", "san-serif";
 }
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #3d5979;
+  background: url("/week-3/todo-list/assets/world.jpg") center/cover no-repeat;
+}
+
+.box {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  border-radius: 40px;
+  background: #124c63;
+  box-shadow: 25px 25px 75px rgb(72, 85, 81),
+    inset 5px 10px 10px rgba(148, 167, 165, 0.5),
+    inset 5px 5px 20px rgba(241, 239, 239, 0.25);
+}
+
+h1 {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+  font-size: 1.75em;
+  margin: 10px;
+  padding-top: 25px;
+}
+
+#inputBox {
+  position: relative;
+  width: 95%;
+  border: none;
+  outline: none;
+  padding: 15px 15px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  box-shadow: 5px 5px 6px;
+}
+
+/* to do buttons*/
+button[type="submit"],
+#remove-all-completed {
+  display: inline-block;
+  width: 40%;
+  padding: 10px;
+  margin-right: 5%;
+  border: none;
+  border-radius: 7px;
+  background-color: hsl(218, 79%, 19%);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 5px 5px 6px;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e1c7c;
+}
+
+#remove-all-completed {
+  background-color: hsl(218, 79%, 19%);
+  margin-right: 0;
+  transition: background-color 0.3s ease;
+}
+#remove-all-completed:hover {
+  background-color: #3e1c7c;
+}
+
+/* Add space between buttons */
+button[type="submit"] + #remove-all-completed {
+  margin-top: 10px;
 }
