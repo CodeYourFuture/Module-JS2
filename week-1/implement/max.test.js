@@ -1,3 +1,17 @@
+
+const largest = require("./max.js");
+
+describe("largest", () => {
+  test("Given an array should sum all numbers and ignoring the strings", () => {
+    expect(largest([10, 20, 30])).toBe(30);
+    expect(largest(["hey", 10, "hi", 60, 10])).toBe(60);
+  });
+
+
+})
+
+
+
 /* Find the maximum element of an array of numbers
 
 In this kata, you will need to implement a function that sums the numerical elements of an array

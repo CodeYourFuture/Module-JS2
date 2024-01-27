@@ -11,3 +11,6 @@ function largest(arr) {
 }
 let arr = ["tt", 98, -9, 1, 39, "a", "df", 99];
 console.log("Largest in given array is " + largest(arr));
+
+module.exports = largest;
+
