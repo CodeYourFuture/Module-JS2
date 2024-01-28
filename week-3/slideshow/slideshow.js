@@ -56,6 +56,9 @@ autoForwardBtn.addEventListener("click", () => {
   }, 1000);
 });
 
-stopBtn.addEventListener("click", () => {});
+stopBtn.addEventListener("click", () => {
+  clearInterval(autoPlayBackward);
+  clearInterval(autoPlayForward);
+});
 
 window.onload = generatePhoto;
