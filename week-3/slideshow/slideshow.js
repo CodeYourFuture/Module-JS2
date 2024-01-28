@@ -11,6 +11,14 @@ const image = document.getElementById("carousel-img");
 const backwardBtn = document.getElementById("backward-btn");
 const forwardBtn = document.getElementById("forward-btn");
 
+const stopBtn = document.getElementById("stop-btn");
+
+const autoBackwardBtn = document.getElementById("auto-backward-btn");
+const autoForwardBtn = document.getElementById("auto-forward-btn");
+
+let autoPlayBackward;
+let autoPlayForward;
+
 // Write your code here
 
 function generatePhoto() {
@@ -35,5 +43,19 @@ function previousPhoto() {
 
 backwardBtn.addEventListener("click", previousPhoto);
 forwardBtn.addEventListener("click", nextPhoto);
+
+autoBackwardBtn.addEventListener("click", () => {
+  autoPlayBackward = setInterval(() => {
+    previousPhoto();
+  }, 1000);
+});
+
+autoForwardBtn.addEventListener("click", () => {
+  autoPlayForward = setInterval(() => {
+    nextPhoto();
+  }, 1000);
+});
+
+stopBtn.addEventListener("click", () => {});
 
 window.onload = generatePhoto;
