@@ -48,12 +48,14 @@ autoBackwardBtn.addEventListener("click", () => {
   autoPlayBackward = setInterval(() => {
     previousPhoto();
   }, 1000);
+  clearInterval(autoPlayForward);
 });
 
 autoForwardBtn.addEventListener("click", () => {
   autoPlayForward = setInterval(() => {
     nextPhoto();
   }, 1000);
+  clearInterval(autoPlayBackward);
 });
 
 stopBtn.addEventListener("click", () => {
