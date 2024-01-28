@@ -5,8 +5,8 @@ function readingList(li) {
 
   
   for (let i = shuffledBooks.length - 1; i > 0; i--) {
-    const indexZ = Math.floor(Math.random() * (i + 1));
-    [shuffledBooks[i], shuffledBooks[indexZ]] = [shuffledBooks[indexZ], shuffledBooks[i]];
+    const getRandomBook = Math.floor(Math.random() * (i + 1));
+    [shuffledBooks[i], shuffledBooks[getRandomBook]] = [shuffledBooks[getRandomBook], shuffledBooks[i]];
   }
 
   return shuffledBooks;
