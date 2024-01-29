@@ -1,7 +1,79 @@
 /** Write your CSS in here **/
-
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+body {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5vh 5vw;
+  border-radius: 27px;
+  border: solid 3px black;
+  padding: 5vh 5vw;
+  background-color: rgb(206, 206, 206);
+}
+#img-container {
+  width: 80vw;
+  height: 60vh;
+  border-radius: 15px;
+  border: solid 3px black;
+}
 #carousel-img {
-  width: auto;
-  height: 400px;
-  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.navBtn {
+  padding: 10px 10px;
+  border-radius: 999px;
+  background-color: black;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.btn-container button {
+  padding: 5px 10px 6px;
+  border-radius: 999px;
+  background-color: black;
+  color: white;
+  font-size: 17px;
+}
+.btn-container button:hover {
+  background-color: grey;
+}
+#auto-backward-btn {
+  padding-right: 14px;
+}
+#backward-btn {
+  padding-right: 14px;
+}
+#auto-forward-btn {
+  padding-left: 14px;
+}
+#forward-btn {
+  padding-left: 14px;
+}
+#auto-backward-btn {
+  padding-right: 14px;
+}
+#stop-btn {
+  padding-right: 15px;
+  padding-left: 15px;
 }
