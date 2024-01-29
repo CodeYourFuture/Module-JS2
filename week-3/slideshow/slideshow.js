@@ -20,10 +20,10 @@ btnContainer.classList.add("btn-container");
 const backwardBtn = document.getElementById("backward-btn");
 const forwardBtn = document.getElementById("forward-btn");
 
-const stopBtn = document.getElementById("stop-btn");
+const stopBtn = document.getElementById("stop");
 
-const autoBackwardBtn = document.getElementById("auto-backward-btn");
-const autoForwardBtn = document.getElementById("auto-forward-btn");
+const autoBackwardBtn = document.getElementById("auto-backward");
+const autoForwardBtn = document.getElementById("auto-forward");
 
 btnContainer.append(
   autoBackwardBtn,
@@ -77,20 +77,26 @@ forwardBtn.addEventListener("click", nextPhoto);
 autoBackwardBtn.addEventListener("click", () => {
   autoPlayBackward = setInterval(() => {
     previousPhoto();
-  }, 1000);
+  }, 2000);
   clearInterval(autoPlayForward);
+  autoBackwardBtn.disabled = true;
+  autoForwardBtn.disabled = true;
 });
 
 autoForwardBtn.addEventListener("click", () => {
   autoPlayForward = setInterval(() => {
     nextPhoto();
-  }, 1000);
+  }, 2000);
   clearInterval(autoPlayBackward);
+  autoBackwardBtn.disabled = true;
+  autoForwardBtn.disabled = true;
 });
 
 stopBtn.addEventListener("click", () => {
   clearInterval(autoPlayBackward);
   clearInterval(autoPlayForward);
+  autoBackwardBtn.disabled = false;
+  autoForwardBtn.disabled = false;
 });
 
 window.onload = generatePhoto;
