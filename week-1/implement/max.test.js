@@ -26,3 +26,24 @@ test.todo("given an empty array, returns -Infinity");
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+describe("max", () => {
+  test("Given an empty array, return -Infinity", () => {
+    expect(max([])).toEqual(-Infinity);
+  });
+
+  test("Given an array with one number, then it should return that number", () => {
+    expect(max([1])).toEqual(1);
+  });
+
+  test("Given an array with both positive and negative numbers, then it should return the largest number overall", () => {
+    expect(max([1, -1, 3, -5, 7, -8])).toEqual(7);
+  });
+
+  test("Given an array with decimal numbers, then it should return the largest decimal number", () => {
+    expect(max([0.1, 1.2, 5.5, 7.89])).toEqual(7.89);
+  });
+
+  test("Given an array with non-number values, then it should return the max and ignore non-numeric values", () => {
+    expect(max(["a", 1, 5, 9, "hi"])).toEqual(9);
+  });
+});
