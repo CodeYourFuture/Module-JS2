@@ -32,3 +32,25 @@ as the object doesn't contains a key of 'c'
 // Given invalid parameters like arrays
 // When passed to contains
 // Then it should return false or throw an error
+describe("contains function", () => {
+  test("Given a contains function, then it should return true if the objet contains the property, false otherwise", () => {
+    expect(contains({ a: 1, b: 2 }, "a")).toEqual(true);
+    expect(contains({ a: 1, b: 2 }, "c")).toEqual(false);
+  });
+
+  test("Given an empty object, then it should return false", () => {
+    expect(contains({})).toEqual(false);
+  });
+
+  test("Given an object with properties, when passed to contains with an existing property name, then it should return true", () => {
+    expect(contains({ a: 1, b: 2 }, "b")).toEqual(true);
+  });
+
+  test("Given an object with properties, when passed to contains with a non-existing property name, then it should return false", () => {
+    expect(contains({ a: 1, b: 2 }, "c")).toEqual(false);
+  });
+
+  test("Given invalid parameters like arrays, then it should return false or throw an error", () => {
+    expect(contains([1, 2, 3, 4])).toEqual(false);
+  });
+});

@@ -1,3 +1,4 @@
+const lookup = require("./lookup.js");
 /*
 
 Create a lookup object of key value pairs from an array of code pairs
@@ -29,3 +30,10 @@ It should return:
    'CA': 'CAD'
  }
 */
+describe("lookup function", () => {
+  test("Given an array representing Country and currency code pairs, then it should return an object where the key is the country and the value is the currency", () => {
+    expect(lookup(["US", "USD"], ["CA", "CAD"])).toEqual(
+      {"US" : "USD",
+      "CA", "CAD"})
+  })
+})
