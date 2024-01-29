@@ -504,3 +504,5 @@ function showQuote() {
 
 // Button click
 btn.addEventListener("click", showQuote);
+
+window.addEventListener("load", showQuote);
