@@ -8,8 +8,8 @@ function totalTill(till) {
   let total = 0;
 
   for (const [coin, quantity] of Object.entries(till)) {
-    console.log(coin * quantity);
-    total += coin * quantity;
+    console.log(Number(coin.slice(0, -1)) * quantity);
+    total += Number(coin.slice(0, -1)) * quantity;
   }
 
   return `£${total / 100}`;
@@ -30,3 +30,5 @@ const totalAmount = totalTill(till);
 // c) What does coin * quantity evaluate to inside the for...of loop?
 
 // d) Write a test for this function to check it works and then fix the implementation of totalTill
+
+console.log(totalTill(till));

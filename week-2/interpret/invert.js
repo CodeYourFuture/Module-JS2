@@ -9,8 +9,10 @@
 function invert(obj) {
   const invertedObj = {};
 
-  for (const [key, value] of Object.entries(obj)) {
-    invertedObj.key = value;
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      invertedObj[obj[key]] = key;
+    }
   }
 
   return invertedObj;
@@ -25,3 +27,5 @@ function invert(obj) {
 // c) What does Object.entries return? Why is it needed in this program?
 
 // d) Explain why the current return value is different from the target output
+
+console.log(invert({ x: 10, y: 20 }));
