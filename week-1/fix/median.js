@@ -8,14 +8,14 @@
   const middleIndex = Math.floor(listsToSort.length / 2);
   const elementsInMiddle = listsToSort.slice(middleIndex - 1, middleIndex + 1);
   
-  for (let i = 0; i < listsToSort.length; i++){
+  // for (let i = 0; i < listsToSort.length; i++){
     if(listsToSort.length % 2 === 0){
     return (elementsInMiddle[0] + elementsInMiddle[1]) / 2;
  }
  else {
     return listsToSort[middleIndex];
   }
-}
+// }
 
 };
 
