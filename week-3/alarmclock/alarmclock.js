@@ -1,35 +1,32 @@
 let countdown;
 let timeRemaining;
 let isAlarmPlaying = false;
+let isPaused = false;
 
 function setAlarm() {
-  // Clear any existing countdown
   clearInterval(countdown);
 
-  // Get the input value for the countdown timer
   const inputTime = parseInt(document.getElementById("alarmSet").value, 10);
 
-  // Validate input
   if (isNaN(inputTime) || inputTime <= 0) {
-    alert("Please enter number");
+    alert("Please enter a valid number");
     return;
   }
 
   timeRemaining = inputTime;
 
-  // Update the heading
   updateHeading();
 
-  // Start the countdown
   countdown = setInterval(() => {
-    timeRemaining--;
+    if (!isPaused) {
+      timeRemaining--;
 
-    if (timeRemaining >= 0) {
-      updateHeading();
-    } else {
-      // Countdown reached zero, play alarm
-      playAlarm();
-      clearInterval(countdown);
+      if (timeRemaining >= 0) {
+        updateHeading();
+      } else {
+        playAlarm();
+        clearInterval(countdown);
+      }
     }
   }, 1000);
 }
@@ -53,10 +50,26 @@ function playAlarm() {
   }
 }
 
-function pauseAlarm() {
+function pauseResumeAlarm() {
+  if (isPaused) {
+    // Resume countdown
+    isPaused = false;
+    document.getElementById("pause").innerText = "Pause";
+    setAlarm();
+  } else {
+    // Pause countdown
+    isPaused = true;
+    document.getElementById("pause").innerText = "Resume";
+    clearInterval(countdown);
+  }
+}
+
+function stopAlarm() {
   clearInterval(countdown);
   isAlarmPlaying = false;
+  isPaused = false;
   document.getElementById("timeRemaining").innerText = "Time Remaining: 00:00";
+  document.getElementById("pause").innerText = "Pause";
 }
 
 // DO NOT EDIT BELOW HERE
@@ -70,6 +83,9 @@ function setup() {
 
   document.getElementById("stop").addEventListener("click", () => {
     pauseAlarm();
+  });
+  document.getElementById("pause").addEventListener("click", () => {
+    pauseResumeAlarm();
   });
 }
 
