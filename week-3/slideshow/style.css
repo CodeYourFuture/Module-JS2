@@ -1,1 +1,97 @@
-/** Write your CSS in here **/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  font-family: monospace;
+  background: url(pexels-kseniya-lapteva-9175736.jpg)
+    no-repeat center;
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block: 3rem;
+}
+.heading {
+  text-align: center;
+  font-size: 2rem;
+}
+.img {
+  height: 25rem;
+  width: 50rem;
+  object-fit: cover;
+  box-shadow: 10px 10px 20px gray;
+}
+#backward-btn,
+#forward-btn {
+  cursor: pointer;
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  top: 36.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid black;
+  transition: transform 0.5s ease-in;
+}
+
+#forward-btn {
+  right: -5rem;
+}
+#backward-btn {
+  left: -5rem;
+}
+#backward-btn img,
+#forward-btn img {
+  width: inherit;
+  height: inherit;
+  padding: 0.3rem;
+}
+#backward-btn:hover,
+#forward-btn:hover {
+  border: 2px solid black;
+}
+.time-input {
+  width: 100%;
+  height: 2rem;
+  margin-top: 1rem;
+  outline: none;
+  border: 2px solid black;
+  padding: 0.4rem;
+}
+.time-input:hover,
+.time-input:focus{
+    border: 1px solid black;
+}
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.btn {
+  cursor: pointer;
+  height: 2.5rem;
+  width: auto;
+  padding-inline: 2rem;
+  border-radius: 3px;
+  background-color: rgb(62, 62, 62);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+}
+.btn:hover,
+.btn:focus{
+  background-color: black;
+}
+
