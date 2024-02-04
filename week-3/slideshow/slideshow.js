@@ -10,7 +10,7 @@ const backwardBtn = document.querySelector('#backward-btn');
 const autoBackBtn = document.querySelector('#auto-backward');
 const autoForwardBtn = document.querySelector('#auto-forward');
 const stopBtn = document.querySelector('#stop');
-let index = 0;
+let currentImageIndex = 0;
 let timeBackward;
 let timeForward;
 let delay;
@@ -20,22 +20,22 @@ function displayImages(num) {
 }
 
 function backward() {
-    if (index === 0) {
-        index = images.length - 1;
-        displayImages(index);
+    if (currentImageIndex === 0) {
+        currentImageIndex = images.length - 1;
+        displayImages(currentImageIndex);
     } else {
-        index--;
-        displayImages(index);
+        currentImageIndex--;
+        displayImages(currentImageIndex);
     }
 }
 
 function forward() {
-    if (index === images.length - 1) {
-        index = 0;
-        displayImages(index);
+    if (currentImageIndex === images.length - 1) {
+        currentImageIndex = 0;
+        displayImages(currentImageIndex);
     } else {
-        index++;
-        displayImages(index);
+        currentImageIndex++;
+        displayImages(currentImageIndex);
     }
 }
 
@@ -45,13 +45,6 @@ stopBtn.addEventListener('click', () => {
     enableAutoButtons();
 })
 
-function autoBackward() {
-    backward();
-}
-
-function autoForward() {
-    forward();
-}
 
 backwardBtn.addEventListener('click', () => {
     backward();
@@ -66,10 +59,8 @@ autoBackBtn.addEventListener('click', () => {
     delay = document.querySelector('#delay').value;
     if (delay === "") {
         delay = 2000;
-        timeBackward = setInterval(autoBackward, delay);
-    } else {
-        timeBackward = setInterval(autoBackward, delay);
-    }
+    } 
+    timeBackward = setInterval(backward(), delay);
 })
 
 autoForwardBtn.addEventListener('click', () => {
@@ -77,10 +68,8 @@ autoForwardBtn.addEventListener('click', () => {
     delay = document.querySelector('#delay').value;
     if (delay === "") {
         delay = 2000;
-        timeForward = setInterval(autoForward, delay);
-    } else {
-        timeForward = setInterval(autoForward, delay);
     }
+    timeForward = setInterval(forward, delay);
 })
 
 function disableAutoButtons() {
