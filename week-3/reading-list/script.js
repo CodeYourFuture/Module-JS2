@@ -1,3 +1,4 @@
+
 // for the tests, do not modify this array of books
 const books = [
   {
@@ -21,3 +22,28 @@ const books = [
   },
 ];
 
+
+const getReadingList = document.getElementById("content");
+const listOfBooks = document.getElementById("reading-list");
+
+for (const item of books) {
+  const li = document.createElement("li");
+
+
+  const p = document.createElement("p");
+  p.textContent = `${item.title} by ${item.author}`;
+
+  const image = document.createElement("img");
+  image.src = item.bookCoverImage;
+
+  if (item.alreadyRead === true) {
+    li.setAttribute("class", "green")
+  } else {
+    li.setAttribute("class", "red")
+  }
+
+
+  listOfBooks.appendChild(li);
+  li.appendChild(p);
+  li.appendChild(image);
+}
