@@ -16,12 +16,12 @@ function invert(obj) {
   return invertedObj;
 }
 
-// a) What is the current return value when invert is called with { a : 1 }
+// a) What is the current return value when invert is called with { a : 1 } = a : 1
 
-// b) What is the current return value when invert is called with { a: 1, b: 2 }
+// b) What is the current return value when invert is called with { a: 1, b: 2 } = a: 1, b: 2
 
-// c) What is the target return value when invert is called with {a : 1, b: 2}
+// c) What is the target return value when invert is called with {a : 1, b: 2} = 1: a, 2: b
 
-// c) What does Object.entries return? Why is it needed in this program?
+// c) What does Object.entries return? Why is it needed in this program? = returns an array consisting of enumerable property [key, value] pairs of the object passed.
 
-// d) Explain why the current return value is different from the target output
+// d) Explain why the current return value is different from the target output = because keys and values in array have been swapped 

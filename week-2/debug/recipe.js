@@ -10,6 +10,13 @@ const recipe = {
   ingredients: ["olive oil", "tomatoes", "salt", "pepper"],
 };
 
+// console.log(`${recipe.title} serves ${recipe.serves}
+//   ingredients:
+// ${recipe}`);
+// this does not work because ingredients's value is an array and to display an element from an arary you either access them using any of the array methods including loops or using index notations.
+
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+  ingredients:`);
+  for(ingredients of recipe.ingredients){
+  console.log(ingredients)
+ }
