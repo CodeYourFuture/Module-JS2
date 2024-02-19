@@ -13,7 +13,7 @@ const recipe = {
 // console.log(`${recipe.title} serves ${recipe.serves}
 //   ingredients:
 // ${recipe}`);
-// this does not work because recipe does not include .ingredients and to show ingredients in a new line you need a for loop 
+// this does not work because ingredients's value is an array and to display an element from an arary you either access them using any of the array methods including loops or using index notations.
 
 console.log(`${recipe.title} serves ${recipe.serves}
   ingredients:`);
