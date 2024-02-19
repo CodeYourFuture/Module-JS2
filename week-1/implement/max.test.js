@@ -48,6 +48,7 @@ describe("getMax", () => {
   })  
 
   test("returns the largest number in array with numerical and non-numerical value", () => {
+    expect(getMax(["55", 8, 9])).toBe(9);
     expect(getMax([3, 7, 'hi', 1, 'bye'])).toBe(7);
   }) 
 

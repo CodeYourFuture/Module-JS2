@@ -8,6 +8,4 @@ function deduped(arr) {
     return data;
 }
 
-//console.log(deduped([2, 5, 2, 3, 5, 1]))
-
 module.exports = deduped; 
