@@ -1,5 +1,5 @@
 // Predict and explain first...
-
+// for...of loop is designed to iterate over iterable objects like arrays, not over plain objects. we need to use for .. in or Object.values() with for of
 // This program attempts to log out all the property values in the object.
 // But it isn't working. Explain why first and then fix the problem
 
@@ -11,6 +11,10 @@ const author = {
   alive: true,
 };
 
-for (const value of author) {
-  console.log(value);
+for (const element of Object.values(author)){
+  console.log(element);
+}
+
+for (const element in author) {
+  console.log(author[element]);
 }

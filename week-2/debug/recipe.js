@@ -11,5 +11,8 @@ const recipe = {
 };
 
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+  ingredients:`);
+
+for (const element of recipe.ingredients) {
+  console.log(element);
+}
