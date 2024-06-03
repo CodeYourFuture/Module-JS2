@@ -1,5 +1,5 @@
 let alarmTime;
-let remainingTime = document.querySelector("#timeRemaining");
+const remainingTime = document.querySelector("#timeRemaining");
 let intervalID;
 
 function setAlarm() {
