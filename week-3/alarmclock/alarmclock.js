@@ -1,75 +1,43 @@
-// var myvar;
-// var timer = document.getElementById("alarmSet");
-// var countDown;
-// function startTime() {
-//   myVar = setInterval(start, 4000);
-//   document.getElementById("timer").innerHTML = timer.value;
-//   countDown = timer.value;
-// }
-// function start() {
-//   countDown--;
-//   document.getElementById("timer").innerHTML = countDown;
-//   if (countDown == -1) {
-//     stop();
-//     document.getElementById("timer").innerHTML = "0";
-//   }
-//   playAlarm();
-// }
-// startTime();
-// setAlarm();
-// DO NOT EDIT BELOW HERE
+let alarmTime;
+let remainingTime = document.querySelector("#timeRemaining");
+let intervalID;
 
 function setAlarm() {
-  const inputTime = document.getElementById("alarmSet");
-  const spanTime = document.querySelector("span");
-  const inputValue = inputTime.value;
-  spanTime.textContent = timeFormat(inputValue);
+  clearInterval(intervalID);
+  let alarmInput = document.getElementById("alarmSet");
+  alarmTime = alarmInput.value;
+  intervalID = setInterval(updateTimeRemaining, 1000);
+  updateTimeRemaining();
 }
 
-function timeFormat(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSec = seconds % 60;
-  const formattedMin = String(minutes).padStart(2, "0");
-  const formattedSec = String(remainingSec).padStart(2, "0");
-  return `${formattedMin}:${formattedSec}`;
-}
-
-setAlarm();
-
-setInterval(() => {
-  const spanTime = document.querySelector("span");
-  const inputTime = document.getElementById("alarmSet");
-  const inputValue = inputTime.value;
-  if (spanTime.textContent === "00:00" && inputValue !== "") {
+function updateTimeRemaining() {
+  let minutes = Math.floor(alarmTime / 60);
+  let seconds = alarmTime % 60;
+  remainingTime.innerText = `Time Remaining: ${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  if (alarmTime === 0) {
     playAlarm();
-  } else if (spanTime.textContent != "00:00") {
-    const currentSeconds =
-      parseInt(spanTime.textContent.slice(3), 10) +
-      parseInt(spanTime.textContent.slice(0, 2)) * 60;
-
-    spanTime.textContent = timeFormat(currentSeconds - 1);
-    pauseAlarm();
+    clearInterval(intervalID);
   }
-}, 1000);
+  alarmTime--;
+}
+
+// DO NOT EDIT BELOW HERE
 
 var audio = new Audio("alarmsound.mp3");
-
 function setup() {
   document.getElementById("set").addEventListener("click", () => {
     setAlarm();
   });
-
   document.getElementById("stop").addEventListener("click", () => {
     pauseAlarm();
   });
 }
-
 function playAlarm() {
   audio.play();
 }
-
 function pauseAlarm() {
   audio.pause();
 }
-
 window.onload = setup;
