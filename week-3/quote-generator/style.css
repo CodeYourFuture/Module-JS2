@@ -1,1 +1,67 @@
 /** Write your CSS in here **/
+/** Write your CSS in here **/
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e1970f;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.randomQuote {
+  background-color: whitesmoke;
+  height: 45vh;
+  width: 50vw;
+  padding: 3vw 2vw 1vw 2vw;
+  position: relative;
+}
+
+#quote {
+  text-align: justify;
+  font-size: 1.7vw;
+  font-weight:500;
+  color: #e1970f;
+
+}
+
+
+.quoteDiv{
+  display: inline-flex;
+  position: absolute;
+  height: 4vw;
+  top: 2.5vw;
+  bottom: 10vw;
+  left: 4vw;
+  right: 4vw;
+  gap: 0.7vw;
+}
+
+
+.btn {
+  display: flex;
+  height: 4vw;
+  width: 100%;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 4vw;
+  bottom: 14vh;
+}
+
+#author {
+  color: #e1970f;
+  font-size: 1.2vw;
+}
+
+#new-quote {
+  background-color: #e1970f;
+  font-size: 1vw;
+  border: none;
+  padding: 0.5rem;
+  color: beige;
+}
+
+#quotationMark{
+  color: #e1970f;
+}

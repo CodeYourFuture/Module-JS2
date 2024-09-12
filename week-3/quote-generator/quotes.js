@@ -491,3 +491,26 @@ const quotes = [
 ];
 
 // call pickFromArray with the quotes array to check you get a random quote
+
+const removeHeading = document.getElementById("heading");
+removeHeading.remove();
+
+function popUpQuote() {
+  const displayQuote = pickFromArray(quotes);
+  const paragraphQuote = document.getElementById("quote");
+  const paragraphAuthor = document.getElementById("author");
+  const quotation = document.getElementById("quotationMark").innerHTML;
+  paragraphQuote.textContent = quotation + displayQuote.quote;
+  paragraphAuthor.textContent = "‐ " + displayQuote.author;
+}
+
+function changeQuote() {
+  const displayQuote = pickFromArray(quotes);
+  popUpQuote();
+}
+
+const newQuote = document.getElementById("new-quote");
+console.log(newQuote);
+newQuote.addEventListener("click", changeQuote);
+
+popUpQuote();
