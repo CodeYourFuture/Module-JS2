@@ -24,3 +24,23 @@ test.todo("given an empty array, it returns an empty array");
 // Given an array with strings or numbers
 // When passed to the dedupe function
 // Then it should remove the duplicate values
+
+test("given an empty array, it returns an empty array", () => {
+  const myNewArr = dedupe([]);
+  expect(myNewArr).toEqual([]);
+});
+
+test("given an array with no duplicate, it should return a copy of the original array", () => {
+  const myNewArr = dedupe(["b", "g", "a", "c", "r", "t"]);
+  expect(myNewArr).toEqual(["b", "g", "a", "c", "r", "t"]);
+});
+
+test("given an array with strings or numbers, it should remove the duplicate values", () => {
+  const myNewArr = dedupe([5, 1, 1, 2, 3, 2, 5, 8]);
+  expect(myNewArr).toEqual([5, 1, 2, 3, 8]);
+});
+
+test("given an array with strings or numbers, it should remove the duplicate values", () => {
+  const myNewArr = dedupe(["b", "g", "a", "c", "r", "t", "c", "g"]);
+  expect(myNewArr).toEqual(["b", "g", "a", "c", "r", "t"]);
+});
