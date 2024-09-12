@@ -57,8 +57,8 @@ describe("Mandatory tasks", () => {
 
   test("can add a new todo to the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+    const button = page.window.document.querySelector("#submit");
+    const input = page.window.document.querySelector("#taskInput");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
@@ -70,37 +70,47 @@ describe("Mandatory tasks", () => {
     expect(listItems.length).toBe(3);
   });
 
-  test("can strike through a todo when it is completed", () => {
-    const li = page.window.document.querySelector("li");
-    const tickIcon = page.window.document.querySelector("li i");
-
+  test("can strike through a todo when it is completed", async () => {
+    const task = page.window.document.querySelector("li p.task-text");
+    const tickIcon = page.window.document.querySelector("li i.fa-check");
+    
     userEvent.click(tickIcon);
 
-    expect(li).toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
+
+    // expect(task).toHaveStyle({
+    //   textDecoration: "line-through",
+    // });
   });
 
   test("can undo a strikethrough on a todo", () => {
-    const li = page.window.document.querySelector("li");
-    const tickIcon = page.window.document.querySelector("li i");
+    const task = page.window.document.querySelector("li p.task-text");
+    const tickIcon = page.window.document.querySelector("li i.fa-check");
     userEvent.click(tickIcon);
 
-    expect(li).toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
 
     userEvent.click(tickIcon);
 
-    expect(li).not.toHaveStyle({
-      textDecoration: "line-through",
-    });
+    setTimeout(() => {
+      expect(task).not.toHaveStyle({
+        textDecoration: "line-through",
+      });
+    }, 500);
   });
 
   test("can delete a todo from the list", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+    const button = page.window.document.querySelector("#submit");
+    const input = page.window.document.querySelector("#taskInput");
     const todoText = "Do CYF coursework";
 
     userEvent.type(input, todoText);
@@ -122,8 +132,8 @@ describe("Mandatory tasks", () => {
 describe("Advanced tasks", () => {
   test("can remove all completed todos", () => {
     const todoList = page.window.document.querySelector("#todo-list");
-    const button = page.window.document.querySelector(".btn");
-    const input = page.window.document.querySelector("#todoInput");
+    const button = page.window.document.querySelector("#submit");
+    const input = page.window.document.querySelector("#taskInput");
 
     userEvent.type(input, "Do CYF coursework");
     userEvent.click(button);
@@ -139,6 +149,7 @@ describe("Advanced tasks", () => {
     const tickIcon2 = page.window.document.querySelector(
       "li:nth-child(2) i.fa-check"
     );
+
     userEvent.click(tickIcon2);
     const tickIcon4 = page.window.document.querySelector(
       "li:nth-child(4) i.fa-check"

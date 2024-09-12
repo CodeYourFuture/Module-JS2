@@ -1,3 +1,20 @@
+function setup() {
+  showQuoteAndAuthor()
+  document.querySelector("#new-quote").addEventListener("click", showQuoteAndAuthor)
+}
+
+function showQuoteAndAuthor(params) {
+  let quoteAndAuthor = pickFromArray(quotes);
+
+  let quoteText = quoteAndAuthor.quote;
+  let authorName = quoteAndAuthor.author;
+
+  document.querySelector("#quote").innerHTML = quoteText;
+  document.querySelector("#author").innerHTML = authorName;
+}
+
+window.onload = setup;
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
