@@ -21,3 +21,27 @@ const books = [
   },
 ];
 
+const getReadingList = document.getElementById("content");
+const listOfBooks = document.getElementById("reading-list");
+console.log(getReadingList);
+
+// const bookRead = books.title;
+for (const item of books) {
+  const li = document.createElement("li");
+  listOfBooks.appendChild(li);
+
+  if (item.alreadyRead === true) {
+    li.setAttribute("class", "green");
+  } else {
+    li.setAttribute("class", "red");
+  }
+
+  const p = document.createElement("p");
+  li.appendChild(p);
+
+  p.textContent = `${item.title} by ${item.author}`;
+
+  const image = document.createElement("img");
+  image.src = item.bookCoverImage;
+  li.appendChild(image);
+}
