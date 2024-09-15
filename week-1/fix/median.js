@@ -1,6 +1,6 @@
-// Fix this implementation
-// Start by running the tests for this function
-// If you're in the week-1 directory, you can run npm test -- fix to run the tests in the fix directory
+//Fix this implementation
+//Start by running the tests for this function
+//If you're in the week-1 directory, you can run npm test -- fix to run the tests in the fix directory
 
 function calculateMedian(list) {
   const middleIndex = Math.floor(list.length / 2);
@@ -8,4 +8,9 @@ function calculateMedian(list) {
   return median;
 }
 
-module.exports = calculateMedian;
+//calculateMedian( 3, 3, 4, 5)
+//module.exports = calculateMedian;
+
+// console.log(calculateMedian( 3, 3, 4, 5))
+
+
