@@ -6,10 +6,36 @@
   transform: translate(-50%, -50%);
 }
 
-#alarmSet {
-  margin: 20px;
+
+label {
+  color: #e18a42;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 h1 {
+  color: #f79732;
+  font-size: 3em;
   text-align: center;
+}
+
+button {
+  background-color: #f6f18b;
+  color: rgb(237, 131, 10);
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+}
+
+#alarmSet {
+  margin: 50px;
+}
+
+/* Additional styles  */
+body {
+  background-color: #f7b2fc;
+}
+
+.container-title {
+  color: #ece163;
 }
