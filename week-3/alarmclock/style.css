@@ -1,3 +1,4 @@
+
 .centre {
   position: fixed;
   top: 50%;
@@ -7,9 +8,35 @@
 }
 
 #alarmSet {
-  margin: 20px;
+  margin: 50px;
+}
+
+label {
+  color: #1D1D1B; 
+  font-size: 1.5em;
+  text-align: center;
 }
 
 h1 {
+  color: #ffffff; 
+  font-size: 3em;
   text-align: center;
 }
+
+button {
+  background-color: #7C9521; 
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Additional styles  */
+body {
+  background-color: #f7941d; 
+}
+
+.container-title {
+  color: #00A6D4; 
+}
+
