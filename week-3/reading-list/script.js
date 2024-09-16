@@ -21,3 +21,30 @@ const books = [
   },
 ];
 
+let ul = document.querySelector("#reading-list");
+
+for (let i = 0; i < books.length; i++) {
+  const li = document.createElement("li");
+  li.setAttribute("id", "li");
+  ul.appendChild(li);
+
+  let title = document.createElement("p");
+  title.setAttribute("id", "title");
+  li.appendChild(title);
+  title.innerText = `Book title: ${books[i].title}`;
+
+  let author = document.createElement("h1");
+  li.appendChild(author);
+  author.innerText = ` Author: ${books[i].author}`;
+
+  const backgroundImage = document.createElement("img");
+  backgroundImage.setAttribute("id", "background-imag");
+  ul.appendChild(backgroundImage);
+  backgroundImage.src = books[i].bookCoverImage;
+
+  if (books[i].alreadyRead === true) {
+    li.style.background = "green";
+  } else {
+    li.style.background = "red";
+  }
+}
