@@ -1,3 +1,32 @@
+const quoteP = document.getElementById("quote");
+const authorP = document.getElementById("author");
+function quoteGenerator() {
+  const randomPick = Math.floor(Math.random() * quotes.length);
+  quoteP.innerText = quotes[randomPick].quote;
+  authorP.innerText = quotes[randomPick].author;
+}
+
+document.getElementById("new-quote").addEventListener("click", () => {
+  quoteGenerator();
+});
+
+window.onload = quoteGenerator;
+
+let autoPlay;
+let autoPlayCheckBox = document.getElementById("autoPlayCheckBox");
+
+autoPlayCheckBox.addEventListener("change", () => {
+  if (autoPlayCheckBox.checked) {
+    autoPlay = setInterval(() => {
+      quoteGenerator();
+    }, 1000);
+    document.getElementById("autoPlayStatus").innerText = "Auto-play: ON";
+  } else {
+    clearInterval(autoPlay);
+    document.getElementById("autoPlayStatus").innerText = "Auto-play: OFF";
+  }
+});
+
 // DO NOT EDIT BELOW HERE
 
 // pickFromArray is a function which will return one item, at
