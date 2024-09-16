@@ -1,25 +1,66 @@
-function populateTodoList(todos) {
-  let list = document.getElementById("todo-list");
-  // Write your code to create todo list elements with completed and delete buttons here, all todos should display inside the "todo-list" element.
+const inputBox = document.querySelector(".inputField input");
+const addBtn = document.querySelector(".inputField button");
+const todoList = document.querySelector(".todoList");
+const deleteAllBtn = document.querySelector(".footer button");
+
+inputBox.onkeyup = () => {
+  let userEnteredValue = inputBox.value;
+  if (userEnteredValue.trim() != 0) {
+    addBtn.classList.add("active");
+  } else {
+    addBtn.classList.remove("active");
+  }
+};
+
+showTasks();
+
+addBtn.onclick = () => {
+  let userEnteredValue = inputBox.value;
+  let getLocalStorageData = localStorage.getItem("New Todo");
+  if (getLocalStorageData == null) {
+    listArray = [];
+  } else {
+    listArray = JSON.parse(getLocalStorageData);
+  }
+  listArray.push(userEnteredValue);
+  localStorage.setItem("New Todo", JSON.stringify(listArray));
+
+  showTasks();
+  addBtn.classList.remove("active");
+};
+
+function showTasks() {
+  let getLocalStorageData = localStorage.getItem("New Todo");
+  if (getLocalStorageData == null) {
+    listArray = [];
+  } else {
+    listArray = JSON.parse(getLocalStorageData);
+  }
+  const pendingTasksNumb = document.querySelector(".pendingTasks");
+  pendingTasksNumb.textContent = listArray.length;
+  if (listArray.length > 0) {
+    deleteAllBtn.classList.add("active");
+  } else {
+    deleteAllBtn.classList.remove("active");
+  }
+  let newLiTag = "";
+  listArray.forEach((element, index) => {
+    newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span> </li>`;
+  });
+  todoList.innerHTML = newLiTag;
+  inputBox.value = "";
 }
 
-// These are the same todos that currently display in the HTML
-// You will want to remove the ones in the current HTML after you have created them using JavaScript
-let todos = [
-  { task: "Wash the dishes", completed: false },
-  { task: "Do the shopping", completed: false },
-];
-
-populateTodoList(todos);
-
-// This function will take the value of the input field and add it as a new todo to the bottom of the todo list. These new todos will need the completed and delete buttons adding like normal.
-function addNewTodo(event) {
-  // The code below prevents the page from refreshing when we click the 'Add Todo' button.
-  event.preventDefault();
-  // Write your code here... and remember to reset the input field to be blank after creating a todo!
+function deleteTask(index) {
+  let getLocalStorageData = localStorage.getItem("New Todo");
+  listArray = JSON.parse(getLocalStorageData);
+  listArray.splice(index, 1);
+  localStorage.setItem("New Todo", JSON.stringify(listArray));
+  showTasks();
 }
 
-// Advanced challenge: Write a fucntion that checks the todos in the todo list and deletes the completed ones (we can check which ones are completed by seeing if they have the line-through styling applied or not).
-function deleteAllCompletedTodos() {
-  // Write your code here...
-}
+deleteAllBtn.onclick = () => {
+  listArray = [];
+  localStorage.setItem("New Todo", JSON.stringify(listArray));
+  showTasks();
+};
