@@ -3,25 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
+    <title>Todo List app</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha384-pzjw8z+ua/cF9eUROoMVW3lvJxWvRWKGVSaEa07p4z3fZO6biHqo5L2fBL5Kb5Z6"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <form>
-      <div>
-        <input type="text" placeholder="New todo..." />
-      </div>
-      <div>
-        <button type="submit">Add Todo</button>
-        <button
-          type="button"
-          id="remove-all-completed"
-          class="btn btn-primary mb-3"
-        >
-          Remove all completed
-        </button>
-      </div>
-    </form>
-    <script src="script.js"></script>
+    <h1>To Do Lists</h1>
+    <section>
+      <ul id="todo-list"></ul>
+      <form>
+        <div>
+          <input type="text" placeholder="New todo..." id="textboxinput" />
+        </div>
+        <div>
+          <button type="submit">Add Todo</button>
+          <button
+            type="button"
+            id="remove-all-completed"
+            class="btn btn-primary mb-3"
+          >
+            Remove all completed
+          </button>
+        </div>
+      </form>
+      <script src="script.js"></script>
+    </section>
   </body>
 </html>
+
+
+
+
+
