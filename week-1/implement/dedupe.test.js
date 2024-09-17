@@ -24,3 +24,20 @@ test.todo("given an empty array, it returns an empty array");
 // Given an array with strings or numbers
 // When passed to the dedupe function
 // Then it should remove the duplicate values
+
+test("Given an empty array, it returns an empty array", () => {
+    expect(dedupe([])).toStrictEqual([]);
+  });
+  test("Given an array with no duplication, it returns a copy of the original array", () => {
+    expect(dedupe([7,8,6])).toStrictEqual([7,8,6]);
+  });
+test("Given an array with strings, it should remove duplicate values", () => {
+    expect(dedupe([`@`, `b`, `g`, `@`, `r`, `g`])).toStrictEqual([`@`,`b`, `g`, 'r']);
+  });
+
+  test("Given an array with numbers, it should remove duplicate values", () => {
+    expect(dedupe([8, 0, 1, 0, 4, 3, 8])).toStrictEqual([8, 0, 1, 4, 3]);
+  });
+
+ 
+ 
