@@ -1,1 +1,21 @@
 /** Write your CSS in here **/
+body{
+    background-color: rgb(207, 167, 191);
+    text-align: center;
+    
+}
+
+#carousel-img{
+    width:40%;
+    height: 25%;
+margin-top: 7%;
+border: 10rem solid rgba(174, 94, 94, 0.951);
+
+}
+button{
+    margin-top: 6%;
+    margin: 1%;
+    font-size:3em;
+    padding: 1rem;
+    border-radius: 25px;
+}
