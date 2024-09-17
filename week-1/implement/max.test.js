@@ -9,7 +9,7 @@ E.g. max(['hey', 10, 'hi', 60, 10]), target output: 60 (sum ignores any non-nume
 // Given an empty array
 // When passed to the max function
 // Then it should return -Infinity
-test.todo("given an empty array, returns -Infinity");
+//test.todo("given an empty array, returns -Infinity");
 
 // Given an array with one number
 // When passed to the max function
@@ -26,3 +26,30 @@ test.todo("given an empty array, returns -Infinity");
 // Given an array with non-number values
 // When passed to the max function
 // Then it should return the max and ignore non-numeric values
+
+const getMax = require("./max.js");
+
+describe("getMax", () => {
+  test("returns infinity for empty array", () => {
+    expect(getMax([])).toBe(-Infinity);
+  });
+
+  test("returns the number in the array if there's 1 number", () => {
+    expect(getMax([5])).toBe(5);
+    expect(getMax([8])).toBe(8);
+  })
+
+  test("returns the positive max number in the array", () => {
+    expect(getMax([5, 9, -4, -1, 2])).toBe(9);
+  })  
+
+  test("returns the largest decimal number in the array", () => {
+    expect(getMax([0.5, 0.9, 0.4, 0.1, 0.2])).toBe(0.9);
+  })  
+
+  test("returns the largest number in array with numerical and non-numerical value", () => {
+    expect(getMax(["55", 8, 9])).toBe(9);
+    expect(getMax([3, 7, 'hi', 1, 'bye'])).toBe(7);
+  }) 
+
+});
