@@ -491,3 +491,54 @@ const quotes = [
 ];
 
 // call pickFromArray with the quotes array to check you get a random quote
+
+document.addEventListener("DOMContentLoaded", function () {
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+  const newQuoteBtn = document.getElementById("new-quote");
+  const autoPlayCheckbox = document.getElementById("auto-play");
+
+  let intervalId;
+
+  function displayQuote() {
+    const randomQuote = pickFromArray(quotes);
+    quoteElement.textContent = randomQuote.quote;
+    authorElement.textContent = `- ${randomQuote.author}`;
+  }
+
+  function startAutoPlay() {
+    intervalId = setInterval(displayQuote, 2000); // Auto-generate every 2 seconds
+  }
+
+  function stopAutoPlay() {
+    clearInterval(intervalId);
+  }
+
+  function createAutoPlayStatusElement() {
+    const statusElement = document.createElement("p");
+    statusElement.id = "auto-play-status";
+    document.body.appendChild(statusElement);
+    return statusElement;
+  }
+
+  const autoPlayStatusElement = document.getElementById("auto-play-status") || createAutoPlayStatusElement();
+
+  newQuoteBtn.addEventListener("click", displayQuote);
+
+  if (autoPlayCheckbox && autoPlayStatusElement) {
+    autoPlayCheckbox.addEventListener("change", function () {
+      if (autoPlayCheckbox.checked) {
+        startAutoPlay();
+        autoPlayStatusElement.textContent = "Auto-play: ON";
+      } else {
+        stopAutoPlay();
+        autoPlayStatusElement.textContent = "Auto-play: OFF";
+      }
+    });
+  }
+
+  // Initial display of a quote when the page loads
+  displayQuote();
+});
+
+
