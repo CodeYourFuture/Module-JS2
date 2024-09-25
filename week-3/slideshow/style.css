@@ -1,1 +1,31 @@
-/** Write your CSS in here **/
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f5f5f5; /* Cor de fundo suave */
+  }
+  
+  #carousel-img {
+    width: 300px; /* Largura da imagem do gatinho */
+    height: auto;
+    border-radius: 15px; /* Cantos arredondados para uma aparência mais suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin: 20px 0; /* Espaçamento ao redor da imagem */
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ffb6c1; /* Rosa claro */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+  
+    &:hover {
+      background-color: #ff69b4; /* Rosa mais escuro no hover */
+    }
+  }
+  
