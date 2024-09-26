@@ -21,3 +21,41 @@ const books = [
   },
 ];
 
+function createBookElement(book) {
+  const bookElement = document.createElement("li");
+  bookElement.style.backgroundColor = book.alreadyRead ? "green" : "red"; //
+  bookElement.style.marginBottom = "5rem";
+
+  const titleElement = document.createElement("span");
+  titleElement.textContent = book.title;
+  bookElement.appendChild(titleElement);
+
+  const authorElement = document.createElement("p");
+  authorElement.textContent = book.author;
+  bookElement.appendChild(authorElement);
+
+  const imageElement = document.createElement("img");
+  imageElement.src = book.bookCoverImage;
+  imageElement.alt = `${book.title} Cover`;
+  bookElement.appendChild(imageElement);
+
+  return bookElement;
+}
+
+function readingList(books) {
+  const readingListContainer = document.getElementById("reading-list");
+
+  // Clear existing content
+  readingListContainer.innerHTML = "";
+
+  books.forEach((book) => {
+    const bookElement = createBookElement(book);
+    readingListContainer.appendChild(bookElement);
+  });
+
+  document.body.style.marginTop = "4rem"; // Adjust the value as needed
+}
+
+window.addEventListener("DOMContentLoaded", function () {
+  readingList(books);
+});

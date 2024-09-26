@@ -96,7 +96,7 @@ body {
 }
 
 .article-title {
-  margin-bottom: 0.5em;
+  margin: 2rem;
   font-weight: 700;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 #greenBtn {
-  background: #87ca8a;
+  background: #088b0f;
 }
 
 @media screen and (min-width: 992px) {
