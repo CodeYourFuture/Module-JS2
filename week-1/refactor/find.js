@@ -3,7 +3,7 @@
 function find(list, target) {
   for (let index = 0; index < list.length; index++) {
     const element = list[index];
-    if (element === target) {
+    if (element == target) {
       return index;
     }
   }
