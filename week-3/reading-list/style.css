@@ -157,3 +157,21 @@ body {
     max-height: 80px;
   }
 }
+
+
+
+img{
+  width: 10%;
+}
+.unread{
+  background-color: red;
+}
+
+.read{
+  background-color: green;
+}
+.bookOne{
+  margin-top: 6px;
+  display: flex;
+  gap: 5px;
+}
