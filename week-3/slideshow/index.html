@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title here</title>
+    <title>Image carousel</title>
+    <link rel="stylesheet" href="style.css" />
     <script defer src="slideshow.js"></script>
   </head>
   <body>
-    <img id="carousel-img" src="./assets/cute-cat-a.png" alt="cat-pic" />
-    <button type="button" id="backward-btn">Backwards</button>
-    <button type="button" id="forward-btn">Forward</button>
+    <section class="container">
+      <h1 class="heading">Image carousel level 2</h1>
+      <img
+        id="carousel-img"
+        class="img"
+        src="./assets/cute-cat-a.png"
+        alt="cat-pic"
+      />
+      <label for="delay"
+        >Delay time: (In milisecoonds)
+        <input class="time-input" type="number" name="delay" id="delay" />
+      </label>
+      <section class="btn-group">
+        <button type="button" class="btn" id="auto-backward">Auto Backwards</button>
+        <button type="button" class="btn" id="stop">Stop</button>
+        <button type="button" class="btn" id="auto-forward">Auto Forward</button>
+      </section>
+      <section id="forward-btn"><img src="arrow-right-solid (1).svg" alt="Arrow right"></section>
+      <section id="backward-btn"><img src="arrow-left-solid.svg" alt="arrow left"></section>
+    </section>
   </body>
 </html>
