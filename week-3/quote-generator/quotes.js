@@ -25,7 +25,7 @@ function pickFromArray(choices) {
 const quotes = [
   {
     quote: "Life isn't about getting and having, it's about giving and being.",
-    author: "Kevin Kruse",
+    author: "- Kevin Kruse",
   },
   {
     quote: "Whatever the mind of man can conceive and believe, it can achieve.",
@@ -140,7 +140,7 @@ const quotes = [
   },
   {
     quote: "Either you run the day, or the day runs you.",
-    author: "Jim Rohn",
+    author: "- Jim Rohn",
   },
   {
     quote: "Whether you think you can or you think you can't, you're right.",
@@ -207,7 +207,7 @@ const quotes = [
   {
     quote:
       "Certain things catch your eye, but pursue only those that capture the heart.",
-    author: " Ancient Indian Proverb",
+    author: "Ancient Indian Proverb",
   },
   {
     quote: "Believe you can and you're halfway there.",
@@ -266,7 +266,7 @@ const quotes = [
   {
     quote:
       "Happiness is not something readymade.  It comes from your own actions.",
-    author: "Dalai Lama",
+    author: "- Dalai Lama",
   },
   {
     quote:
@@ -337,7 +337,7 @@ const quotes = [
   },
   {
     quote: "A person who never made a mistake never tried anything new.",
-    author: " Albert Einstein",
+    author: "Albert Einstein",
   },
   {
     quote:
@@ -354,7 +354,7 @@ const quotes = [
   },
   {
     quote: "You become what you believe.",
-    author: "Oprah Winfrey",
+    author: "- Oprah Winfrey",
   },
   {
     quote: "I would rather die of passion than of boredom.",
@@ -478,7 +478,7 @@ const quotes = [
   },
   {
     quote: "Nothing is impossible, the word itself says, “I'm possible!”",
-    author: "-Audrey Hepburn",
+    author: "Audrey Hepburn",
   },
   {
     quote: "The only way to do great work is to love what you do.",
@@ -490,4 +490,41 @@ const quotes = [
   },
 ];
 
-// call pickFromArray with the quotes array to check you get a random quote
+
+
+function getQoutes(evet){
+const quoteParagahraph = document.getElementById("quote");
+const currentQuote = pickFromArray(quotes);
+quoteParagahraph.innerText = currentQuote.quote;
+const quoteParagahraph2 = document.getElementById("author");
+quoteParagahraph2.innerText = `-${currentQuote.author}`;
+
+}
+getQoutes();
+
+const button = document.getElementById("new-quote");
+function eventhandler(event){
+  // console.log("click");
+  getQoutes();
+}
+button.addEventListener("click", getQoutes);
+
+const checkBox = document.getElementById("check-box");
+
+setInterval(() => {
+  
+  if(checkBox.checked){
+    return "On", getQoutes();
+  }
+}, 5000);
+
+const autoPlay = document.getElementById("auto-play-text")
+checkBox.addEventListener("change",function(){
+    if(checkBox.checked){
+      autoPlay.textContent = "auto-play:ON";
+    }else{
+      autoPlay.textContent = "";
+    }
+});
+
+
