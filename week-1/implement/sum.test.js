@@ -1,3 +1,16 @@
+const summation = require("./sum.js");
+
+describe("summation", () => {
+  test("Given an array should sum all numbers and ignoring the strings", () => {
+    expect(summation([10, 20, 30])).toBe(60);
+    expect(summation(["hey", 10, "hi", 60, 10])).toBe(80);
+  });
+
+  test("Given an empty array should return 0", () => {
+    expect(summation([])).toStrictEqual(0);
+  });
+});
+
 /* Sum the numbers in an array
 
 In this kata, you will need to implement a function that sums the numerical elements of an array
