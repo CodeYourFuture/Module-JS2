@@ -3,6 +3,7 @@
 // This program should log out the title, how many it serves and the ingredients.
 // Each ingredient should be logged on a new line
 // How can you fix it?
+// I have add back-tick to ingredient and add semicolon to it. 
 
 const recipe = {
   title: "bruschetta",
@@ -11,5 +12,7 @@ const recipe = {
 };
 
 console.log(`${recipe.title} serves ${recipe.serves}
-  ingredients:
-${recipe}`);
+  ingredients:`);
+
+  
+
