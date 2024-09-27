@@ -1,3 +1,25 @@
+const tally = require("./tally.js");
+
+describe("tally", () => {
+  test("function called tally should return an object containing the count for each unique item", () => {
+  
+expect(tally(['a'])).toStrictEqual({a: 1});
+expect(tally(['a','a','a'])).toStrictEqual({a: 3});
+
+  });
+
+  test("function called tally should return an empty object when passed an empty object", () => {
+  
+    expect(tally([])).toStrictEqual({});
+    
+      });
+    
+
+});
+
+
+
+
 /**
  * tally array
  *

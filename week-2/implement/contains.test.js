@@ -1,5 +1,17 @@
 const contains = require("./contains.js");
 
+describe("contains", () => {
+  test("contains({ a : 1, b: 2 },'a') // returns true as the object contains a key of 'a'", () => {
+  
+  const item = {a: 1,b: 2,c: 3 };
+  
+expect(contains(item,'d')).toBe(false);
+expect(contains(item, 'a')).toBe(true);
+
+  });
+});
+
+
 /*
 Implement a function called contains that checks an object contains a
 particular property
