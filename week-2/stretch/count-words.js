@@ -6,7 +6,6 @@
     - returns an object where
           - the keys are the words from the string and
           - the values are the number of times the word appears in the string
-
   Example
   If we call countWords like this:
 
@@ -26,3 +25,20 @@
 
 3. Order the results to find out which word is the most common in the chapter
 */
+function countWords(str){
+  if(!typeof str === "string"){
+    throw new Error("input must be a string");
+  }
+  // remove punctuation and change the string to lowercase
+  // also split the string into words
+  const myString = str.replace(/[.,!?]/g, '').toLowerCase().split(/\s+/);
+   const count ={};
+   for (const element of myString) {
+       if(element){
+        count[element] = (count[element] || 0)+1;
+       }
+   }
+   return count;
+  }
+console.log(countWords("you and me and you!"));
+console.log(countWords("Hello, hello! How are you?"));

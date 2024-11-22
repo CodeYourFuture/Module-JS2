@@ -1,5 +1,32 @@
 const contains = require("./contains.js");
+describe('contain function' , ()=>{
+  test('should return true when the object contains the key',()=>{
+    expect(contains({ a: 1, b: 2 }, 'a')).toBe(true);
+  });
+    test('should return false for an empty object', () => {
+    expect(contains({}, 'a')).toBe(false);
+  });
 
+  test('should return false for an array input', () => {
+    expect(contains([], 'length')).toBe(false);
+  });
+
+  test('should return false for null input', () => {
+    expect(contains(null, 'a')).toBe(false);
+  });
+
+  test('should return false for non-object input like a number', () => {
+    expect(contains(42, 'a')).toBe(false);
+  });
+
+  test('should return false when the key is not a string', () => {
+    expect(contains({ a: 1 }, 1)).toBe(false);
+  });
+
+  test('should return false as an array input', () => {
+    expect(contains([1, 2], '1')).toBe(false);
+  });
+});
 /*
 Implement a function called contains that checks an object contains a
 particular property
