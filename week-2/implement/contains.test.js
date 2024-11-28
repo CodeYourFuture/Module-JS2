@@ -32,3 +32,29 @@ as the object doesn't contains a key of 'c'
 // Given invalid parameters like arrays
 // When passed to contains
 // Then it should return false or throw an error
+
+describe("contains()", () => {
+  test("Given an object with the property, it should return true", () => {
+    expect(contains({ a: 1, b: 2 }, "a")).toBe(true);
+  });
+
+  test("Given an object without the property, it should return false", () => {
+    expect(contains({ a: 1, b: 2 }, "c")).toBe(false);
+  });
+
+  test("Given an empty object, it should return false", () => {
+    expect(contains({}, "a")).toBe(false);
+  });
+
+  test("Given null, it should throw an error", () => {
+    expect(() => contains(null, "a")).toThrow(
+      "Invalid input: object must be a non-null object."
+    );
+  });
+
+  test("Given a non-object input, it should throw an error", () => {
+    expect(() => contains(42, "a")).toThrow(
+      "Invalid input: object must be a non-null object."
+    );
+  });
+});

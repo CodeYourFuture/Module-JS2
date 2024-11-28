@@ -1,4 +1,5 @@
 // ======= Test suite is provided below... =======
+const createLookup = require("./lookup");
 
 test("converts a single pair of currency codes", () => {
   expect(createLookup([["GB", "GBP"]])).toEqual({

@@ -29,3 +29,22 @@
 // Given an invalid input like a string
 // When passed to tally
 // Then it should throw an error
+
+const tally = require("./tally");
+
+test("tallies a single item in an array", () => {
+  expect(tally(["a"])).toEqual({ a: 1 });
+});
+test("tallies an array with duplicate items", () => {
+  expect(tally(["a", "a", "a"])).toEqual({ a: 3 });
+});
+test("Given an empty array,it should return an empty object", () => {
+  expect(tally([])).toEqual({});
+});
+test("Given an invalid input,it should throw an error", () => {
+  expect(() => tally("invalid")).toThrow(
+    "Invalid input,input must be an array"
+  );
+  expect(() => tally(123)).toThrow("Invalid input,input must be an array");
+  expect(() => tally(null)).toThrow("Invalid input,input must be an array");
+});
