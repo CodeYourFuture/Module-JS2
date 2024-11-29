@@ -1,4 +1,22 @@
-function setAlarm() {}
+
+let alarmTime = 0;
+
+//Every one second the title should count down by one.
+
+function setAlarm() {
+
+const alarmTime = document.getElementById("alarmSet").value;
+
+document.getElementById("timeRemaining").textContent = ` Time Remaining: ${alarmTime}`;
+
+
+
+
+
+}
+
+
+document.getElementById("set").addEventListener("click", setAlarm);
 
 // DO NOT EDIT BELOW HERE
 
