@@ -64,15 +64,6 @@ document.getElementById("stop").addEventListener("click", setAlarm);
 
 
 
-
-
-
-
-
-
-
-
-
 // DO NOT EDIT BELOW HERE
 function setup() {
   document.getElementById("set").addEventListener("click", () => {
