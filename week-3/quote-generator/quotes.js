@@ -490,4 +490,26 @@ const quotes = [
   },
 ];
 
+function displayRandomQuote() {
+  const quoteElement = document.getElementById("quote");
+  const authorElement = document.getElementById("author");
+
+  const randomQuote = pickFromArray(quotes);
+
+  console.log("Selected Quote:", randomQuote.quote);
+  console.log("Selected Author:", randomQuote.author);
+
+  quoteElement.textContent = randomQuote.quote;
+  authorElement.textContent = randomQuote.author;
+}
+
+displayRandomQuote();
+
+document
+  .getElementById("new-quote")
+  .addEventListener("click", displayRandomQuote);
+
 // call pickFromArray with the quotes array to check you get a random quote
+
+const randomQuoteTest = pickFromArray(quotes);
+console.log(randomQuoteTest);
