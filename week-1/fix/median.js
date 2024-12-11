@@ -4,7 +4,11 @@
 
 function calculateMedian(list) {
   const middleIndex = Math.floor(list.length / 2);
-  const median = list.splice(middleIndex, 1)[0];
+  let median = 0
+  if (list.length % 2 === 0) {
+    const mean = (list[middleIndex - 1] + list[middleIndex]) / 2;
+    median = mean;
+  } else { median = list[middleIndex]; }
   return median;
 }
 
